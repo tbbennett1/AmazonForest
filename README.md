@@ -1,5 +1,5 @@
-# mern-project
-is a site that sell items.
+# AmazonForest.com
+#### An exotic pet/supply site
 
 
 ## Background and Overview
@@ -14,12 +14,13 @@ is a site that sell items.
 ## Technologies and Technical Challenges
 	MERN (MongoDB, Express, React, and Node).
 	Redux
-	Active Storage
     AWS
     Frontend: React
     Backened: MongoDB/Express
 
 ## Group Members and Work Breakdown
+backend: Brock & Abby
+Frontend: Brett && Carlos
 ### Day 1 - 2
 * User Auth
 * MongoDb Setup
@@ -29,6 +30,8 @@ is a site that sell items.
 ### Day 3 - 5
 * Home Page (item index)
 * Profile Page (user show)
+    - orders page
+    - profile page
 * Item detail (show)
 #### Bonus:
 * Categories (catagories index)
