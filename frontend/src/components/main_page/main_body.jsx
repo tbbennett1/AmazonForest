@@ -3,6 +3,8 @@ import React from 'react';
 import HeaderContainer from './header_container';
 import Sidebar from './sidebar';
 import FeaturedContainer from './featured_container';
+import FooterOne from './footer_one';
+import FooterTwo from './footer_two';
 
 class MainBody extends React.Component {
     render() {
@@ -13,6 +15,8 @@ class MainBody extends React.Component {
                     <Sidebar />
                     <FeaturedContainer />
                 </div>
+                <FooterOne />
+                <FooterTwo />
             </div>
         )
     }
