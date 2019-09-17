@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require('../../models/User');
+const Item = require('../../models/Item');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
@@ -8,7 +9,7 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+// router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
@@ -92,5 +93,18 @@ router.post("/login", (req, res) => {
 		});
 	});
 });
+
+
+// find items sold by user (seller)
+
+router.get('/:user_id/items', (req, res) => {
+  Item.find({ sellerId: req.params.user_id })
+    .then(items => res.json(items))
+    .catch(err =>
+      res.status(404).json({ noItemsFound: 'No items found from that user' }
+      )
+    );
+});
+
 
 module.exports = router;
