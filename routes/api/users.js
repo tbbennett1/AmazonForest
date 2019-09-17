@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require('../../models/User');
+const Item = require('../../models/Item');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
@@ -92,5 +93,18 @@ router.post("/login", (req, res) => {
 		});
 	});
 });
+
+
+// find items sold by user (seller)
+
+router.get('/:user_id/items', (req, res) => {
+  Item.find({ sellerId: req.params.user_id })
+    .then(items => res.json(items))
+    .catch(err =>
+      res.status(404).json({ noItemsFound: 'No items found from that user' }
+      )
+    );
+});
+
 
 module.exports = router;

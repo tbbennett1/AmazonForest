@@ -2,8 +2,12 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
+// var AWS = require("aws-sdk");
 
 const Item = require('../../models/Item');
+
+// var storage = multer.memoryStorage();
+// var upload = multer({ storage: storage });
 
 // router.get("/test", (req, res) => res.json({ msg: "This is the Item route" }));
 
@@ -22,15 +26,6 @@ router.get("/:id", (req, res) => {
     );
 });
 
-// find by user (seller)
-
-router.get('/user/:user_id', (req, res) => {
-	Item.find({ user: req.params.user_id })
-		.then(items => res.json(items))
-		.catch(err =>
-			res.status(404).json({ noItemsFound: 'No tweets found from that user' }
-			)
-		);
-});
-
 module.exports = router;
+
+

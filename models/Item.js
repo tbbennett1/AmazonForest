@@ -21,6 +21,10 @@ const ItemSchema = new Schema({
 	date: {
 		type: Date,
 		default: Date.now
+	},
+	image_url: {
+		type: String,
+		required: false
 	}
 });
 
