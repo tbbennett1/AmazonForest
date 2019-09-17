@@ -7,8 +7,8 @@ const CommentSchema = new Schema({
 		type: String,
 		required: true
 	}
+});
 
+module.exports = Item = mongoose.model('items', ItemSchema);
 
-CommentcommentComment
-
-module.exports = Item = mongoose.model('item', ItemSchema);
+// I'm new
