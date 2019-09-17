@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { fetchItems, fetchItem, removeItem } from "../../actions/item_actions";
 
 import ItemIndex from './item_index';
 
@@ -11,7 +12,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		fetch: 
+		fetchItems: () => dispatch(fetchItems()),
+		fetchItem: (id) => dispatch(fetchItem(id)),
+		removeItem: (id) => dispatch(removeItem(id))
 	}
 }
 
