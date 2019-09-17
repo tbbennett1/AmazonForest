@@ -16,6 +16,10 @@ const ReviewSchema = new Schema({
       max: { type: Number, min: 5 }
     },
 		required: true
+	},
+	date: {
+		type: Date,
+		default: Date.now
 	}
 });
 
