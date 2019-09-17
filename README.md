@@ -10,7 +10,6 @@
 - [ ] Search
 - [ ] Bonus: Categories
 - [ ] Bonus: Wish Lists
-- [ ] somethingsomething
 
 ## Technologies and Technical Challenges
 	MERN (MongoDB, Express, React, and Node).

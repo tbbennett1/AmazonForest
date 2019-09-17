@@ -24,22 +24,32 @@ export const receiveErrors = errors => ({
     errors
 })
 
+const loginHelper = (res, dispatch) => {
+    const { token } = res.data;
+    localStorage.setItem('jwtToken', token);
+    APIUtil.setAuthToken(token);
+    const decoded = jwt_decode(token);
+    dispatch(receiveCurrentUser(decoded))
+}
+
+
 export const signup = (user) => dispatch => (
-    APIUtil.signup(user).then(() => dispatch(receiveSignin()))
-    .catch(errors => dispatch(receiveErrors(errors.response.data)))
+    APIUtil.signup(user).then(res => {
+        loginHelper(res, dispatch)
+    })
+    .catch(err => {
+        dispatch(receiveErrors(err.response.data));
+    })
+
 )
 
 export const login = user => dispatch => (
     APIUtil.login(user).then(res => {
-        const { token } = res.data;
-        localStorage.setItem('jwtToken', token);
-        APIUtil.setAuthToken(token);
-        const decoded = jwt_decode(token);
-        dispatch(receiveCurrentUser(decoded))
+        loginHelper(res, dispatch)    
     })
-        .catch(err => {
-            dispatch(receiveErrors(err.response.data));
-        })
+    .catch(err => {
+        dispatch(receiveErrors(err.response.data));
+    })
 )
 
 export const logout = () => dispatch => {
