@@ -95,7 +95,7 @@ router.post("/login", (req, res) => {
 });
 
 
-// find items sold by user (seller)
+// show items sold by user (find by sellerId)
 
 router.get('/:user_id/items', (req, res) => {
   Item.find({ sellerId: req.params.user_id })
@@ -106,5 +106,31 @@ router.get('/:user_id/items', (req, res) => {
     );
 });
 
+// show the cart belongs to user (find by userId)
+
+router.get('/:user_id/cart', (req, res) => {
+  Cart.find({ userId: req.params.user_id })
+    .then(cart => res.json(cart))
+    .catch(err =>
+      res.status(404).json({ noCartFound: 'No Cart found from that user' }
+      )
+    );
+});
+
+
+
+
+// deleting an Item_Cart instance
+
+router.delete("/:item_cart_id", (req, res) => {
+  // authentification
+  passport.authenticate('jwt', { session: false }),
+  ItemCart.findByIdAndRemove(req.params.item_cart_id, err => {
+    if (err) res.send(err);
+    else res.json({
+      message: "Product has been deleted"
+    });
+  });
+});
 
 module.exports = router;

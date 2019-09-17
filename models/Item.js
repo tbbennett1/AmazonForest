@@ -18,13 +18,13 @@ const ItemSchema = new Schema({
 		type: String,
 		required: false
 	},
-	date: {
-		type: Date,
-		default: Date.now
-	},
 	image_url: {
 		type: String,
 		required: false
+	},
+	date: {
+		type: Date,
+		default: Date.now
 	}
 });
 
