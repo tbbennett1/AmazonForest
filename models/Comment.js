@@ -1,7 +1,11 @@
 const CommentSchema = new Schema({
-	item: {
+	itemId: {
 		type: Schema.Types.ObjectId,
 		ref: 'items'
+	},
+	userId: {
+		type: Schema.Types.ObjectId,
+		ref: 'users'
 	},
 	body: {
 		type: String,
@@ -9,6 +13,4 @@ const CommentSchema = new Schema({
 	}
 });
 
-module.exports = Item = mongoose.model('items', ItemSchema);
-
-// I'm new
+module.exports = Comment = mongoose.model('comments', CommentSchema);

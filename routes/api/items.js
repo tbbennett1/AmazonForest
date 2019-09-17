@@ -34,7 +34,3 @@ router.get('/user/:user_id', (req, res) => {
 });
 
 module.exports = router;
-
-https://scotch.io/courses/create-a-crud-app-with-node-and-mongodb/seeding-database
-
-https://github.com/pkosiec/mongo-seeding

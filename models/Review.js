@@ -1,7 +1,11 @@
 const ReviewSchema = new Schema({
-	item: {
+	itemId: {
 		type: Schema.Types.ObjectId,
 		ref: 'items'
+	},
+	userId: {
+		type: Schema.Types.ObjectId,
+		ref: 'users'
 	},
 	rating: {
 		type: Number, // from 1 to 5
