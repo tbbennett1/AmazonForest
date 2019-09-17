@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ItemSchema = new Schema({
-	user: {
+	sellerId: {
 		type: Schema.Types.ObjectId,
 		ref: 'users'
 	},
@@ -18,10 +18,14 @@ const ItemSchema = new Schema({
 		type: String,
 		required: false
 	},
+	image_url: {
+		type: String,
+		required: false
+	},
 	date: {
 		type: Date,
 		default: Date.now
 	}
 });
 
-module.exports = Item = mongoose.model('item', ItemSchema);
+module.exports = Item = mongoose.model('items', ItemSchema);

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require('../../models/User');
+const Item = require('../../models/Item');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
@@ -8,7 +9,7 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+// router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
@@ -91,6 +92,45 @@ router.post("/login", (req, res) => {
 			}
 		});
 	});
+});
+
+
+// show items sold by user (find by sellerId)
+
+router.get('/:user_id/items', (req, res) => {
+  Item.find({ sellerId: req.params.user_id })
+    .then(items => res.json(items))
+    .catch(err =>
+      res.status(404).json({ noItemsFound: 'No items found from that user' }
+      )
+    );
+});
+
+// show the cart belongs to user (find by userId)
+
+router.get('/:user_id/cart', (req, res) => {
+  Cart.find({ userId: req.params.user_id })
+    .then(cart => res.json(cart))
+    .catch(err =>
+      res.status(404).json({ noCartFound: 'No Cart found from that user' }
+      )
+    );
+});
+
+
+
+
+// deleting an Item_Cart instance
+
+router.delete("/:item_cart_id", (req, res) => {
+  // authentification
+  passport.authenticate('jwt', { session: false }),
+  ItemCart.findByIdAndRemove(req.params.item_cart_id, err => {
+    if (err) res.send(err);
+    else res.json({
+      message: "Product has been deleted"
+    });
+  });
 });
 
 module.exports = router;
