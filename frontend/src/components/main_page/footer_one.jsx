@@ -1,13 +1,14 @@
 import React from 'react';
 import WhiteLogo from '../../assets/images/forest_icon_white.png'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class FooterOne extends React.Component {
     render() {
+        // debugger
         return(
             <div className="footer1">
                 <div className="back-to-top">
-                    <a href="#"><span>Back to top</span></a>
+                    <a href={this.props.history.location.pathname}><span>Back to top</span></a>
                 </div>
                 <div className="footer-links-groups">
                     <div className="footer-group">
@@ -38,11 +39,11 @@ class FooterOne extends React.Component {
                 </div>
 
                 <div className="footer-logo">
-                    <a href="#"><img src={WhiteLogo} alt=""/></a>
+                    <a href={this.props.history.location.pathname}><img src={WhiteLogo} alt=""/></a>
                 </div>
             </div>
         )
     }
 }
 
-export default FooterOne;
+export default withRouter(FooterOne);
