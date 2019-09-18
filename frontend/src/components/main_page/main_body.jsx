@@ -15,7 +15,7 @@ class MainBody extends React.Component {
             <div className="mainPage">
                 <HeaderContainer />
                 <div className="mainPageBody">
-                    <Sidebar />
+                    {/* <Sidebar /> */}
                     <Switch>
                         <Route exact path="/items/:id" component={Item} />
                         <Route exact path="/items" component={ItemIndex} />  

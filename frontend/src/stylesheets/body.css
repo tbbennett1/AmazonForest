@@ -8,5 +8,5 @@
 .mainPageBody{
     display: flex;
     flex: 1 0 auto;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
