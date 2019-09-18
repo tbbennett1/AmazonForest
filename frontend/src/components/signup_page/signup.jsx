@@ -159,7 +159,7 @@ class SignUp extends React.Component {
         return(
         <div>
             <div className="session-body">
-                <img src={BlackLogo} alt="" />
+                <Link to="/"><img src={BlackLogo} alt="" /></Link>
                 <div className="session-box">
     
                     <div>

@@ -194,6 +194,10 @@ label.password2 {
     margin-bottom: 18px;
 }
 
+.session-body a {
+    align-self: center;
+}
+
 .session-footer{
     display: flex;
     flex-direction: column;
