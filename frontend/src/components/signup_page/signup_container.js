@@ -3,9 +3,9 @@ import React from 'react';
 import { signup } from '../../actions/session_actions';
 import SignUp from './signup';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ errors }) => {
     return {
-        // errors: errors.session
+        errors: errors
     }
 };
 

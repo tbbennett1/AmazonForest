@@ -3,9 +3,9 @@ import React from 'react';
 import { login } from '../../actions/session_actions';
 import Login from './login';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({errors}) => {
     return {
-        // errors: errors.session
+        errors: errors
     }
 };
 

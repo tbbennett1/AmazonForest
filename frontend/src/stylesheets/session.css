@@ -1,7 +1,3 @@
-.error{
-    margin-top: 6px;
-    color: #c40000;
-}
 
 .session-body{
     display: flex;
@@ -20,6 +16,7 @@
     border: solid 1px lightgray;
     border-radius: 3px;
     padding: 14px 18px;
+    font-family: 'ember-rg'
 }
 
 .session-box h1 {
@@ -38,7 +35,7 @@
     margin-bottom: 14px;
 }
 
-.form-input-box label{
+.form-input-box label:first-child{
     padding-left: 2px;
     padding-bottom: 2px;
     font-weight: bold;
@@ -71,6 +68,15 @@ label.password2 {
     margin-bottom: 26px;
 }
 
+.session-box-legal a{
+    color: #0066c0;
+    text-decoration: none;
+}
+
+.session-box-legal a:hover{
+    text-decoration: underline;
+}
+
 .form-orange-button {
     border-color: #a88734 #9c7e31 #846a29;
     background: #f0c14b;
@@ -98,6 +104,7 @@ label.password2 {
     background: linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
     z-index: 0;
     zoom: 1;
+
 }
 
 .form-divider-inner::after{
@@ -109,6 +116,7 @@ label.password2 {
     background: linear-gradient(to right,#fff,rgba(255,255,255,0),#fff);
     z-index: 1;
     content: "";
+
 }
 
 .session-divider-break{
@@ -118,6 +126,7 @@ label.password2 {
     padding-top: 1px;
     margin-bottom: 14px;
     line-height: 0;
+
 }
 
 .session-divider-break::after{
@@ -131,6 +140,7 @@ label.password2 {
     top: 50%;
     margin-top: -1px;
     z-index: 1;
+
 }
 
 .session-divider-break h5{
@@ -143,6 +153,7 @@ label.password2 {
     display: inline-block;
     background-color: #fff;
     padding: 0 8px 0 7px;
+    font-family: 'ember-lt'
 }
 
 .form-orange-button {
@@ -162,12 +173,123 @@ label.password2 {
     border-color: #adb1b8 #a2a6ac #8d9096;
     border-style: solid;
     border-width: 1px;
+    font-family: 'ember-rg';
+    font-size: 14px;
 }
 
 .form-orange-button:hover input{
     background: linear-gradient(to bottom,#f7dfa5,#e6b94a);
 }
 
+
 .session-gray-button:hover{
     background: #dfe2e6;
+}
+
+.session-body img{
+    align-self: center;
+    height: auto;
+    width: 154px;
+    margin-top: 22px;
+    margin-bottom: 18px;
+}
+
+.session-footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
+    font-family: 'ember-rg'
+}
+
+.session-footer-links{
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.session-footer-links div{
+    font-size: 11px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.session-footer-links a{
+    color: #0066c0;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.link-to-login a{
+    color: #0066c0;
+    text-decoration: none;
+}
+
+.link-to-login a:hover{
+    text-decoration: underline;  
+}
+
+.session-footer-links a:hover{
+    text-decoration: underline;
+}
+
+.session-footer-copyright{
+    font-size: 11px;
+    align-self: center;
+}
+
+.error{
+    margin-top: 6px;
+    color: #c40000;
+    font-weight: normal;
+}
+
+.password{
+    color: black;
+}
+
+
+.session-error{
+    display: none;
+    margin-bottom: 14px;
+    border: 1px #c40000 solid;
+    font-family: 'ember-rg';
+    position: relative;
+    box-shadow: 0 0 0 4px #fcf4f4 inset;
+    border-radius: 3px;
+}
+
+.session-error h4{
+    font-size: 17px;
+    line-height: 1.255;
+    margin: 0;
+    padding-bottom: 4px;
+    color: red;
+    font-family: 'ember-lt'
+}
+
+.session-error > div{
+    padding: 14px 18px 14px 63px; 
+}
+
+.session-error > div > svg {
+    color: #c40000;
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    font-size: 43px;
+}
+
+.hidden {
+    display:none;
+}
+
+
+.active {
+    display: flex;
+}
+
+
+input.red-border{
+    border: 1px solid #bd3200!important; 
+    box-shadow: 0 0 0 4px #fcf4f4 inset;
 }
