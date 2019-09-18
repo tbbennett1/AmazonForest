@@ -5,8 +5,9 @@ import { fetchItems, fetchItem, removeItem } from "../../actions/item_actions";
 import ItemIndex from './item_index';
 
 const mapStateToProps = (state) => {
+	
 	return {
-		items: state.entities.items
+		items: Object.keys((state.items)).map(id => state.items[id])
 	}
 }
 

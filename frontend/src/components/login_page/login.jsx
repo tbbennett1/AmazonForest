@@ -105,7 +105,7 @@ class Login extends React.Component {
         return(
             <div>
                 <div className="session-body">
-                <img src={BlackLogo} alt=""/>
+                <Link to="/"><img src={BlackLogo} alt=""/></Link>
                     <div className="session-error" id="session-error">
                         <div>
                             <MdErrorOutline/>

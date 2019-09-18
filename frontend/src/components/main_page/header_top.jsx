@@ -1,5 +1,7 @@
 import React from 'react';
-import SearchLogo from '../../assets/images/search_icon.svg'
+import SearchLogo from '../../assets/images/search_icon.svg';
+import Bars from '../../assets/images/bars.png';
+import WhiteLogo from '../../assets/images/forest_icon_white.png';
 
 class HeaderTop extends React.Component {
     constructor(props) {
@@ -16,9 +18,10 @@ class HeaderTop extends React.Component {
     render() {
         return(
             <div className="headerTop">
-                <h2>amazon forest</h2>
+                <img className="headerBars" src={Bars} />
+                <img className="headerLogo" src={WhiteLogo} />
                 <div className="searchBar">
-                    <button>All</button>
+                    <button>All<div></div></button>
                     <input type="text" onChange={this.update("text")} />
                     <img src={SearchLogo}/>
                 </div>
