@@ -1,28 +1,59 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import AccountDropdownContainer from './account_dropdown_container';
+
 import Cart from '../../assets/images/cart.png';
 import Location from '../../assets/images/location.png';
 
 class HeaderBottom extends React.Component{
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = { accountDropdown: false }
+
+        this.toggleAccountDropdown = this.toggleAccountDropdown.bind(this);
         this.handleSignedIn = this.handleSignedIn.bind(this)
+    }
+
+    componentDidMount() {
+        const body = document.getElementsByTagName("body")[0];
+        body.addEventListener("click", (event) => {
+            if(this.state.accountDropdown) {
+                if(!Array.from(event.target.classList).includes("accountDropdown") &&
+                !Array.from(event.target.classList).includes("form-orange-button")) {
+                    if(this.state.accountDropdown) {
+                        this.setState({accountDropdown: false})
+                    }
+                }
+            }
+        })
+    }
+
+    toggleAccountDropdown() {
+        if(!this.state.accountDropdown) {
+            this.setState({
+                accountDropdown: !this.state.accountDropdown
+            })
+        }
     }
 
     handleSignedIn() {
         if (this.props.currentUser.name) {
-            return (<div><nav className="header">
-                            <span className="headerAccountOne">Hello, {this.props.currentUser.name}</span>
-                            <span className="headerAccountTwo">Accounts & Lists</span>
-                    </nav></div>)
+            return (<div className="header" onClick={this.toggleAccountDropdown}>
+                        <span className="headerAccountOne">Hello, {this.props.currentUser.name}</span>
+                        <span className="headerAccountTwo">Accounts & Lists</span>
+                        <section className="headerTriangle"></section>
+                        { this.state.accountDropdown && <AccountDropdownContainer currentUser={this.props.currentUser} />}
+                    </div>)
         } else {
             return (
-                <div><nav className="header">
-                        <span className="headerAccountOne">Hello, Sign in</span>
-                        <span className="headerAccountTwo">Accounts & Lists</span>
+                <div className="header" onClick={this.toggleAccountDropdown}>
+                    <span className="headerAccountOne">Hello, Sign in</span>
+                    <span className="headerAccountTwo">Accounts & Lists</span>
+                    <section className="headerTriangle"></section>
                     {/* <div><Link to="/signup">Sign Up</Link></div> */}
-                </nav></div>)
+                    { this.state.accountDropdown && <AccountDropdownContainer />}
+                </div>)
         }
     }
     
@@ -38,7 +69,11 @@ class HeaderBottom extends React.Component{
                         </div>
                     </button>
                 </div>
-                <div>A bunch of buttons</div>
+                <section className="navbarButtons">
+                    <div>Today's Deals</div>
+                    <div>Your Amazon Forest</div>
+                    <div>Sell Your Pets</div>
+                </section>
                 <div className="headerBottomRight">
                     {this.handleSignedIn()}
                     <div className="headerCartContainer">
