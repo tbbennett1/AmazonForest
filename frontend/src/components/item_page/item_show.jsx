@@ -14,7 +14,7 @@ class ItemShow extends React.Component {
   render() {
     if(!this.props.item){
       return(
-        <div><span>props not set yet</span></div>
+        <div></div>
       )
     }
     const item = this.props.item;
