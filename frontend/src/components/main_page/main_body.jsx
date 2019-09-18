@@ -13,10 +13,11 @@ class MainBody extends React.Component {
                 <HeaderContainer />
                 <div className="mainPageBody">
                     <Sidebar />
-                    <FeaturedContainer />
+                    This is the featured items section.
+                    {/* <FeaturedContainer /> */}
                 </div>
                 <FooterOne />
-                <FooterTwo />
+                {/* <FooterTwo /> */}
             </div>
         )
     }

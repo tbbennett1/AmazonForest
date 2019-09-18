@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 // import {fetchItems} from '../../actions/item_actions';
 
-import Featured from './header';
+import Featured from './featured';
 
 const mapStateToProps = (state) => {
     // let items = Object.values(state.items);

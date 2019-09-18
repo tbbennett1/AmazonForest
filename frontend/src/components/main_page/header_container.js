@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 
 import Header from './header';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ session }) => {
     return{
-
+        currentUser: session.user
     }
 }
 
