@@ -5,12 +5,19 @@ export const RECEIVE_ITEM = "RECEIVE_ITEM";
 export const CREATE_ITEM = "CREATE_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 
+export const receiveItem = item => {
+  return {
+    type: RECEIVE_ITEM,
+    item
+  }
+}
+
 export const fetchItems = () => dispatch => (
 	ItemApiUtil.fetchItems().then((items) => dispatch({ type: RECEIVE_ALL_ITEMS, items }))
 );
 
 export const fetchItem = (id) => dispatch => (
-	ItemApiUtil.fetchItem(id).then((item) => dispatch({ type: RECEIVE_ITEM, item }))
+	ItemApiUtil.fetchItem(id).then((item) => dispatch(receiveItem(item.data)))
 );
 
 export const createItem = (data) => dispatch => (
