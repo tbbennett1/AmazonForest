@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../main_page/header_container';
-import Footer from '../main_page/footer_one';
 
 class ItemShow extends React.Component {
   constructor(props){
@@ -21,7 +19,6 @@ class ItemShow extends React.Component {
 
     return (
       <div>
-        <Header />
         <div className="item-show-top">
           <div className="item-left-col">
             <img src={this.props.item.image_url}/>
@@ -39,7 +36,6 @@ class ItemShow extends React.Component {
             <h3>In Stock.</h3>
           </div>
         </div>
-        <Footer />
       </div>
     )
   }
