@@ -1,0 +1,35 @@
+.item-show-top{
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.item-left-col{
+  padding: 100px 20px;
+}
+
+.item-left-col > img{
+  width: 444px;
+}
+
+.item-center-col {
+  padding: 20px;
+}
+
+.item-title {
+  font-family: 'ember-rg';
+  font-size: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.item-center-col > h4 {
+  color: #555;
+  font-family: 'ember-rg';
+  font-size: 14px;
+}
+
+.item-price{
+  color: rgb(177, 39, 4);
+  font-family: 'ember-rg';
+  font-size: 18px;
+}

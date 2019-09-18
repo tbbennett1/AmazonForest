@@ -12,6 +12,7 @@ import '../stylesheets/header.css'
 import '../stylesheets/footer2.css'
 import '../stylesheets/reset.css'
 import '../stylesheets/session.css'
+import '../stylesheets/item-show/item-show.css'
 
 const App = () => (
   <Switch>

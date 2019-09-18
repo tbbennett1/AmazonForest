@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from '../main_page/header_container';
+import Footer from '../main_page/footer_one';
 
 class ItemShow extends React.Component {
   constructor(props){
@@ -12,20 +14,30 @@ class ItemShow extends React.Component {
   render() {
     if(!this.props.item){
       return(
-        <div><h1>props not set yet</h1></div>
+        <div><span>props not set yet</span></div>
       )
     }
+    const item = this.props.item;
+
     return (
-      <div className="item-show-top">
-        <div className="item-left-col">
-          <h1>testy mc testers</h1>
+      <div>
+        <Header />
+        <div className="item-show-top">
+          <div className="item-left-col">
+            <img src={this.props.item.image_url}/>
+          </div>
+          <div className="item-center-col">
+            <h1 className="item-title">{item.title}</h1>
+            <h4>Price: 
+              <span className="item-price"> ${item.price}.00</span>
+            </h4>
+            <p>{item.description}</p>
+          </div>
+          <div className="item-right-col">
+  
+          </div>
         </div>
-        <div className="item-center-col">
-
-        </div>
-        <div className="item-right-col">
-
-        </div>
+        <Footer />
       </div>
     )
   }
