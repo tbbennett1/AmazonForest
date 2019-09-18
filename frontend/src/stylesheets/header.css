@@ -40,9 +40,19 @@
     display: flex;
 }
 
-.headerTop h2 {
-    margin: 10px 20px 0px 0px;
-    color: white;
+.headerTop .headerBars {
+    height: 35px;
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid #666;
+    border-radius: 3px;
+    position: relative;
+    bottom: 5px;
+}
+
+.headerTop .headerLogo {
+    margin: 18px 50px 0px 15px;
+    height: 35px;
 }
 
 .headerTop .searchBar {
@@ -58,12 +68,15 @@
 }
 
 .searchBar {
+    height: 35px;
     margin-top: 12px;
     margin-right: 25px;
     display: flex;
 }
 
 .searchBar button {
+    display: flex;
+    padding: 0px 10px 0px 13px;
     cursor: pointer;
     border-radius: 5px 0px 0px 5px;
     background-color: #f3f3f3;
@@ -71,6 +84,19 @@
     border-bottom: 1px solid #f3f3f3;
     border-left: 1px solid #f3f3f3;
     border-right: 0.5px solid lightgray;
+    font-size: 16px;
+    color: #666;
+}
+
+.searchBar button div {
+    margin-left: 4px;
+    position: relative;
+    top: 6px;
+    border-top: 5px solid #666;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    width: 0;
+    height: 0;
 }
 
 .searchBar input {

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Cart from '../../assets/images/cart.png';
+
 class HeaderBottom extends React.Component{
     constructor(props) {
         super(props)
@@ -31,7 +33,10 @@ class HeaderBottom extends React.Component{
                 <div>A bunch of buttons</div>
                 <div className="headerBottomRight">
                     {this.handleSignedIn()}
-                    <div>Cart</div>
+                    <div className="headerCartContainer">
+                        <img className="headerCartImage" src={Cart} />
+                        Cart
+                    </div>
                 </div>
             </div>
         )
