@@ -4,3 +4,23 @@ html, body {
 	border: 0;
 	height: 100%;
 }
+
+@font-face{
+	font-family: 'officina';
+	src: local('officina'), url(../assets/fonts/OfficinaSansStd-Bold.otf) format('opentype');
+}
+
+@font-face{
+	font-family: 'ember-lt';
+	src: local('ember-lt'), url(../assets/fonts/Ember_Lt.ttf) format('truetype');
+}
+
+@font-face{
+	font-family: 'ember-rg';
+	src: local('ember-rg'), url(../assets/fonts/Ember_Rg.ttf) format('truetype');
+}
+
+@font-face{
+	font-family: 'ember-bd';
+	src: local('ember-bd'), url(../assets/fonts/Ember_Bd.ttf) format('truetype');
+}
