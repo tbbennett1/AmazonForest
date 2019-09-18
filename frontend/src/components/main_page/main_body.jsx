@@ -5,6 +5,9 @@ import Sidebar from './sidebar';
 import FeaturedContainer from './featured_container';
 import FooterOne from './footer_one';
 import FooterTwo from './footer_two';
+import { Route, Redirect, withRouter, Switch } from 'react-router-dom';
+import Item from '../item_page/item_show_container';
+import ItemIndex from '../item_page/item_index_container';
 
 class MainBody extends React.Component {
     render() {
@@ -13,8 +16,10 @@ class MainBody extends React.Component {
                 <HeaderContainer />
                 <div className="mainPageBody">
                     <Sidebar />
-                    This is the featured items section.
-                    {/* <FeaturedContainer /> */}
+                    <Switch>
+                        <Route exact path="/items/:id" component={Item} />
+                        <Route exact path="/items" component={ItemIndex} />  
+                    </Switch>
                 </div>
                 <FooterOne />
                 {/* <FooterTwo /> */}
