@@ -1,0 +1,26 @@
+.item-lists ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    width: 100%;
+}
+
+.index-item{
+    display: flex;
+    width: 25%;
+}
+
+.index-item-wrapper{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.index-item img{
+    
+}
+
+.index-item-details{
+    width: 100%;
+    display: flex;
+}
