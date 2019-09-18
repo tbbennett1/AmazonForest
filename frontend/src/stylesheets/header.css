@@ -18,6 +18,7 @@
     bottom: 10px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .headerAddress:hover {
@@ -43,6 +44,26 @@
     font-weight: 900;
 }
 
+.navbarButtons {
+    display: flex;
+    max-height: 40px;
+}
+
+.navbarButtons div {
+    margin-left: 20px;
+    color: #ccc;
+    font-family: Arial;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbarButtons div:hover {
+    border: 1px solid rgba(169, 169, 169, 0.253);
+    border-radius: 2px;
+    position: relative;
+    bottom: 3px;
+}
+
 .headerBottomRight {
     display: flex;
     position: relative;
@@ -60,12 +81,88 @@
     bottom: 3px;
 }
 
+.header {
+    cursor: pointer;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 10px;
+    right: 10px;
+}
+
+.headerTriangle {
+    position: absolute;
+    top: 25px;
+    left: 150px;
+    border-top: 5px solid #666;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.accountDropdown {
+    width: 500px;
+    height: 80px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px;
+    position: absolute;
+    top: 50px;
+    right: -71px;
+    text-align: center;
+    cursor: default;
+}
+
+.accountDropdown a {
+    text-decoration: none;
+    color: #05a;
+}
+
+.dropdownTriangle {
+    position: absolute;
+    top: -10px;
+    left: 465px;
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.accountDropdown button {
+    width: 199px;
+    height: 33px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.header span {
+    float: left;
+    clear: both;
+}
+
+.headerAccountOne {
+    color: #ccc;
+    font-size: 12px;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+.headerAccountTwo {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: Arial;
+    text-decoration: none;
+}
+
 .headerCartContainer {
     margin: 0px;
     padding: 5px !important;
     display: flex;
     position: relative;
     bottom: 10px;
+    cursor: pointer;
 }
 
 .headerItemsInCart {
@@ -82,6 +179,8 @@
     font-size: 18px;
     font-weight: 800;
     font-family: Arial;
+    position: relative;
+    top: 18px;
 }
 
 .headerCartImage {
@@ -112,6 +211,7 @@
     border-radius: 3px;
     position: relative;
     bottom: 5px;
+    cursor: pointer;
 }
 
 .headerTop .headerBars:hover {
@@ -121,6 +221,7 @@
 .headerTop .headerLogo {
     margin: 18px 50px 0px 15px;
     height: 35px;
+    cursor: pointer;
 }
 
 .headerTop .searchBar {
@@ -130,9 +231,11 @@
 
 .headerTop span {
     color: #fff;
+    margin-right: 20px;
     font-size: 24px;
     padding: 10px;
     font-weight: 800;
+    font-family: Arial;
 }
 
 .searchBar {
