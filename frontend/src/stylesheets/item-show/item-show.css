@@ -5,18 +5,20 @@
 
 .item-left-col{
   padding: 100px 20px;
+  width: 35%;
 }
 
 .item-left-col > img{
-  width: 444px;
+  width: 100%;
 }
 
 .item-center-col {
   padding: 20px;
+  width: 50%;
+  font-family: 'ember-rg';
 }
 
 .item-title {
-  font-family: 'ember-rg';
   font-size: 24px;
   padding-bottom: 20px;
   border-bottom: 1px solid #e7e7e7;
@@ -24,12 +26,26 @@
 
 .item-center-col > h4 {
   color: #555;
-  font-family: 'ember-rg';
   font-size: 14px;
 }
 
 .item-price{
   color: rgb(177, 39, 4);
   font-family: 'ember-rg';
+  font-size: 18px;
+}
+
+.item-right-col{
+  font-family: 'ember-rg';
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  position: relative;
+  padding: 20px;
+  width: 15%;
+  margin: 20px;
+}
+
+.item-right-col > h3 {
+  color: #007600;
   font-size: 18px;
 }

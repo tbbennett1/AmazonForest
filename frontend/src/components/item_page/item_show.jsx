@@ -34,7 +34,9 @@ class ItemShow extends React.Component {
             <p>{item.description}</p>
           </div>
           <div className="item-right-col">
-  
+            <span className="item-price"> ${item.price}.00</span>
+            <p>Want it by Friday? Too late. How about next month? Buy AmazonForest Prime and get it never.</p>
+            <h3>In Stock.</h3>
           </div>
         </div>
         <Footer />
