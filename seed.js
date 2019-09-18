@@ -2,6 +2,8 @@
 const bcrypt = require('bcryptjs');
 const User = require('./models/User');
 const Item = require('./models/Item');
+const Cart = require('./models/Cart');
+const ItemCart = require('./models/Item_Cart');
 const mongoose = require('mongoose');
 const faker = require('faker')
 
@@ -14,6 +16,12 @@ const user = new User({
 });
 
 user.save();
+
+const cart1 = new Cart({
+	ownerId: "5d8252686711da301181fe6a"
+});
+
+cart1.save();
 
 fakeProducts = [];
 
@@ -35,11 +43,11 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB successfully")
     
-	Item.find({}, (err, items) => {
-		items.forEach(item => {
-			item.remove();
-		})
-	})
+	// Item.find({}, (err, items) => {
+	// 	items.forEach(item => {
+	// 		item.remove();
+	// 	})
+	// })
 
     Item.insertMany(fakeProducts, function (err, docs) {
       if (err) throw err;
@@ -47,3 +55,30 @@ mongoose
     });
 
   });
+
+  	ItemCart.find({}, (err, itemCarts) => {
+			itemCarts.forEach(item => {
+			item.remove();
+		})
+	})
+
+const itemCart1 = new ItemCart({
+	itemId: "5d8296b0e157b3097a9a98df",
+	cartId: "5d8296b0e157b3097a9a98dd"
+});
+
+itemCart1.save();
+
+const itemCart2 = new ItemCart({
+	itemId: "5d8296b0e157b3097a9a98e4",
+	cartId: "5d8296b0e157b3097a9a98dd"
+});
+
+itemCart2.save();
+
+const itemCart3 = new ItemCart({
+	itemId: "5d8296b0e157b3097a9a98e2",
+	cartId: "5d8296b0e157b3097a9a98dd"
+});
+
+itemCart3.save();
