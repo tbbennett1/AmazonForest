@@ -12,19 +12,17 @@ class HeaderBottom extends React.Component{
 
     handleSignedIn() {
         if (this.props.currentUser.name) {
-            return (<nav className="header">
-                        <div><Link to="/">
-                            <span>Hello, {this.props.currentUser.name}</span>
-                        </Link></div>
-                    </nav>)
+            return (<div><nav className="header">
+                            <span className="headerAccountOne">Hello, {this.props.currentUser.name}</span>
+                            <span className="headerAccountTwo">Accounts & Lists</span>
+                    </nav></div>)
         } else {
             return (
-                <nav className="header">
-                    <div><Link to="/login">
-                        <span>Hello, Sign in</span>
-                    </Link></div>
+                <div><nav className="header">
+                        <span className="headerAccountOne">Hello, Sign in</span>
+                        <span className="headerAccountTwo">Accounts & Lists</span>
                     {/* <div><Link to="/signup">Sign Up</Link></div> */}
-                </nav>)
+                </nav></div>)
         }
     }
     

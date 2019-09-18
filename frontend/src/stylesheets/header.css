@@ -18,6 +18,7 @@
     bottom: 10px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .headerAddress:hover {
@@ -60,12 +61,37 @@
     bottom: 3px;
 }
 
+.header {
+    cursor: pointer;
+}
+
+.header span {
+    float: left;
+    clear: both;
+}
+
+.headerAccountOne {
+    color: #ccc;
+    font-size: 12px;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+.headerAccountTwo {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: Arial;
+    text-decoration: none;
+}
+
 .headerCartContainer {
     margin: 0px;
     padding: 5px !important;
     display: flex;
     position: relative;
     bottom: 10px;
+    cursor: pointer;
 }
 
 .headerItemsInCart {
@@ -82,6 +108,8 @@
     font-size: 18px;
     font-weight: 800;
     font-family: Arial;
+    position: relative;
+    top: 18px;
 }
 
 .headerCartImage {
@@ -112,6 +140,7 @@
     border-radius: 3px;
     position: relative;
     bottom: 5px;
+    cursor: pointer;
 }
 
 .headerTop .headerBars:hover {
@@ -121,6 +150,7 @@
 .headerTop .headerLogo {
     margin: 18px 50px 0px 15px;
     height: 35px;
+    cursor: pointer;
 }
 
 .headerTop .searchBar {
@@ -130,9 +160,11 @@
 
 .headerTop span {
     color: #fff;
+    margin-right: 20px;
     font-size: 24px;
     padding: 10px;
     font-weight: 800;
+    font-family: Arial;
 }
 
 .searchBar {
