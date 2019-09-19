@@ -25,4 +25,4 @@ class CartIndex extends React.Component {
 	}
 }
 
-export default BoardIndex;
+export default CartIndex;

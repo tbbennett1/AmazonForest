@@ -23,7 +23,8 @@ class MainBody extends React.Component {
                     <Switch>
                         <Route exact path="/items/:id" component={Item} />
                         <Route exact path="/items" component={ItemIndex} /> 
-                        <ProtectedRoute exact path="/new_item" component={ItemCreateContainer} /> 
+                        <ProtectedRoute exact path="/new_item" component={ItemCreateContainer} />
+						<ProtectedRoute exact path="/cart" component={ItemCreateContainer} />
                     </Switch>
                 </div>
                 <FooterOne />

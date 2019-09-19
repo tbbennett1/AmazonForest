@@ -5,7 +5,8 @@ import allCartItems from "../../reducers/selectors/cart_items_selector"
 
 const mapStateToProps = (state) => ({
 	// cartItems: state.entities.cartItems
-	cartItems: allCartItems
+	cartItems: allCartItems,
+	currentUser: state.session.user
 	// need currentUser
 });
 
