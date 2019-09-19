@@ -51,6 +51,34 @@ router.post('/',
   }
 );
 
+router.patch("/:id", (req, res) => {
+  Item.findOneAndUpdate({ _id: req.body._id },
+    {
+      $set:
+      {
+        title: req.body.title,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category,
+        image_url: req.body.image_url
+      }
+    }).then(item => {
+      if (item) {
+        User.findById(item.owner_id)
+          .then(user => {
+            if (user) {
+              const filter = {
+                name: user.name,
+                email: user.email,
+                _id: user._id
+              }
+              res.json({ item: item, user: filter })
+            }
+          })
+      }
+    })
+});
+
 module.exports = router;
 
 

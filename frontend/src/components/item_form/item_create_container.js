@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
       title: "",
       description: "",
       price: 0,
+      image_url: "",
       sellerId: "",
       category: "category1"
     },

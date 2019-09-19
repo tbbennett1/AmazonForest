@@ -24,6 +24,10 @@ export const createItem = (data) => dispatch => (
   ItemApiUtil.createItem(data).then((item) => dispatch(receiveItem(item.data)))
 );
 
+export const editItem = (item, id) => dispatch => (
+  ItemApiUtil.updateItem(item, id).then(item => dispatch(receiveItem(item.data)))
+)
+
 export const removeItem = (id) => dispatch => (
 	ItemApiUtil.removeItem(id).then((item) => dispatch({ type: REMOVE_ITEM, itemId: item.id }))
 );

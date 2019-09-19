@@ -28,12 +28,12 @@ class ItemShow extends React.Component {
           <div className="item-center-col">
             <h1 className="item-title">{item.title}</h1>
             <h4>Price: 
-              <span className="item-price"> ${item.price}.00</span>
+              <span className="item-price"> ${item.price}</span>
             </h4>
             <p>{item.description}</p>
           </div>
           <div className="item-right-col">
-            <span className="item-price"> ${item.price}.00</span>
+            <span className="item-price"> ${item.price}</span>
             <p>Want it by Friday? Too late. How about next month? Buy AmazonForest Prime and get it never.</p>
             <h3>In Stock.</h3>
             <div className="add-to-cart-button">
