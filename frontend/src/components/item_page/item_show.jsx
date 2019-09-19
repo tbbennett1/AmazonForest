@@ -1,4 +1,6 @@
 import React from 'react';
+import Cart from '../../assets/images/cart.png';
+import { FiMousePointer } from "react-icons/fi";
 
 class ItemShow extends React.Component {
   constructor(props){
@@ -34,6 +36,14 @@ class ItemShow extends React.Component {
             <span className="item-price"> ${item.price}.00</span>
             <p>Want it by Friday? Too late. How about next month? Buy AmazonForest Prime and get it never.</p>
             <h3>In Stock.</h3>
+            <div className="add-to-cart-button">
+              <img src={Cart} className="item-cart-image"/>
+              <div className="atc-div"><input type="button" className="add-to-cart" value="Add to Cart" /></div>
+            </div>
+            <div className="add-to-wl-button">
+              <div className="item-wl-plus">+</div>
+              <div className="atc-div"><input type="button" className="add-to-wl" value="Add to Wish List" /></div>
+            </div>
           </div>
         </div>
       </div>
