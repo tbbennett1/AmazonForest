@@ -43,63 +43,71 @@ class ItemForm extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="create-item-top">
         <div className="form-container">
           <form
-            className="create-or-destroy"
+            className="create-item-form"
             onSubmit={this.handleSubmit}
           >
-            <label id="top-label">title</label>
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('title')}
-              className="form-input"
-            />
-            <label>price</label>
-            <input
-              type="number"
-              value={this.state.price}
-              onChange={this.update('price')}
-              className="form-input"
-            />
-            <label>description</label>
-            <textarea
-              value={this.state.description}
-              onChange={this.update('description')}
-              className="form-input-text-area"
-            />
-            <label>image_url</label>
-            <input
-              type="text"
-              value={this.state.image_url}
-              onChange={this.update("image_url")}
-              className="form-input-text-area"
-            />
-            <label>category</label>
-            <select className="select-create"
-              name="category"
-              value={this.state.category}
-              onChange={this.update("category")}
-            >
-              <option value="category1">
-                Category1
-                </option>
-              <option value="category2">
-                Category2
-                </option>
-              <option value="category3">
-                Category3
-                </option>
-              <option value="category4">
-                Category4
-                </option>
-              <option value="category5">
-                Category5
-              </option>
-            </select>
+            <div className="form-label">
+              <label>Product Title: </label>
+              <input
+                type="text"
+                value={this.state.title}
+                onChange={this.update('title')}
+                className="form-input"
+              />
+            </div>
+            <div className="form-label">
+              <label>Price $</label>
+              <input
+                type="number"
+                min="0.01"
+                step="0.01"
+                value={this.state.price}
+                onChange={this.update('price')}
+                className="form-input"
+              />
+            </div>
+            <div className="form-label">
+              <label>Please provide a detailed description: </label>
+              <textarea
+                value={this.state.description}
+                onChange={this.update('description')}
+                className="form-input"
+              />
+            </div>
+            <div className="form-label">
+              <label>Image URL: </label>
+              <input
+                type="text"
+                value={this.state.image_url}
+                onChange={this.update("image_url")}
+                className="form-input"
+              />
+            </div>
+            <div className="form-label">
+              <label>Category: </label>
+              <select className="select-create"
+                name="Category"
+                value={this.state.category}
+                onChange={this.update("category")}
+              >
+                <option value="pets">
+                  Pets
+                  </option>
+                <option value="food">
+                  Food
+                  </option>
+                <option value="toys">
+                  Toys
+                  </option>
+                <option value="accessories">
+                  Accessories
+                  </option>
+              </select>
+            </div>
             <input
               id="item-submit"
               type="submit"

@@ -1,0 +1,53 @@
+.create-item-top{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #232f3e;
+  font-family: 'ember.rg';
+}
+
+.form-container{
+  display: flex;
+  height: 100vh;
+  max-width: 600px;
+  flex: 1 1 auto;
+}
+
+.create-item-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-label{
+  display: flex;
+  justify-content: center;
+  color: #ccc;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: 100;
+  margin: 10px;
+  padding: 10px;
+}
+
+.form-label > label{
+  margin-right: 10px;
+}
+
+.form-input{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-to-wl-button{
+  display: flex;
+  background-image: linear-gradient(#f7cd9c, #f0854b);
+  border: 1px solid #846a29;
+  border-radius: 4px; 
+  margin-top: 20px;
+}
+
+.add-to-wl-button:hover{
+  background-image: linear-gradient(#f7cd9c, #f46c22);
+  cursor: pointer;
+}
