@@ -8,7 +8,6 @@ const itemsReducer = (state = {}, action) => {
 	Object.freeze(state);
 	switch (action.type) {
 		case RECEIVE_ALL_ITEMS:
-			debugger
 			return action.items;
 		case RECEIVE_ITEM:
 			return Object.assign({}, state, { [action.item._id]: action.item });
