@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import AccountDropdownContainer from './account_dropdown_container';
 
@@ -22,8 +22,9 @@ class HeaderBottom extends React.Component{
                 if(!Array.from(event.target.classList).includes("accountDropdown") &&
                 !Array.from(event.target.classList).includes("form-orange-button")) {
                     if(this.state.accountDropdown) {
+
                         let screen = document.getElementById("smoke-screen")
-                        screen.classList.remove("active")
+                        if (screen) screen.classList.remove("active")
                         this.setState({accountDropdown: false})
                     }
                 }
@@ -94,4 +95,4 @@ class HeaderBottom extends React.Component{
 
 }
 
-export default HeaderBottom
+export default withRouter(HeaderBottom)
