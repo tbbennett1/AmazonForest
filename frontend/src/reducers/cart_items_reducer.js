@@ -9,11 +9,11 @@ const cartItemsReducer = (state = {}, action) => {
 			return state;
 	}
 }
-entities.itemCarts
-[] 
-itemsId 
-userId = 
+// entities.itemCarts
+// [] 
+// itemsId 
+// userId = 
 // itemCart
 
 
-export default cartsReducer;
+export default cartItemsReducer;
