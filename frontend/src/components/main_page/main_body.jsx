@@ -14,12 +14,18 @@ import ItemCreateContainer from '../item_form/item_create_container';
 import CartIndexContainer from '../cart_page/cart_index_containter';
 
 class MainBody extends React.Component {
+    componentDidMount() {
+        this.props.fetchItems()
+    }    
+
+
     render() {
         return(
             <div className="mainPage">
-                <HeaderContainer />
+                <HeaderContainer/>
                 <div className="mainPageBody">
                     {/* <Sidebar /> */}
+                    <div className="smoke-screen" id="smoke-screen"></div>
                     <Switch>
                         <Route exact path="/items/:id" component={Item} />
                         <Route exact path="/items" component={ItemIndex} /> 

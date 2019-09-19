@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter } from 'react-router-dom';
 
 import SearchLogo from '../../assets/images/search_icon.svg';
 import Bars from '../../assets/images/bars.png';
@@ -8,13 +8,44 @@ import WhiteLogo from '../../assets/images/forest_icon_white.png';
 class HeaderTop extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {text: ""};
+        this.state = {
+            searchTerm: '',
+            currentlyDisplayed: []
+        }
+        this.onInputChange = this.onInputChange.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     update(field) {
         return (e) => this.setState({
             [field]: e.target.value
         })
+    }
+
+    onInputChange(e){
+        let newDisplayed = this.props.items.filter(item => item.title.match(new RegExp( e.target.value, "i")))
+        this.setState({
+            searchTerm: e.target.value,
+            currentlyDisplayed: newDisplayed
+        })
+    }
+
+    handleClick(id){
+        return e => {
+            this.props.history.push(`/items/${id}`)
+            this.setState({
+                searchTerm: "",
+                currentlyDisplayed: []
+            })
+        }
+    }
+    
+    renderSuggestions(){
+        let cut 
+        if (this.state.currentlyDisplayed) cut = this.state.currentlyDisplayed
+        .reverse().slice(-12).reverse()
+        .map(item => <div key={item._id} className="search-suggestion" onClick={this.handleClick(item._id)}>{item.title}</div>)
+        return cut
     }
 
     render() {
@@ -24,7 +55,12 @@ class HeaderTop extends React.Component {
                 <Link to={"/"}><img className="headerLogo" src={WhiteLogo} /></Link>
                 <div className="searchBar">
                     <button>All<div></div></button>
-                    <input type="text" onChange={this.update("text")} />
+                    <div className="search-box">
+                        <input type="text" onChange={this.onInputChange} value={this.state.searchTerm}/>
+                        <div className="search-suggestions">
+                            {this.renderSuggestions()}
+                        </div>
+                    </div>
                     <img src={SearchLogo}/>
                 </div>
                 <span>All your greatest deals on exotic pets here!</span>
@@ -33,4 +69,4 @@ class HeaderTop extends React.Component {
     }
 }
 
-export default HeaderTop;
+export default withRouter(HeaderTop);
