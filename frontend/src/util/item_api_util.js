@@ -12,7 +12,13 @@ export const createItem = (data) => {
 	return axios.post("/api/items/", data);
 };
 
-// export const updateItem 
+export const updateItem = (item, id) => {
+  return axios({
+    method: 'patch',
+    url: `api/items/${id}`,
+    data: item
+  })
+}
 
 export const removeItem = (id) => {
 	return axios.delete(`/api/items/${id}`);
