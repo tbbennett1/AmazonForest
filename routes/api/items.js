@@ -26,10 +26,58 @@ router.get("/:item_id", (req, res) => {
     );
 });
 
-// creating an Item_Cart instance
-// item_index, item_show (button: "put in the cart")
+router.post('/',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    // Add validations back in later
+    // const { errors, isValid } = validateTweetInput(req.body);
+    // 
+    // if (!isValid) {
+    //   return res.status(400).json(errors);
+    // }
+    debugger
+    const newItem = new Item({
+      sellerId: req.user.id,
+      title: req.body.title,
+      description: req.body.description,
+      price: req.body.price,
+      image_url: req.body.image_url,
+      category: req.body.category
+    });
 
-// router.post('/:item_id/create', 
+    newItem
+      .save()
+      .then(item => res.json(item));
+  }
+);
+
+router.patch("/:id", (req, res) => {
+  Item.findOneAndUpdate({ _id: req.body._id },
+    {
+      $set:
+      {
+        title: req.body.title,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category,
+        image_url: req.body.image_url
+      }
+    }).then(item => {
+      if (item) {
+        User.findById(item.owner_id)
+          .then(user => {
+            if (user) {
+              const filter = {
+                name: user.name,
+                email: user.email,
+                _id: user._id
+              }
+              res.json({ item: item, user: filter })
+            }
+          })
+      }
+    })
+});
 
 module.exports = router;
 

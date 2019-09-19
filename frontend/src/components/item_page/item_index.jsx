@@ -5,7 +5,7 @@ class ItemIndex extends React.Component {
 
 	render() {
 		const { items } = this.props
-		let itemLists 
+		let itemLists
 		if (items && items[0]) {
 			itemLists = items[0].map(item => <ItemIndexItem key={item.id} item={item} />)
 		}

@@ -3,8 +3,9 @@
     /* width: 100%; */
     /* max-height: 114px; */
     padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 10px;
+    /* padding-right: 15px; */
+    /* padding-bottom: 10px; */
+    z-index: 4;
 }
 
 .headerBottom {
@@ -58,7 +59,7 @@
 .navbarButtons div {
     margin-left: 20px;
     color: #ccc;
-    font-family: Arial;
+    font-family: 'ember-rg';
     cursor: pointer;
     padding: 10px;
 }
@@ -77,34 +78,51 @@
 
 .headerBottomRight {
     display: flex;
+    margin-right: 20px;
     position: relative;
-    top: 9px;
-    right: 30px;
+    /* top: 9px;
+    right: 30px; */
 }
 
 .headerBottomRight div {
     padding: 10px;
 }
 
+.headerBottomRight div:first-child{
+    padding-right: 20px;
+}
+
 .headerBottomRight div:hover {
     border: 1px solid rgba(169, 169, 169, 0.253);
     border-radius: 2px;
-    position: relative;
+    /* position: relative; */
     bottom: 3px;
 }
 
+.smoke-screen{
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.8); 
+    z-index: 3;
+}
+
+
 .header {
     cursor: pointer;
-    padding-left: 10px;
-    position: relative;
-    margin-bottom: 10px;
-    right: 10px;
+    /* padding-left: 10px; */
+    /* position: relative; */
+    /* margin-right: 10px; */
+    /* right: 10px; */
 }
 
 .headerTriangle {
     position: absolute;
     top: 34px;
-    left: 166px;
+    left: 132px;
     border-top: 5px solid #666;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -119,10 +137,11 @@
     border-radius: 3px;
     padding: 20px;
     position: absolute;
-    top: 50px;
-    right: -71px;
+    top: 59px;
+    right: 119px;
     text-align: center;
     cursor: default;
+    z-index: 3000;
 }
 
 .accountDropdown a {
@@ -156,7 +175,7 @@
 .headerAccountOne {
     color: #ccc;
     font-size: 12px;
-    font-family: Arial;
+    font-family: 'ember-rg';
     text-decoration: none;
 }
 
@@ -164,13 +183,13 @@
     color: #fff;
     font-size: 16px;
     font-weight: 800;
-    font-family: Arial;
+    font-family: 'ember-rg';
     text-decoration: none;
 }
 
 .headerCartContainer {
     margin: 0px;
-    padding: 5px !important;
+    /* padding: 5px !important; */
     display: flex;
     position: relative;
     bottom: -1px;
@@ -182,21 +201,23 @@
     font-size: 24px;
     font-weight: 700;
     position: relative;
-    right: 30px;
+    right: 27px;
     bottom: 5px;
 }
+
 
 .headerCartContainer span:last-child {
     color: white;
     font-size: 18px;
     font-weight: 800;
-    font-family: Arial;
+    font-family: 'ember-rg';
     position: relative;
-    top: 18px;
+    top: 13px;
+    left: -14px;
 }
 
 .headerCartImage {
-    height: 40px;
+    height: 34px;
 }
 
 .header div:hover {
@@ -232,7 +253,7 @@
 }
 
 .headerTop .headerLogo {
-    margin: 18px 50px 0px 15px;
+    margin: 10px 50px 0px 15px;
     height: 35px;
     cursor: pointer;
 }
@@ -244,11 +265,11 @@
 
 .headerTop span {
     color: #fff;
-    margin-right: 20px;
-    font-size: 24px;
-    padding: 10px;
+    margin-top: 10px;
+    /* margin-right: 20px; */
+    font-size: 20px;
     font-weight: 800;
-    font-family: Arial;
+    font-family: 'ember-rg'
 }
 
 

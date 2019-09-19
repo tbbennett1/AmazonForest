@@ -9,7 +9,6 @@ class AccountDropdown extends React.Component {
     }
 
     handleClick() {
-        debugger;
         this.props.logout();
     }
 
@@ -39,8 +38,10 @@ class AccountDropdown extends React.Component {
     render() {
         return(
             <section className="accountDropdown">
+                
                 <section className="dropdownTriangle"></section>
                 {this.handleDropdown()}
+
             </section>
         )
     }

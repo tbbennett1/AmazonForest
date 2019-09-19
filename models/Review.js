@@ -11,10 +11,19 @@ const ReviewSchema = new Schema({
 		ref: 'users'
 	},
 	rating: {
-    range: {
-      min: { type: Number, min: 1 },
-      max: { type: Number, min: 5 }
-    },
+		range: {
+			min: { type: Number, min: 1 },
+			max: { type: Number, min: 5 }
+		},
+		type: Number,
+		required: true
+	},
+	title: {
+		type: String,
+		required: true
+	},
+	comment: {
+		type: String,
 		required: true
 	},
 	date: {

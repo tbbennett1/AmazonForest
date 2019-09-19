@@ -22,6 +22,8 @@ class HeaderBottom extends React.Component{
                 if(!Array.from(event.target.classList).includes("accountDropdown") &&
                 !Array.from(event.target.classList).includes("form-orange-button")) {
                     if(this.state.accountDropdown) {
+                        let screen = document.getElementById("smoke-screen")
+                        screen.classList.remove("active")
                         this.setState({accountDropdown: false})
                     }
                 }
@@ -31,6 +33,8 @@ class HeaderBottom extends React.Component{
 
     toggleAccountDropdown() {
         if(!this.state.accountDropdown) {
+            let screen = document.getElementById("smoke-screen")
+            screen.classList.add("active")
             this.setState({
                 accountDropdown: !this.state.accountDropdown
             })
@@ -62,7 +66,7 @@ class HeaderBottom extends React.Component{
             <div className="headerBottom">
                 <div className="headerAddress">
                     <button>
-                        <img src={Location} />
+                        <img src={Location} alt="user location"/>
                         <div>
                             <div>Deliver to</div>
                             <div>My address, yo</div>
@@ -75,9 +79,10 @@ class HeaderBottom extends React.Component{
                     <div>Sell Your Pets</div>
                 </section>
                 <div className="headerBottomRight">
+                    
                     {this.handleSignedIn()}
                     <div className="headerCartContainer">
-                        <img className="headerCartImage" src={Cart} />
+                        <img className="headerCartImage" src={Cart} alt="cart"/>
                         <span className="headerItemsInCart">0</span>
                         <span>Cart</span>
                     </div>
