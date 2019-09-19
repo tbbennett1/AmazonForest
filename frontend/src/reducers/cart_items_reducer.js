@@ -1,6 +1,6 @@
-import { RECEIVE_CART } from "../actions/cart_actions";
+// import { RECEIVE_CART } from "../actions/cart_actions";
 
-const cartsReducer = (state = {}, action) => {
+const cartItemsReducer = (state = {}, action) => {
 	Object.freeze(state);
 	switch (action.type) {
 		case RECEIVE_CART:

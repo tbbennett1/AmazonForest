@@ -1,28 +1,48 @@
+const express = require("express");
+const router = express.Router();
+const mongoose = require('mongoose');
+const passport = require('passport');
 
-// show the cart belongs to user (find by userId)
+const CartItem = require('../../models/CartItem');
 
-router.get('/:user_id/cart', (req, res) => {
-	Cart.find({ userId: req.params.user_id })
-		.then(cart => res.json(cart))
+// show all items belongs to user (find by userId)
+
+router.get('/', (req, res) => {
+	CartItem.find({ userId: req.params.user_id })
+		.then(cartItems => res.json(cartItems))
 		.catch(err =>
-			res.status(404).json({ noCartFound: 'No Cart found from that user' }
+			res.status(404).json({ noCartItemFound: 'No Items found from this user' }
 			)
 		);
 });
 
+// creating a Cart_Item instance
+// item_index, item_show (button: "put in the cart")
 
-"/:item_carts/:id"
+router.post('/',
+	passport.authenticate('jwt', { session: false }),
+	(req, res) => {
+		const cartItem = CartItem.find({ userId: req.params.user_id});
 
+		const newCartItem = new CartItem ({
+			userId: req.user.id,
+			itemId: item.id
+		});
 
-// deleting an Item_Cart instance
+		newCartItem
+			.save()
+			.then(cartItem => res.json(cartItem));
+	});
 
-router.delete("/:item_cart_id", (req, res) => {
+// deleting an CartItem instance
+
+router.delete("/:cart_item_id", (req, res) => {
 	// authentification
 	passport.authenticate('jwt', { session: false }),
-		ItemCart.findByIdAndRemove(req.params.item_cart_id, err => {
+		CartItem.findByIdAndRemove(req.params.cart_item_id, err => {
 			if (err) res.send(err);
 			else res.json({
-				message: "Product has been deleted"
+				message: "the item has been deleted from cart"
 			});
 		});
 });

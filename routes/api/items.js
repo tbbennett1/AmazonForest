@@ -26,11 +26,6 @@ router.get("/:item_id", (req, res) => {
     );
 });
 
-// creating an Item_Cart instance
-// item_index, item_show (button: "put in the cart")
-
-// router.post('/:item_id/create', 
-
 module.exports = router;
 
 
