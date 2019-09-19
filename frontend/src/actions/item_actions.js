@@ -21,7 +21,7 @@ export const fetchItem = (id) => dispatch => (
 );
 
 export const createItem = (data) => dispatch => (
-	ItemApiUtil.createItem(data).then((item) => dispatch({ type: RECEIVE_ITEM, item }))
+  ItemApiUtil.createItem(data).then((item) => dispatch(receiveItem(item.data)))
 );
 
 export const removeItem = (id) => dispatch => (

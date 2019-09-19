@@ -26,10 +26,30 @@ router.get("/:item_id", (req, res) => {
     );
 });
 
-// creating an Item_Cart instance
-// item_index, item_show (button: "put in the cart")
+router.post('/',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    // Add validations back in later
+    // const { errors, isValid } = validateTweetInput(req.body);
+    // 
+    // if (!isValid) {
+    //   return res.status(400).json(errors);
+    // }
+    debugger
+    const newItem = new Item({
+      sellerId: req.user.id,
+      title: req.body.title,
+      description: req.body.description,
+      price: req.body.price,
+      image_url: req.body.image_url,
+      category: req.body.category
+    });
 
-// router.post('/:item_id/create', 
+    newItem
+      .save()
+      .then(item => res.json(item));
+  }
+);
 
 module.exports = router;
 

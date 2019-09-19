@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {AuthRoute, ProtectedRoute } from '../../util/route_util';
+
 import HeaderContainer from './header_container';
 import Sidebar from './sidebar';
 import FeaturedContainer from './featured_container';
@@ -8,6 +10,7 @@ import FooterTwo from './footer_two';
 import { Route, Redirect, withRouter, Switch } from 'react-router-dom';
 import Item from '../item_page/item_show_container';
 import ItemIndex from '../item_page/item_index_container';
+import ItemCreateContainer from '../item_form/item_create_container';
 
 class MainBody extends React.Component {
     render() {
@@ -18,7 +21,8 @@ class MainBody extends React.Component {
                     {/* <Sidebar /> */}
                     <Switch>
                         <Route exact path="/items/:id" component={Item} />
-                        <Route exact path="/items" component={ItemIndex} />  
+                        <Route exact path="/items" component={ItemIndex} /> 
+                        <AuthRoute exact path="/items/new" component={ItemCreateContainer} /> 
                     </Switch>
                 </div>
                 <FooterOne />
