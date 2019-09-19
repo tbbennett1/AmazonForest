@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ItemCartSchema = new Schema({
+const CartItemSchema = new Schema({
+	userId: {
+		type: Schema.Types.ObjectId,
+		ref: 'users'
+	},
 	itemId: {
 		type: Schema.Types.ObjectId,
 		ref: 'items'
-	},
-	cartId: {
-		type: Schema.Types.ObjectId,
-		ref: 'carts'
 	},
 	date: {
 		type: Date,
@@ -16,4 +16,4 @@ const ItemCartSchema = new Schema({
 	}
 });
 
-module.exports = ItemCart = mongoose.model('itemCart', ItemCartSchema);
+module.exports = CartItem = mongoose.model('cartItem', CartItemSchema);
