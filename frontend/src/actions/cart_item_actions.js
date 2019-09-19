@@ -27,6 +27,6 @@ export const createCartItem = (data) => dispatch => (
 );
 
 export const removeCartItem = (id) => dispatch => (
-	CartItemApiUtil.removeCartItem(id).then((res) => dispatch({ type: REMOVE_CART_ITEM, cartItemId: cartItem.id }))
+	CartItemApiUtil.removeCartItem(id).then((cartItem) => dispatch({ type: REMOVE_CART_ITEM, cartItemId: cartItem.id }))
 );
 	
