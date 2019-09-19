@@ -1,5 +1,6 @@
 import React from 'react';
 import Cart from '../../assets/images/cart.png';
+import CommentSectionContainer from './comment_section_container';
 import { FiMousePointer } from "react-icons/fi";
 
 class ItemShow extends React.Component {
@@ -8,7 +9,7 @@ class ItemShow extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchItem(this.props.match.params.id)
+    this.props.fetchItem(this.props.match.params.id);
   }
 
   render() {
@@ -18,6 +19,7 @@ class ItemShow extends React.Component {
       )
     }
     const item = this.props.item;
+    const reviews = this.props.reviews;
 
     return (
       <div>
@@ -28,12 +30,13 @@ class ItemShow extends React.Component {
           <div className="item-center-col">
             <h1 className="item-title">{item.title}</h1>
             <h4>Price: 
-              <span className="item-price"> ${item.price}.00</span>
+              <span className="item-price"> ${item.price}</span>
             </h4>
             <p>{item.description}</p>
+            <CommentSectionContainer item={this.props.item} />
           </div>
           <div className="item-right-col">
-            <span className="item-price"> ${item.price}.00</span>
+            <span className="item-price"> ${item.price}</span>
             <p>Want it by Friday? Too late. How about next month? Buy AmazonForest Prime and get it never.</p>
             <h3>In Stock.</h3>
             <div className="add-to-cart-button">

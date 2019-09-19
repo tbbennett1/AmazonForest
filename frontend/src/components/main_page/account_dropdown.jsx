@@ -9,7 +9,6 @@ class AccountDropdown extends React.Component {
     }
 
     handleClick() {
-        debugger;
         this.props.logout();
     }
 
