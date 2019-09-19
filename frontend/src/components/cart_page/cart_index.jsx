@@ -6,14 +6,17 @@ import CartIndexItem from "./cart_index_item";
 class CartIndex extends React.Component {
 
 	componentDidMount() {
-		this.props.fetchCartItems();
+		const userId = this.props.currentUser.id
+		this.props.fetchCartItems(userId);
 	}
 
 	render() {
-		const { cartItems } = this.props;
-
+		const { cartItems, removeCartItem } = this.props;
 		const myCartItems = cartItems.map((cartItem) => {
-			return < CartIndexItem key={cartItem.id} cartItem={cartItem} />
+			
+			return <CartIndexItem key={cartItem.id} 
+								cartItem={cartItem} 
+								removeCartItem={removeCartItem} />
 		});
 
 		return (
@@ -25,4 +28,4 @@ class CartIndex extends React.Component {
 	}
 }
 
-export default BoardIndex;
+export default CartIndex;
