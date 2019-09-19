@@ -6,6 +6,7 @@
     width: 100%;
     font-family: "ember-rg";
     color: #FFF;
+    z-index: 4;
 }
 
 .footer-links-groups{

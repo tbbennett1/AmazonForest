@@ -5,7 +5,6 @@ import {fetchReviews} from '../../actions/review_actions';
 import ItemShow from './item_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   let reviews = Object.values(state.entities.reviews)
   reviews = reviews.filter(review => review.id === ownProps.match.params.id)
 

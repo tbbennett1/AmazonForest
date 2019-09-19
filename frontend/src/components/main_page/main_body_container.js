@@ -1,16 +1,21 @@
 import { connect } from 'react-redux';
-
-import MainBody from 'header';
+import { fetchItems } from "../../actions/item_actions"
+import MainBody from '../main_page/main_body'
 
 const mapStateToProps = (state) => {
-    return{
+    let itemList 
+    if (state.entities.items){
+        itemList = Object.keys((state.entities.items)).map(id => state.entities.items[id])
+    }
 
+    return {
+        items: itemList
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-
+        fetchItems: () => dispatch(fetchItems())
     }
 }
 
