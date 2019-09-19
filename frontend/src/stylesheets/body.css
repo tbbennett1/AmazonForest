@@ -10,3 +10,7 @@
     flex: 1 0 auto;
     /* min-height: 100vh; */
 }
+
+.mainPageBody ul{
+    list-style: none;
+}

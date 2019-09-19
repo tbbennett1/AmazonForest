@@ -14,6 +14,7 @@ import '../stylesheets/footer2.css'
 import '../stylesheets/reset.css'
 import '../stylesheets/session.css'
 import '../stylesheets/item-show/item-show.css'
+import '../stylesheets/item-index/item-index.css'
 
 const App = () => (
   <Switch>
