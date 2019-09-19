@@ -1,7 +1,7 @@
 .mainBodyHeader {
     background-color: #232f3e;
     /* width: 100%; */
-    max-height: 114px;
+    /* max-height: 114px; */
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 10px;
@@ -9,13 +9,19 @@
 
 .headerBottom {
     display: flex;
+    align-items: center;
+}
+
+.headerAddress {
+    display: flex;
+    align-items: center;
 }
 
 .headerAddress button {
     display: flex;
     padding: 10px !important;
-    position: relative;
-    bottom: 10px;
+    /* position: relative; */
+    /* bottom: 10px; */
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -57,6 +63,11 @@
     padding: 10px;
 }
 
+.navbarButtons a {
+    color: #ccc;
+    text-decoration: none;
+}
+
 .navbarButtons div:hover {
     border: 1px solid rgba(169, 169, 169, 0.253);
     border-radius: 2px;
@@ -67,6 +78,7 @@
 .headerBottomRight {
     display: flex;
     position: relative;
+    top: 9px;
     right: 30px;
 }
 
@@ -91,8 +103,8 @@
 
 .headerTriangle {
     position: absolute;
-    top: 25px;
-    left: 150px;
+    top: 34px;
+    left: 166px;
     border-top: 5px solid #666;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -161,7 +173,7 @@
     padding: 5px !important;
     display: flex;
     position: relative;
-    bottom: 10px;
+    bottom: -1px;
     cursor: pointer;
 }
 
@@ -196,11 +208,12 @@
 
 .headerCartContainer:hover {
     position: relative;
-    bottom: 13px !important;
+    bottom: 2px !important;
 }
 
 .headerTop {
     display: flex;
+    align-items: center;
 }
 
 .headerTop .headerBars {
