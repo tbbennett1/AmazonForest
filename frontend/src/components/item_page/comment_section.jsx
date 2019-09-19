@@ -28,8 +28,8 @@ class CommentSection extends React.Component {
         const review = Object.assign({}, {
             title: this.state.title, 
             comment: this.state.comment,
-            user_id: this.props.currentUser.id,
-            item_id: this.props.item.id
+            userId: this.props.currentUser.id,
+            itemId: this.props.item.id
         });
         this.props.createReview(review).then(() => this.setState({
             title: "", comment: ""

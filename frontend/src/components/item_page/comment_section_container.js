@@ -6,9 +6,8 @@ import {fetchReviews, createReview, deleteReview} from '../../actions/review_act
 import CommentSection from './comment_section';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
-  let reviews = Object.values(state.entities.reviews)
-  reviews = reviews.filter(review => review.id === ownProps.match.params.id)
+  let reviews = Object.keys((state.entities.reviews))
+  reviews = reviews.filter(review => review.itemId === ownProps.item.match.params.id)
 
   return {
     item: ownProps.item,
