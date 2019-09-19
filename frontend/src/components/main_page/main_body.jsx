@@ -10,6 +10,11 @@ import Item from '../item_page/item_show_container';
 import ItemIndex from '../item_page/item_index_container';
 
 class MainBody extends React.Component {
+    componentDidMount() {
+        this.props.fetchItems()
+    }    
+
+
     render() {
         return(
             <div className="mainPage">

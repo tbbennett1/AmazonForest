@@ -2,9 +2,6 @@ import React from 'react';
 import ItemIndexItem from './item_index_item';
 
 class ItemIndex extends React.Component {
-	componentDidMount(){
-		this.props.fetchItems()
-	}
 
 	render() {
 		const { items } = this.props

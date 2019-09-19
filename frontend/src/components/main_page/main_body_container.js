@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-
-import MainBody from 'header';
+import { fetchItems } from "../../actions/item_actions"
+import MainBody from '../main_page/main_body'
 
 const mapStateToProps = (state) => {
-    return{
-
+    return {
+        items: Object.keys((state.items)).map(id => state.items[id])
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-
+        fetchItems: () => dispatch(fetchItems())
     }
 }
 

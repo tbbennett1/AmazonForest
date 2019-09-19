@@ -11,6 +11,10 @@ class ItemShow extends React.Component {
     this.props.fetchItem(this.props.match.params.id)
   }
 
+  componentDidUpdate(prevProps, prevState){
+      this.props.fetchItem(this.props.match.params.id)
+  }
+
   render() {
     if(!this.props.item){
       return(

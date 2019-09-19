@@ -3,7 +3,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import SignUp from './signup_page/signup_container';
 import Login from './login_page/login_container';
-import MainBody from './main_page/main_body';
+import MainBody from './main_page/main_body_container';
 import Item from './item_page/item_show_container';
 import ItemIndex from './item_page/item_index_container';
 import { Route, Redirect, withRouter } from 'react-router-dom';

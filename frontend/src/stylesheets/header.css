@@ -251,11 +251,24 @@
     font-family: Arial;
 }
 
+
+
+.search-box input {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 11.250px;
+}
+
 .searchBar {
     height: 35px;
     margin-top: 12px;
     margin-right: 25px;
     display: flex;
+    width: 100%;
+}
+
+.search-box{
+    width: 100%;
 }
 
 .searchBar button {
@@ -290,11 +303,28 @@
 .searchBar input {
     cursor: text;
     width: 100%;
-    padding: 6px 10px 6px 0px;
+    font-family: 'ember-rg'
+}
+
+.search-suggestions{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -1px;
+    bottom: 0;
+    width: 99.9%;
+    background-color: white;
+}
+
+.search-suggestion{
+    padding: 8px 11.250px;
+    font-family: 'ember-rg';
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .searchBar img {
-    padding: 5px 10px 5px 5px;
+    padding: 5px 10px 5px 10px;
     height: 28px;
     background-color: #febd69;
     border-color: transparent;
