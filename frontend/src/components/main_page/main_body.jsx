@@ -22,7 +22,7 @@ class MainBody extends React.Component {
                     <Switch>
                         <Route exact path="/items/:id" component={Item} />
                         <Route exact path="/items" component={ItemIndex} /> 
-                        <AuthRoute exact path="/items/new" component={ItemCreateContainer} /> 
+                        <Route exact path="/items/new" component={ItemCreateContainer} /> 
                     </Switch>
                 </div>
                 <FooterOne />

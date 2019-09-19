@@ -9,7 +9,7 @@ export const fetchItem = (id) => {
 };
 
 export const createItem = (data) => {
-	return axios.post("/api/items/", data);
+	return axios.post("/api/items", data);
 };
 
 // export const updateItem 

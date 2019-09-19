@@ -3,7 +3,6 @@ import { createItem, fetchItem } from '../../actions/item_actions';
 import ItemForm from './item_form.jsx';
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     currentUser: state.session.user,
     item: {
@@ -18,7 +17,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
   return {
     createItem: data => dispatch(createItem(data)),
     fetchItem: (id) => dispatch(fetchItem(id))
