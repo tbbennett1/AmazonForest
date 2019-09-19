@@ -11,7 +11,7 @@ import { Route, Redirect, withRouter, Switch } from 'react-router-dom';
 import Item from '../item_page/item_show_container';
 import ItemIndex from '../item_page/item_index_container';
 import ItemCreateContainer from '../item_form/item_create_container';
-import ItemEditContainer from '../item_form/item_edit_container';
+
 
 class MainBody extends React.Component {
     render() {
@@ -24,7 +24,6 @@ class MainBody extends React.Component {
                         <Route exact path="/items/:id" component={Item} />
                         <Route exact path="/items" component={ItemIndex} /> 
                         <ProtectedRoute exact path="/new_item" component={ItemCreateContainer} /> 
-                        <ProtectedRoute exact path="/edit_item" component={ItemEditContainer} /> 
                     </Switch>
                 </div>
                 <FooterOne />
