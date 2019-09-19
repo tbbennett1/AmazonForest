@@ -12,7 +12,6 @@ class CartIndex extends React.Component {
 
 	render() {
 		const { cartItems, removeCartItem } = this.props;
-		debugger
 		const myCartItems = cartItems.map((cartItem) => {
 			
 			return <CartIndexItem key={cartItem.id} 
