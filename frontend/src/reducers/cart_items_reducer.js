@@ -8,7 +8,11 @@ const cartItemsReducer = (state = {}, action) => {
 	Object.freeze(state);
 	switch (action.type) {
 		case RECEIVE_CART_ITEMS:
-			return action.cartItems;
+			let nextState = Object.assign({}, state);
+			action.cartItems.data.forEach((item) => {
+				nextState[item._id] = item
+			});
+			return nextState;
 		case RECEIVE_CART_ITEM:
 			return Object.assign({}, state, { [action.cartItem._id]: action.cartItem });
 		case REMOVE_CART_ITEM:
