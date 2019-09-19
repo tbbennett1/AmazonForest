@@ -1,17 +1,18 @@
 import { connect } from "react-redux";
-import { fetchCartItems } from "../../actions/cart_actions";
+import { fetchCartItems, removeCartItem } from "../../actions/cart_item_actions";
 import CartIndex from "./cart_index";
-import allCartItems from "../../reducers/selectors/cart_items_selector"
+// import allCartItems from "../../reducers/selectors/cart_items_selector"
 
-const mapStateToProps = (state) => ({
-	// cartItems: state.entities.cartItems
-	cartItems: allCartItems,
-	currentUser: state.session.user
-	// need currentUser
-});
+const mapStateToProps = (state) => {
+	// const allCartItems = Object.values(state.entities.cartItems).map(
+	// 		cartItem => state.entities.items[cartItem.itemId]
+	// 	);
+	return { cartItems: Object.values(state.entities.cartItems), currentUser: state.session.user }
+};
 
 const mapDispatchToProps = (dispatch) => ({
-	fetchCartItems: () => dispatch(fetchCartItems())
+	fetchCartItems: (userId) => dispatch(fetchCartItems(userId)),
+	removeCartItem: (id) => dispatch(removeCartItem(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIndex);
