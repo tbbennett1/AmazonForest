@@ -3,7 +3,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import SignUp from './signup_page/signup_container';
 import Login from './login_page/login_container';
-import MainBody from './main_page/main_body';
+import MainBody from './main_page/main_body_container';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import '../stylesheets/body.css'
 import '../stylesheets/footer1.css'
@@ -14,6 +14,7 @@ import '../stylesheets/session.css'
 import '../stylesheets/item-show/item-show.css'
 import '../stylesheets/item-index/item-index.css'
 import '../stylesheets/item-form.css'
+import main_body_container from './main_page/main_body_container';
 
 const App = () => (
   <Switch>
