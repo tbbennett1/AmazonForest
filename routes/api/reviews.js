@@ -3,10 +3,10 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-const Reviews = require('../../models/Reviews');
+const Review = require('../../models/Review');
 
-router.get("/:id/reviews", (req, res) => {
-  Item.findById(req.params.id)
+router.get("/:id", (req, res) => {
+  Review.find({itemId: req.params.id})
     .sort({ date: -1 })
     .then(reviews => res.json(reviews))
     .catch(err => res.status(404).json({ noReviewsFound: "No reviews found" }));
@@ -16,12 +16,13 @@ router.get("/:id/reviews", (req, res) => {
 router.post('/:id',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
-		const item = Item.findById(req.params.id);
 
 		const newReview = new Review({
 			rating: req.body.rating,
 			userId: req.user.id,
-			itemId: item.id
+			itemId: req.params.id,
+			title: req.body.title,
+			comment: req.body.comment
 		});
 
 		newReview
