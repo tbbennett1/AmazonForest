@@ -53,7 +53,7 @@ class Login extends React.Component {
             }
         }
         
-        if (this.props.errors.session != prevProps.errors.session) {
+        if (this.props.errors.session !== prevProps.errors.session) {
             const { email, password } = this.props.errors.session
 
             if (email && email.includes("required")) {

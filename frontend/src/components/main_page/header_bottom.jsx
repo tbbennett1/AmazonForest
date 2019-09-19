@@ -62,7 +62,7 @@ class HeaderBottom extends React.Component{
             <div className="headerBottom">
                 <div className="headerAddress">
                     <button>
-                        <img src={Location} />
+                        <img src={Location} alt="user location"/>
                         <div>
                             <div>Deliver to</div>
                             <div>My address, yo</div>
@@ -77,7 +77,7 @@ class HeaderBottom extends React.Component{
                 <div className="headerBottomRight">
                     {this.handleSignedIn()}
                     <div className="headerCartContainer">
-                        <img className="headerCartImage" src={Cart} />
+                        <img className="headerCartImage" src={Cart} alt="cart"/>
                         <span className="headerItemsInCart">0</span>
                         <span>Cart</span>
                     </div>
