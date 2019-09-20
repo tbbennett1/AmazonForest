@@ -37,9 +37,7 @@ router.post('/',
 
 // deleting an CartItem instance
 
-router.delete("/:cart_item_id", (req, res) => {
-	// authentification
-	passport.authenticate('jwt', { session: false }),
+router.delete("/:cart_item_id", passport.authenticate('jwt', { session: false }), (req, res) => {
 		CartItem.findByIdAndRemove(req.params.cart_item_id, err => {
 			if (err) res.send(err);
 			else res.json({
