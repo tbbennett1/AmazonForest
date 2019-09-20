@@ -14,15 +14,25 @@ class HeaderTop extends React.Component {
         }
         this.onInputChange = this.onInputChange.bind(this)
         this.handleClick = this.handleClick.bind(this)
+        this.handleSearchButton = this.handleSearchButton.bind(this)
     }
-
+    
     update(field) {
         return (e) => this.setState({
             [field]: e.target.value
         })
     }
+    
+    componentDidMount(){
+        this.suggestionsElement = document.getElementById("search-suggestions")
+        const body = document.getElementsByTagName("body")[0];
+        body.addEventListener("click", (event) => {
+            this.suggestionsElement.classList.remove("active")
+        })
+    }
 
     onInputChange(e){
+        this.suggestionsElement.classList.add("active")
         let newDisplayed = this.props.items.filter(item => item.title.match(new RegExp( e.target.value, "i")))
         this.setState({
             searchTerm: e.target.value,
@@ -48,6 +58,17 @@ class HeaderTop extends React.Component {
         return cut
     }
 
+    handleSearchButton(){
+        this.setState({
+            currentlyDisplayed: []
+        })
+        this.props.history.push({
+            pathname: '/search',
+            state: { searchTerm: this.state.searchTerm },
+            search: `?=${this.state.searchTerm}`
+        })
+    }
+
     render() {
         return(
             <div className="headerTop">
@@ -56,12 +77,12 @@ class HeaderTop extends React.Component {
                 <div className="searchBar">
                     <button>All<div></div></button>
                     <div className="search-box">
-                        <input type="text" onChange={this.onInputChange} value={this.state.searchTerm}/>
-                        <div className="search-suggestions">
+                        <form onSubmit={this.handleSearchButton}><input type="text" onChange={this.onInputChange} value={this.state.searchTerm}/></form>
+                        <div className="search-suggestions" id="search-suggestions">
                             {this.renderSuggestions()}
                         </div>
                     </div>
-                    <Link to={{ pathname: '/search', state: { searchTerm: this.state.searchTerm } }}><img src={SearchLogo}/></Link>
+                    <img onClick={this.handleSearchButton} src={SearchLogo}/>
                 </div>
                 <span>All your greatest deals on exotic pets here!</span>
             </div>

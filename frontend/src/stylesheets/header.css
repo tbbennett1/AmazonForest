@@ -279,7 +279,9 @@
     font-family: 'ember-rg'
 }
 
-
+.search-box form{
+    height: 100%;
+}
 
 .search-box input {
     height: 100%;
@@ -335,7 +337,7 @@
 }
 
 .search-suggestions{
-    display: flex;
+    display: none;
     flex-direction: column;
     position: relative;
     top: -1px;
