@@ -38,8 +38,10 @@ class AccountDropdown extends React.Component {
     render() {
         return(
             <section className="accountDropdown">
+                
                 <section className="dropdownTriangle"></section>
                 {this.handleDropdown()}
+
             </section>
         )
     }

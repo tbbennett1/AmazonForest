@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const fetchCartItems = () => {
-	return axios.get("/api/cartitems");
+export const fetchCartItems = (userId) => {
+	return axios.get("/api/cartitems", { userId: userId} );
 };
 
 export const fetchCartItem = (id) => {

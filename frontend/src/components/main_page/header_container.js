@@ -2,9 +2,14 @@ import { connect } from 'react-redux';
 
 import Header from './header';
 
-const mapStateToProps = ({ session }) => {
+const mapStateToProps = (state) => {
+    let itemList
+    if (state.entities.items) {
+        itemList = Object.keys((state.entities.items)).map(id => state.entities.items[id])
+    }
     return{
-        currentUser: session.user
+        currentUser: state.session.user,
+        items: itemList
     }
 }
 

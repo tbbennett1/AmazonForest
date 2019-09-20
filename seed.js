@@ -49,6 +49,28 @@ mongoose
 
   });
 
+// const cartItem1 = new CartItem({
+// 	itemId: "5d8296b0e157b3097a9a98df",
+// 	userId: "5d8252686711da301181fe6a"
+// });
+
+// cartItem1.save();
+
+// const cartItem2 = new CartItem({
+// 	itemId: "5d8296b0e157b3097a9a98e4",
+// 	userId: "5d8252686711da301181fe6a"
+// });
+
+// cartItem2.save();
+
+// const cartItem3 = new CartItem({
+// 	itemId: "5d8296b0e157b3097a9a98e2",
+// 	userId: "5d8252686711da301181fe6a"
+// });
+
+// cartItem3.save();
+
+
 const cartItem1 = new CartItem({
 	itemId: "5d8296b0e157b3097a9a98df",
 	userId: "5d8252686711da301181fe6a"
@@ -58,14 +80,14 @@ cartItem1.save();
 
 const cartItem2 = new CartItem({
 	itemId: "5d8296b0e157b3097a9a98e4",
-	cartId: "5d8252686711da301181fe6a"
+	userId: "5d8252686711da301181fe6a"
 });
 
 cartItem2.save();
 
 const cartItem3 = new CartItem({
 	itemId: "5d8296b0e157b3097a9a98e2",
-	cartId: "5d8296b0e157b3097a9a98dd"
+	userId: "5d8252686711da301181fe6a"
 });
 
 cartItem3.save();

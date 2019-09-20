@@ -11,19 +11,26 @@ import { Route, Redirect, withRouter, Switch } from 'react-router-dom';
 import Item from '../item_page/item_show_container';
 import ItemIndex from '../item_page/item_index_container';
 import ItemCreateContainer from '../item_form/item_create_container';
-
+import CartIndexContainer from '../cart_page/cart_index_containter';
 
 class MainBody extends React.Component {
+    componentDidMount() {
+        this.props.fetchItems()
+    }    
+
+
     render() {
         return(
             <div className="mainPage">
-                <HeaderContainer />
+                <HeaderContainer/>
                 <div className="mainPageBody">
                     {/* <Sidebar /> */}
+                    <div className="smoke-screen" id="smoke-screen"></div>
                     <Switch>
                         <Route exact path="/items/:id" component={Item} />
                         <Route exact path="/items" component={ItemIndex} /> 
-                        <ProtectedRoute exact path="/new_item" component={ItemCreateContainer} /> 
+                        <ProtectedRoute exact path="/new_item" component={ItemCreateContainer} />
+						<ProtectedRoute exact path="/cart" component={CartIndexContainer} />
                     </Switch>
                 </div>
                 <FooterOne />

@@ -10,9 +10,14 @@ class Header extends React.Component {
     }
 
     render() {
+        const { items } = this.props
+        let itemLists
+        if (items && items[0]){
+            itemLists = items[0]
+        }
         return(
             <div className="mainBodyHeader">
-                <HeaderTop />
+                <HeaderTop items={itemLists}/>
                 <HeaderBottom currentUser={this.props.currentUser}/>
                 {/* {this.handleSignedIn()} */}
             </div>
