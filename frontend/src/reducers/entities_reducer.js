@@ -6,10 +6,10 @@ import reviews from './reviews_reducer';
 import items from './items_reducer';
 
 const EntitiesReducer = combineReducers({
-	// users,
 	reviews,
 	cartItems,
-  	items
+  	items,
+	users
 });
 
 export default EntitiesReducer;
