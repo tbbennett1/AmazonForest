@@ -41,11 +41,14 @@ class ItemShow extends React.Component {
               },
               largeImage: {
                 src: this.props.item.image_url,
-                width: 1200,
-                height: 1800
+                width: 2000,
+                height: 1000
+              },
+              enlargedImageContainerDimensions: {
+                width: '125%',
+                height: '125%'
               }
             }} />
-            {/* <img src={this.props.item.image_url} alt="item" /> */}
           </div>
           <div className="item-center-col">
             <h1 className="item-title">{item.title}</h1>
