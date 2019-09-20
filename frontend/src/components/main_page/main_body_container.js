@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
-import { fetchItems } from "../../actions/item_actions"
-import MainBody from '../main_page/main_body'
+import { fetchItems } from "../../actions/item_actions";
+import MainBody from '../main_page/main_body';
+
 
 const mapStateToProps = (state) => {
     let itemList 
     if (state.entities.items){
         itemList = Object.keys((state.entities.items)).map(id => state.entities.items[id])
-    }
-
+	}
+	
     return {
         items: itemList
     }
@@ -15,7 +16,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        fetchItems: () => dispatch(fetchItems())
+		fetchItems: () => dispatch(fetchItems())
     }
 }
 

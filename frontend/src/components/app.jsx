@@ -11,6 +11,7 @@ import '../stylesheets/header.css'
 import '../stylesheets/footer2.css'
 import '../stylesheets/reset.css'
 import '../stylesheets/session.css'
+import '../stylesheets/cart.css'
 import '../stylesheets/item-show/item-show.css'
 import '../stylesheets/item-index/item-index.css'
 import main_body_container from './main_page/main_body_container';
