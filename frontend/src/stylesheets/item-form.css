@@ -1,0 +1,99 @@
+.create-item-top{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  font-family: arial;
+  margin: 40px;
+}
+
+.form-container{
+  display: flex;
+  width: 800px;
+  flex: 1 1 auto;
+  margin: 40px;
+}
+
+.create-item-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 5px 5px lightgray;
+}
+
+.form-label{
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: 100;
+  margin: 10px;
+  padding: 10px;
+}
+
+.form-label > label{
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.dollar{
+  color: white;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: none;
+  padding: 8px;
+ 
+}
+
+.form-input, .form-input-price{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50%;
+  margin-right: 200px;
+  min-height: 30px;
+  font-family: arial;
+  font-size: 16px;
+}
+
+.form-input-price{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 340px;
+}
+
+.form-input:focus, .form-input-price:focus {
+  outline: none;
+}
+
+#item-submit{
+  display: flex;
+  justify-content: center;
+  color:white; 
+  background-image: linear-gradient(#f7cd9c, #f0854b);
+  border: 1px solid #846a29;
+  border-radius: 4px; 
+  margin-top: 20px;
+  width: 50%;
+  min-height: 40px;
+  font-family: arial;
+  font-size: 16px;
+}
+
+#item-submit:hover{
+  background-image: linear-gradient(#f7cd9c, #f46c22);
+  cursor: pointer;
+}
+
+#item-submit:focus{
+  outline: none;
+}
