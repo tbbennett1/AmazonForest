@@ -51,8 +51,8 @@ class HeaderTop extends React.Component {
     render() {
         return(
             <div className="headerTop">
-                <img className="headerBars" src={Bars} />
-                <Link to={"/"}><img className="headerLogo" src={WhiteLogo} /></Link>
+                <img className="headerBars" src={Bars} alt="header bars" />
+                <Link to={"/"}><img className="headerLogo" src={WhiteLogo} alt="header logo" /></Link>
                 <div className="searchBar">
                     <button>All<div></div></button>
                     <div className="search-box">
