@@ -34,9 +34,9 @@ export const fetchReview = (id) => dispatch => (
 	ReviewApiUtil.fetchReview(id).then((review) => dispatch(receiveReview(review.data)))
 );
 
-export const createReview = (data) => dispatch => (
-	ReviewApiUtil.createReview(data).then((review) => dispatch({ type: RECEIVE_REVIEW, review }))
-);
+export const createReview = (itemId, review) => dispatch => {
+	return ReviewApiUtil.createReview(itemId, review).then((review) => dispatch({ type: RECEIVE_REVIEW, review }))
+};
 
 export const deleteReview = (id) => dispatch => (
 	ReviewApiUtil.deleteReview(id).then((review) => dispatch({ type: REMOVE_REVIEW, reviewId: review.id }))

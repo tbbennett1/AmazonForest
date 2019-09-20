@@ -18,37 +18,27 @@ class HeaderBottom extends React.Component{
     componentDidMount() {
         const body = document.getElementsByTagName("body")[0];
         body.addEventListener("click", (event) => {
-            if(this.state.accountDropdown) {
-                if(!Array.from(event.target.classList).includes("accountDropdown") &&
-                !Array.from(event.target.classList).includes("form-orange-button")) {
-                    if(this.state.accountDropdown) {
-
-                        let screen = document.getElementById("smoke-screen")
-                        if (screen) screen.classList.remove("active")
-                        this.setState({accountDropdown: false})
-                    }
-                }
-            }
+            let screen = document.getElementById("smoke-screen")
+            if (screen) screen.classList.remove("active")
+            let accountDropdown = document.getElementById("accountDropdown")
+            if (accountDropdown) accountDropdown.classList.remove("active")
         })
     }
 
     toggleAccountDropdown() {
-        if(!this.state.accountDropdown) {
-            let screen = document.getElementById("smoke-screen")
-            screen.classList.add("active")
-            this.setState({
-                accountDropdown: !this.state.accountDropdown
-            })
-        }
+        let screen = document.getElementById("smoke-screen")
+        if (screen) screen.classList.add("active")
+        let accountDropdown = document.getElementById("accountDropdown")
+        if (accountDropdown) accountDropdown.classList.add("active")
     }
 
     handleSignedIn() {
-        if (this.props.currentUser.name) {
+        if (this.props.currentUser && this.props.currentUser.name) {
             return (<div className="header" onClick={this.toggleAccountDropdown}>
                         <span className="headerAccountOne">Hello, {this.props.currentUser.name}</span>
                         <span className="headerAccountTwo">Accounts & Lists</span>
                         <section className="headerTriangle"></section>
-                        { this.state.accountDropdown && <AccountDropdownContainer currentUser={this.props.currentUser} />}
+                        <AccountDropdownContainer currentUser={this.props.currentUser} />
                     </div>)
         } else {
             return (
@@ -57,7 +47,7 @@ class HeaderBottom extends React.Component{
                     <span className="headerAccountTwo">Accounts & Lists</span>
                     <section className="headerTriangle"></section>
                     {/* <div><Link to="/signup">Sign Up</Link></div> */}
-                    { this.state.accountDropdown && <AccountDropdownContainer />}
+                    <AccountDropdownContainer />
                 </div>)
         }
     }

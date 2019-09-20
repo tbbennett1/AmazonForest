@@ -9,7 +9,7 @@ const EntitiesReducer = combineReducers({
 	// users,
 	reviews,
 	cartItems,
-  items
+  	items
 });
 
 export default EntitiesReducer;

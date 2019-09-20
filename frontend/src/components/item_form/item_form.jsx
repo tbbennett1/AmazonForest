@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class ItemForm extends React.Component {
   constructor(props) {
@@ -43,7 +43,6 @@ class ItemForm extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="create-item-top">
         <div className="form-container">
