@@ -32,7 +32,7 @@ class MainBody extends React.Component {
                         <Route exact path="/items" component={ItemIndex} /> 
                         <Route path="/search" component={Search} />
                         <ProtectedRoute exact path="/new_item" component={ItemCreateContainer} />
-						<ProtectedRoute exact path="/cart" component={CartIndexContainer} />
+						            <ProtectedRoute exact path="/cart" component={CartIndexContainer} />
                     </Switch>
                 </div>
                 <FooterOne />
