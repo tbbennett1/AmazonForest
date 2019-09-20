@@ -35,7 +35,6 @@ class Login extends React.Component {
             password: this.state.password,
             email: this.state.email,
         } 
-        // debugger
         this.props.login(user)
     }
 
