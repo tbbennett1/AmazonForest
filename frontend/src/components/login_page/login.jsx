@@ -35,7 +35,6 @@ class Login extends React.Component {
             password: this.state.password,
             email: this.state.email,
         } 
-        // debugger
         this.props.login(user)
     }
 
@@ -75,7 +74,7 @@ class Login extends React.Component {
             }
 
 
-            if ((email && email.includes("invalid")) || (password && password.includes("Incorrect"))) {
+            if ((email && (email.includes("invalid"))) || (email && (email.includes("user"))) || (password && password.includes("Incorrect"))) {
                 let element = document.getElementById("session-error")
                 if (element) element.classList.add("active")
             }

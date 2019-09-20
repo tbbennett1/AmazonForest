@@ -6,8 +6,12 @@ import {fetchReviews, createReview, deleteReview} from '../../actions/review_act
 import CommentSection from './comment_section';
 
 const mapStateToProps = (state, ownProps) => {
-  let reviews = Object.keys((state.entities.reviews))
-  reviews = reviews.filter(review => review.itemId === ownProps.item.match.params.id)
+  let reviews;
+  let itemReviews;
+
+  if(state.entities.reviews.data) {
+    reviews = state.entities.reviews.data;
+  }
 
   return {
     item: ownProps.item,
@@ -20,7 +24,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchItem: (id) => dispatch(fetchItem(id)),
     fetchReviews: () => dispatch(fetchReviews()),
-    createReview: (review) => dispatch(createReview(review)),
+    createReview: (itemId, review) => dispatch(createReview(itemId, review)),
     deleteReview: (id) => dispatch(deleteReview(id))
   }
 }

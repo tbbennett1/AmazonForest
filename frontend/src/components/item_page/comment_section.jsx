@@ -29,14 +29,18 @@ class CommentSection extends React.Component {
             title: this.state.title, 
             comment: this.state.comment,
             userId: this.props.currentUser.id,
-            itemId: this.props.item.id
+            itemId: this.props.item._id
         });
-        this.props.createReview(review).then(() => this.setState({
+        this.props.createReview(this.props.item._id, review).then(() => this.setState({
             title: "", comment: ""
         }))
     }
 
     render() {
+        if(!this.props.reviews) {
+            return <div></div>
+        }
+
         const reviews = this.props.reviews.map(review => {
             return <Review key={review.id} review={review} deleteReview={this.props.deleteReview} />
         })
