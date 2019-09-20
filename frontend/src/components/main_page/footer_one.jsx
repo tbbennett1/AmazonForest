@@ -1,6 +1,6 @@
 import React from 'react';
 import WhiteLogo from '../../assets/images/forest_icon_white.png'
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class FooterOne extends React.Component {
 
