@@ -45,13 +45,14 @@ class ItemForm extends React.Component {
   render() {
     return (
       <div className="create-item-top">
+        <h1>Hello {this.props.currentUser.name}, create your new product</h1>
         <div className="form-container">
           <form
             className="create-item-form"
             onSubmit={this.handleSubmit}
           >
             <div className="form-label">
-              <label>Product Title: </label>
+              <label>Product Title </label>
               <input
                 type="text"
                 value={this.state.title}
@@ -60,18 +61,19 @@ class ItemForm extends React.Component {
               />
             </div>
             <div className="form-label">
-              <label>Price $</label>
+              <label>Price</label>
+              <div className="dollar">$</div>
               <input
                 type="number"
                 min="0.01"
                 step="0.01"
                 value={this.state.price}
                 onChange={this.update('price')}
-                className="form-input"
+                className="form-input-price"
               />
             </div>
             <div className="form-label">
-              <label>Please provide a detailed description: </label>
+              <label>Description</label>
               <textarea
                 value={this.state.description}
                 onChange={this.update('description')}
@@ -79,7 +81,7 @@ class ItemForm extends React.Component {
               />
             </div>
             <div className="form-label">
-              <label>Image URL: </label>
+              <label>Image URL </label>
               <input
                 type="text"
                 value={this.state.image_url}
@@ -88,8 +90,8 @@ class ItemForm extends React.Component {
               />
             </div>
             <div className="form-label">
-              <label>Category: </label>
-              <select className="select-create"
+              <label>Category </label>
+              <select className="form-input"
                 name="Category"
                 value={this.state.category}
                 onChange={this.update("category")}
@@ -108,11 +110,13 @@ class ItemForm extends React.Component {
                   </option>
               </select>
             </div>
-            <input
-              id="item-submit"
-              type="submit"
-              value="Submit"
-            />
+            <div className="form-label">
+              <input
+                id="item-submit"
+                type="submit"
+                value="Submit"
+              />
+            </div>
           </form>
         </div>
       </div>
