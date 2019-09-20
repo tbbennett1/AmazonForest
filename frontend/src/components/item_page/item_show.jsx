@@ -1,10 +1,6 @@
 import React from 'react';
 import Cart from '../../assets/images/cart.png';
-<<<<<<< HEAD
-import ReactImageZoom from 'react-image-zoom';
-=======
 import CommentSectionContainer from './comment_section_container';
->>>>>>> c939c950303dfacbd5d88bbc22d1a919e2616331
 
 class ItemShow extends React.Component {
   componentDidMount(){
@@ -29,25 +25,12 @@ class ItemShow extends React.Component {
       )
     }
     const item = this.props.item;
-    const props = { 
-      width: 400,  
-      // zoomWidth: 50, 
-      zoomLensStyle: {
-        width: 40,
-        height: 12
-      },
-      img: this.props.item.image_url, 
-      scale: 1.5,
-      offset: { vertical: 0, horizontal: 10 }
-    }
     const reviews = this.props.reviews;
 
     return (
       <div>
         <div className="item-show-top">
           <div className="item-left-col">
-            <ReactImageZoom {...props} className="item-img"/>
-              {/* <img src={this.props.item.image_url}/> */}
             <img src={this.props.item.image_url} alt="item" />
           </div>
           <div className="item-center-col">
