@@ -132,3 +132,74 @@
   background-image: linear-gradient(#f7a581, #ed411b);
   cursor: pointer;
 }
+
+.item-comment-section {
+  margin-top: 26px;
+  border-top: 1px solid #e7e7e7
+}
+
+.reviewInput {
+  width: 75%;
+  height: 28px;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+  padding: 5px 7px;
+  font-size: 14px;
+}
+
+.reviewInput:last-child {
+  width: 100%;
+}
+
+.submitSeparator {
+  height: 60px;
+  border-top: 1px solid #ddd;
+  background: linear-gradient(to bottom, #f3f3f3, #fff);
+  padding: 14px;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.commentSubmitForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentSubmitForm button input {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+.commentSubmitForm button {
+  width: 70px;
+  cursor: pointer;
+}
+
+.item-comment-section ul {
+  padding-left: 0px;
+}
+
+.item-comment-section h4 {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.review {
+  color: #111;
+  word-wrap: break-word;
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.ratingAndTitle {
+  display: flex;
+}
+
+.reviewTitle {
+  font-weight: 700;
+}
+
+.reviewComment {
+  padding-top: 15px;
+}
