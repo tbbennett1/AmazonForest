@@ -6,8 +6,8 @@ const passport = require('passport');
 const Review = require('../../models/Review');
 
 router.get("/", (req, res) => {
-	let itemId = req.query.itemId;
-	Review.find({itemId: itemId})
+  let itemId = req.body.itemId;
+  Review.find({ itemId: itemId })
     .sort({ date: -1 })
     .then(reviews => res.json(reviews))
     .catch(err => res.status(404).json({ noReviewsFound: "No reviews found" }));
