@@ -131,6 +131,8 @@
 }
 
 .accountDropdown {
+    display: none;
+    justify-content: center;
     width: 500px;
     height: 80px;
     background-color: white;
@@ -142,6 +144,11 @@
     text-align: center;
     cursor: default;
     z-index: 3000;
+}
+
+.accountDropdown > a {
+    display: flex;
+    align-items: center;
 }
 
 .accountDropdown a {

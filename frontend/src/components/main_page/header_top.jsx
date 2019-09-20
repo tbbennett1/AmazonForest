@@ -61,7 +61,7 @@ class HeaderTop extends React.Component {
                             {this.renderSuggestions()}
                         </div>
                     </div>
-                    <img src={SearchLogo}/>
+                    <Link to={{ pathname: '/search', state: { searchTerm: this.state.searchTerm } }}><img src={SearchLogo}/></Link>
                 </div>
                 <span>All your greatest deals on exotic pets here!</span>
             </div>
