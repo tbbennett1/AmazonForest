@@ -71,7 +71,7 @@ class SignUp extends React.Component {
             this.cleanErrors("password2")
         }
 
-        if (this.props.errors.session != prevProps.errors.session) {
+        if (this.props.errors.session !== prevProps.errors.session) {
             const { name, email, password, password2 } = this.props.errors.session
 
             if (email && (email.includes("required") || email.includes("invalid") || password.includes("must"))) {
@@ -122,7 +122,6 @@ class SignUp extends React.Component {
             password2: this.state.password2,
             email: this.state.email,
         } 
-        // debugger
         this.props.signup(user)
     }
 
