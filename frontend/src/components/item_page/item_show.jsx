@@ -2,6 +2,7 @@ import React from 'react';
 import Cart from '../../assets/images/cart.png';
 import CommentSectionContainer from './comment_section_container';
 import ReactImageMagnify from 'react-image-magnify';
+import { withRouter, Link } from 'react-router-dom';
 
 class ItemShow extends React.Component {
   componentDidMount(){
@@ -27,7 +28,6 @@ class ItemShow extends React.Component {
     }
     const item = this.props.item;
     const reviews = this.props.reviews;
-
     return (
       <div>
         <div className="item-show-top">
@@ -53,13 +53,13 @@ class ItemShow extends React.Component {
           <div className="item-center-col">
             <h1 className="item-title">{item.title}</h1>
             <h4>Price: 
-              <span className="item-price"> ${item.price}.00</span>
+              <span className="item-price"> ${item.price}</span>
             </h4>
             <p>{item.description}</p>
             <CommentSectionContainer item={this.props.item} />
           </div>
           <div className="item-right-col">
-            <span className="item-price"> ${item.price}.00</span>
+            <span className="item-price"> ${item.price}</span>
             <p>Want it by Friday? Too late. How about next month? Buy AmazonForest Prime and get it never.</p>
             <h3>In Stock.</h3>
             <div className="add-to-cart-button">
@@ -70,6 +70,10 @@ class ItemShow extends React.Component {
               <div className="item-wl-plus">+</div>
               <div className="atc-div"><input type="button" className="add-to-wl" value="Add to Wish List" /></div>
             </div>
+            <div className="edit-item-button">
+              <div className="item-edit">edit</div>
+              <Link to={`/edit_item/${item._id}`}><div className="atc-div"><input type="button" className="edit-item" value="Edit Your Product" /></div></Link>
+            </div>
           </div>
         </div>
       </div>
@@ -77,4 +81,4 @@ class ItemShow extends React.Component {
   }
 }
 
-export default ItemShow;
+export default withRouter(ItemShow);

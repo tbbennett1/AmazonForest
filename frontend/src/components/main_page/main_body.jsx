@@ -11,6 +11,7 @@ import { Route, Switch } from 'react-router-dom';
 import Item from '../item_page/item_show_container';
 import ItemIndex from '../item_page/item_index_container';
 import ItemCreateContainer from '../item_form/item_create_container';
+import ItemEditContainer from '../item_form/item_edit_container';
 import CartIndexContainer from '../cart_page/cart_index_containter';
 import Search from '../search_page/search_container'
 
@@ -32,6 +33,7 @@ class MainBody extends React.Component {
                         <Route exact path="/items" component={ItemIndex} /> 
                         <Route exact path="/search" component={Search} />
                         <ProtectedRoute exact path="/new_item" component={ItemCreateContainer} />
+                        <ProtectedRoute exact path="/edit_item/:id" component={ItemEditContainer} />
 						<ProtectedRoute exact path="/cart" component={CartIndexContainer} />
                     </Switch>
                 </div>

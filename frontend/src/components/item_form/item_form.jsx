@@ -24,7 +24,7 @@ class ItemForm extends React.Component {
       category: this.state.category,
       image_url: this.state.image_url
     }
-
+debugger
     if (this.props.formType === 'edit') {
       this.props.createItem(new_item, this.state._id)
         .then(res => {
@@ -37,12 +37,16 @@ class ItemForm extends React.Component {
             this.props.history.push(`/items/${res.item._id}`);
           }
         })
-
     }
-
   }
 
   render() {
+    if(this.props.formType === 'edit' && !this.state){
+      return(
+        <div></div>
+      )
+    }
+    debugger
     return (
       <div className="create-item-top">
         <h1>Hello {this.props.currentUser.name}, create your new product</h1>

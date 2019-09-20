@@ -3,24 +3,11 @@ import { connect } from 'react-redux';
 import { editItem, fetchItem } from '../../actions/item_actions';
 import ItemForm from './item_form';
 
-class EditItemForm extends React.Component {
-  componentDidMount() {
-    this.props.fetchItem(this.props.item.id)
-  }
-
-  render() {
-    return (
-      <ItemForm
-        item={this.props.item}
-        editItem={this.props.editItem}
-      />
-    )
-  }
-}
-
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
-    item: ownProps.item,
+    currentUser: state.session.user,
+    itemId: ownProps.match.params.id,
     formType: "edit"
   }
 }
@@ -30,4 +17,27 @@ const mapDispatchToProps = dispatch => ({
   action: (item, id) => dispatch(editItem(item, id))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemForm)
+class EditItemForm extends React.Component {
+  componentDidMount() {
+    debugger
+    this.props.fetchItem(this.props.itemId)
+  }
+
+  render() {
+    debugger
+    if(!this.props.item){
+      debugger
+      return (
+        <div></div>
+      )
+    }
+    return (
+      <ItemForm
+        item={this.props.item}
+        editItem={this.props.editItem}
+      />
+    )
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditItemForm)
