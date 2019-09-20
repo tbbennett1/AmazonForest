@@ -41,8 +41,8 @@ class ItemShow extends React.Component {
               },
               largeImage: {
                 src: this.props.item.image_url,
-                width: 2000,
-                height: 1000
+                width: 3500,
+                height: 2000
               },
               enlargedImageContainerDimensions: {
                 width: '125%',
