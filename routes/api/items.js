@@ -35,7 +35,7 @@ router.post('/',
     // if (!isValid) {
     //   return res.status(400).json(errors);
     // }
-    debugger
+    // debugger
     const newItem = new Item({
       sellerId: req.user.id,
       title: req.body.title,
