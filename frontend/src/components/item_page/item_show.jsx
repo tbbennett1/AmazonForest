@@ -1,6 +1,6 @@
 import React from 'react';
 import Cart from '../../assets/images/cart.png';
-import { FiMousePointer } from "react-icons/fi";
+import ReactImageZoom from 'react-image-zoom';
 
 class ItemShow extends React.Component {
   constructor(props){
@@ -29,12 +29,24 @@ class ItemShow extends React.Component {
       )
     }
     const item = this.props.item;
+    const props = { 
+      width: 400,  
+      // zoomWidth: 50, 
+      zoomLensStyle: {
+        width: 40,
+        height: 12
+      },
+      img: this.props.item.image_url, 
+      scale: 1.5,
+      offset: { vertical: 0, horizontal: 10 }
+    }
 
     return (
       <div>
         <div className="item-show-top">
           <div className="item-left-col">
-            <img src={this.props.item.image_url}/>
+            <ReactImageZoom {...props} className="item-img"/>
+              {/* <img src={this.props.item.image_url}/> */}
           </div>
           <div className="item-center-col">
             <h1 className="item-title">{item.title}</h1>
