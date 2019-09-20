@@ -1,6 +1,7 @@
 import React from 'react';
 import Cart from '../../assets/images/cart.png';
 import CommentSectionContainer from './comment_section_container';
+import ReactImageMagnify from 'react-image-magnify';
 
 class ItemShow extends React.Component {
   componentDidMount(){
@@ -31,7 +32,20 @@ class ItemShow extends React.Component {
       <div>
         <div className="item-show-top">
           <div className="item-left-col">
-            <img src={this.props.item.image_url} alt="item" />
+            <ReactImageMagnify {...{
+              smallImage: {
+                isFluidWidth: true,
+                src: this.props.item.image_url,
+                srcSet: this.srcSet,
+                sizes: '(max-width: 480px) 100vw, (max-width: 1200px) 30vw, 360px'
+              },
+              largeImage: {
+                src: this.props.item.image_url,
+                width: 1200,
+                height: 1800
+              }
+            }} />
+            {/* <img src={this.props.item.image_url} alt="item" /> */}
           </div>
           <div className="item-center-col">
             <h1 className="item-title">{item.title}</h1>
