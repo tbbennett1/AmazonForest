@@ -7,9 +7,11 @@ const CartItem = require('../../models/Cart_Item');
 
 // show all items belongs to user (find by userId)
 
-router.get('/', (req, res) => {
-	CartItem.find({ userId: req.body.userId })
-		.populate("itemId")
+
+
+router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+	CartItem.find({ userId: req.user.id })
+		.populate("item")
 		.then(cartItems => res.json(cartItems))
 		.catch(err =>
 			res.status(404).json({ noCartItemFound: 'No Items found from this user' }
