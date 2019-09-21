@@ -149,6 +149,7 @@
 
 .commentSubmitForm button input {
   border: none;
+  outline: none;
   background-color: transparent;
   font-size: 14px;
 }
