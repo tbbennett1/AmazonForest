@@ -1,7 +1,11 @@
 .home-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
-    width: 80%;
     height: 1100px;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .home-page-wrapper{
@@ -9,6 +13,9 @@
     background: #EAEDED;
 }
 
+.home-page-carousel{
+    width: 1500px;
+}
 
 .react-multiple-carousel__arrow {
     top: 100px;
@@ -32,22 +39,24 @@
 }
 
 .home-page-card-rows{
+    display: flex;
     max-width: 1480px;
     margin: 0 auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 20px 0;
     position: relative;
     top: -380px;
-    display: flex;
     font-family: "ember-rg";
-    flex-wrap: wrap;
+    min-width: 1500px;
+    justify-content: space-between
 }
 
 .home-page-card{
+    display: flex;
     max-width: 400px;
     height: 420px;
     min-height: 420px;
-    /* flex: 1 0 290px; */
+    flex: 1 0 290px;
     padding-left: 10px;
     padding-right: 10px;
     min-width: 290px;
@@ -56,6 +65,7 @@
 .home-page-card-details{
     padding: 20px 0 15px 0;
     background: white;
+    width: 100%;
     height: 385px;
 }
 
@@ -154,7 +164,7 @@
     padding: 20px 0 15px 0;
     background: white;
     height: 25%;
-    /* width: 300px; */
+    width: 100%;
 }
 
 .home-page-entire-row{
@@ -162,8 +172,8 @@
     margin: 0 auto;
     position: relative;
     top: -380px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: "ember-rg"
 }
 
@@ -185,24 +195,27 @@
 
 .home-page-card-item{
     padding: 0 20px 0 20px;
-    width: 310px;
 }
 
 .home-page-card-item-img-wrapper{
     height: 240px;
     position: relative;
     margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page-card-item-img-wrapper a{
+    width: 100%;
+    height: 100%;
 }
 
 .home-page-card-item img {
-    position: absolute;
     margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .home-page-card-price-name div{

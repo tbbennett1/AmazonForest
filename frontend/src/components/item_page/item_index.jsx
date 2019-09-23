@@ -12,7 +12,6 @@ class ItemIndex extends React.Component {
 		return (
 			<div className="item-index">
 				<div className="item-lists">
-			
 					<ul>
 						{itemLists}
 					</ul>
