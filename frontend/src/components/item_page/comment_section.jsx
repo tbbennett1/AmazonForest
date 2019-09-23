@@ -11,9 +11,7 @@ class CommentSection extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchReviews().then(() => {
-            this.props.fetchItem(this.props.item.id);
-        });
+        this.props.fetchReviews(this.props.item._id)
     }
 
     update(field) {
@@ -33,21 +31,20 @@ class CommentSection extends React.Component {
             user: this.props.currentUser.name,
             itemId: this.props.item._id
         });
-        this.props.createReview(this.props.item._id, review).then(() => this.setState({
+        this.props.createReview(review).then(() => this.setState({
             title: "", comment: "", rating: 5
         }))
     }
 
     render() {
-        // debugger;
         if(!this.props.reviews) {
+            console.log("whatever")
             return <div></div>
         }
 
         const reviews = this.props.reviews.map(review => {
             return <ReviewContainer key={review._id} review={review} deleteReview={this.props.deleteReview} />
         })
-
         return(
             <div className="item-comment-section">
                 <h3>Review this product</h3>
@@ -61,7 +58,7 @@ class CommentSection extends React.Component {
                     placeholder="What did you like or dislike? What did you use this product for?" 
                     onChange={this.update("comment")} />
                     <div className="submitSeparator">
-                        <button class="form-orange-button" onClick={this.handleClick}>
+                        <button className="form-orange-button" onClick={this.handleClick}>
                             <input type="submit" value="Submit" />
                         </button>
                     </div>

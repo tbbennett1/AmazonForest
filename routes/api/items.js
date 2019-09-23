@@ -81,7 +81,7 @@ router.patch("/:id", (req, res) => {
     })
 });
 
-router.use('/items/:itemId/reviews/', reviews)
+// router.use('/items/:itemId/reviews/', reviews)
 
 module.exports = router;
 

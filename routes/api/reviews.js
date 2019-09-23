@@ -6,7 +6,9 @@ const passport = require('passport');
 const Review = require('../../models/Review');
 
 router.get("/", (req, res) => {
-	let itemId = req.body.itemId;
+	let itemId = req.query.itemId;
+	console.log(itemId);
+	debugger;
 	Review.find({ itemId: itemId })
 		.sort({ date: -1 })
 		.then(reviews => res.json(reviews))
