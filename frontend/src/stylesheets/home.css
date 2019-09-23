@@ -1,0 +1,363 @@
+.home-page{
+    margin: 0 auto;
+    width: 80%;
+    height: 1100px;
+}
+
+.home-page-wrapper{
+    width: 100%;
+    background: #EAEDED;
+}
+
+
+.react-multiple-carousel__arrow {
+    top: 100px;
+    z-index: 1;
+}
+
+.home-splash-item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(-180deg, rgba(234,237,237,0), #EAEDED);
+    /* background-image: linear-gradient(-180deg, rgba(234, 237, 237, 0), rgb(234, 237, 237)); */
+}
+
+.home-splash-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.home-page-card-rows{
+    max-width: 1480px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    top: -380px;
+    display: flex;
+    font-family: "ember-rg";
+    flex-wrap: wrap;
+}
+
+.home-page-card{
+    max-width: 400px;
+    height: 420px;
+    min-height: 420px;
+    /* flex: 1 0 290px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 290px;
+}
+
+.home-page-card-details{
+    padding: 20px 0 15px 0;
+    background: white;
+    height: 385px;
+}
+
+.home-page-user-details{
+    display: flex;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.home-page-user-details h2 {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 21px;
+    line-height: 27.3px;
+}
+
+.home-page-card-details p {
+    margin-bottom: 10px;
+    padding: 0 20px 0px 20px;
+    font-weight: bold;
+}
+
+.home-page-user-details-4x4{
+    padding: 0 20px 0px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-page-user-details-4x4 a:first-child{
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+
+.home-page-user-details-4x4 a:nth-child(2){
+    margin-bottom: 2px;
+}
+
+.home-page-user-details-4x4 a:nth-child(3){
+    margin-right: 2px;
+}
+
+.home-page-user-details-box{
+    background-color: rgba(0, 164, 180, 0.05);
+    width: 49.5%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-page-user-details-box:hover{
+    text-decoration: none;
+}
+
+.home-page-user-details-box div:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 90px;
+    width: 100%;
+}
+
+.home-page-user-details-box img{
+    width: 80%;
+    height: 80%;
+    object-fit: scale-down;
+    align-self: flex-start;
+    margin: 20px 5px 0px 5px;
+}
+
+.home-page-user-details-box p{
+    text-align: center;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.home-page-card-logged-in{
+    width: 300px;
+}
+
+
+.home-page-card-logged-in h2{
+    padding-left: 20px;
+    font-size:20px;
+    margin: 0;
+}
+
+.home-page-card-logged-in p{
+    font-weight: normal;
+    padding-left: 20px; 
+}
+
+.home-page-card-details-last{
+    padding: 20px 0 15px 0;
+    background: white;
+    height: 25%;
+    /* width: 300px; */
+}
+
+.home-page-entire-row{
+    max-width: 1480px;
+    margin: 0 auto;
+    position: relative;
+    top: -380px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: "ember-rg"
+}
+
+.home-page-first-list-wrapper{
+
+}
+
+.home-page-first-list{
+    padding: 10px 20px;
+    background: white;
+}
+
+.home-page-card-details h2{
+    margin: 0;
+    padding-left: 20px;
+    font-size: 21px;
+    line-height: 27.3px;
+}
+
+.home-page-card-item{
+    padding: 0 20px 0 20px;
+    width: 310px;
+}
+
+.home-page-card-item-img-wrapper{
+    height: 240px;
+    position: relative;
+    margin: 10px;
+}
+
+.home-page-card-item img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.home-page-card-price-name div{
+    margin-top: 6px;
+    font-size: 21px;
+}
+
+.home-page-card-price-name p{
+    padding: 0;
+    font-weight: normal;
+    margin-top: 6px;
+}
+
+.home-page-card-not-logged {
+    padding: 0 20px 0 20px;
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-page-card-not-logged h2{
+    margin: 0;
+    font-size: 21px;
+    line-height: 27.3px;
+}
+
+
+.home-page-card-not-logged a {
+    margin-top: 27px;
+    color: black;
+    width: 100%;
+    height: 27px;
+    text-align: center;
+    line-height: 27px;
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+}
+
+.home-page-card-not-logged a:hover {
+    text-decoration: none;
+    background: linear-gradient(to bottom,#f7dfa5,#e6b94a);
+}
+
+.home-page-first-list h2{
+    margin: 0;
+    margin-top: 10px;
+}
+
+.home-page-item-list{
+    margin-top: 15px;
+}
+
+.home-page-item-list 
+
+.home-page-item-list-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    min-height: 240px;
+    width: 165px;
+}
+
+.home-page-item-list-item div:first-child{
+    height: 80%;
+    width: 100%;
+}
+
+.home-page-item-list-item img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    max-width: 270px;
+    max-height: 200px;
+    vertical-align: middle;
+}
+
+.home-page-item-list-item div:nth-child(2){
+    height: 20%;
+    margin-top: 5px;
+}
+
+.home-page-item-list svg {
+    position: relative;
+    top: 20px;
+    left: -8px;
+    font-size: 55px;
+}
+
+.custom-right{
+    visibility: hidden;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    bottom: 85px;
+    right: 0px;
+    background-color: #fff;
+    height: 100px;
+    line-height: 100px;
+    width: 45px;
+    text-align: center;
+    box-shadow: 0 1px 3px #888;
+    cursor: pointer;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.custom-left{
+    visibility: hidden;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    bottom: 85px;
+    left: 0px;
+    background-color: #fff;
+    height: 100px;
+    line-height: 100px;
+    width: 45px;
+    text-align: center;
+    box-shadow: 0 1px 3px #888;
+    cursor: pointer;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.home-page-entire-row:hover .custom-right, .home-page-entire-row:hover .custom-left{
+  visibility: visible;
+  opacity: 1;
+}
+
+.custom-right-splash{
+    content: "";
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    height: 100px;
+    line-height: 100px;
+    width: 45px;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.custom-left-splash{
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    height: 100px;
+    line-height: 100px;
+    width: 45px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.home-page-carousel svg{
+    position: relative;
+    top: 16px;
+    left: -7px;
+    font-size: 60px;
+    color: white;
+}
