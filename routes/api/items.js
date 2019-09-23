@@ -1,10 +1,10 @@
-const reviews = require('./reviews');
-
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 // var AWS = require("aws-sdk");
+
+const reviews = require('./reviews');
 
 const Item = require('../../models/Item');
 
@@ -37,7 +37,6 @@ router.post('/',
     // if (!isValid) {
     //   return res.status(400).json(errors);
     // }
-    // debugger
     const newItem = new Item({
       sellerId: req.user.id,
       title: req.body.title,
@@ -80,6 +79,8 @@ router.patch("/:id", (req, res) => {
       }
     })
 });
+
+// router.use('/items/:itemId/reviews/', reviews)
 
 module.exports = router;
 

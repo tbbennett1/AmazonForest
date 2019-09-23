@@ -18,7 +18,6 @@ class Header extends React.Component {
         if (items && items[0]){
             itemLists = items[0]
 		}
-		// debugger
         return(
             <div className="mainBodyHeader">
                 <HeaderTop items={itemLists}/>
