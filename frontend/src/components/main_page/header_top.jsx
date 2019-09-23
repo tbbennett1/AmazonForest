@@ -72,8 +72,8 @@ class HeaderTop extends React.Component {
     render() {
         return(
             <div className="headerTop">
-                <img className="headerBars" src={Bars} />
-                <Link to={"/"}><img className="headerLogo" src={WhiteLogo} /></Link>
+                <img className="headerBars" src={Bars} alt="bars" />
+                <Link to={"/"}><img className="headerLogo" src={WhiteLogo} alt="header logo" /></Link>
                 <div className="searchBar">
                     <button>All<div></div></button>
                     <div className="search-box">
@@ -82,7 +82,7 @@ class HeaderTop extends React.Component {
                             {this.renderSuggestions()}
                         </div>
                     </div>
-                    <img onClick={this.handleSearchButton} src={SearchLogo}/>
+                    <img onClick={this.handleSearchButton} src={SearchLogo} alt="search button" />
                 </div>
                 <span>All your greatest deals on exotic pets here!</span>
             </div>

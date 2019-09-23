@@ -40,7 +40,7 @@ class CartIndex extends React.Component {
 				<div className="checkout">
 					<div className="cart-sub">
 						<p className="subtotal">Subtotal - { myCartItems.length } items:  </p>
-						<p className="subtotal-price">${ totalPrice }.00</p>
+						<p className="subtotal-price">${ totalPrice }</p>
 					</div>
 					
 					<button type="submit" value="">Proceed to checkout</button>

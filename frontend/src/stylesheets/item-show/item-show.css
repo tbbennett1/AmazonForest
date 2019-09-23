@@ -79,7 +79,7 @@
   width: 100%;
 }
 
-.add-to-cart, .add-to-wl{
+.add-to-cart, .add-to-wl, .edit-item{
   font-size: 14px;
   border: none;
   background-color: inherit;
@@ -101,7 +101,7 @@
   cursor: pointer;
 }
 
-.item-wl-plus{
+.item-wl-plus, .item-edit{
   display: flex;
   justify-content: center;
   color: white;
@@ -113,6 +113,30 @@
   margin: 4px;
   width: 24px;
   height: 20px;
+}
+
+.item-edit{
+  font-size: 12px;
+  align-items: center;
+}
+
+.edit-item-button{
+  display: flex;
+  background-image: linear-gradient(#f7b79c, #ee5937);
+  border: 1px solid #846a29;
+  border-radius: 4px; 
+  margin-top: 20px;
+  align-items: center;
+}
+
+.edit-item-button:hover{
+  background-image: linear-gradient(#f7a581, #ed411b);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.edit-item-button > a:hover{
+  text-decoration: none;
 }
 
 .item-comment-section {
@@ -176,6 +200,10 @@
   margin-bottom: 22px;
 }
 
+.ratingUsername {
+  margin-bottom: 20px;
+}
+
 .ratingAndTitle {
   display: flex;
 }
@@ -186,4 +214,28 @@
 
 .reviewComment {
   padding-top: 15px;
+}
+
+.reviewSubmitRating img {
+  height: 35px;
+  width: 35px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.reviewShowRating img {
+  height: 15px;
+  width: 15px;
+  border: none;
+  outline: none;
+  margin-right: 3px;
+}
+
+.submitError {
+  border-top: none;
+  color: #c40000;
+  font-size: 12px;
 }

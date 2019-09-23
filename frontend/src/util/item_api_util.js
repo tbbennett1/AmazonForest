@@ -13,12 +13,8 @@ export const createItem = (data) => {
 };
 
 export const updateItem = (item, id) => {
-  return axios({
-    method: 'patch',
-    url: `api/items/${id}`,
-    data: item
-  })
-}
+  return axios.patch(`api/items/${id}`, item);
+};
 
 export const removeItem = (id) => {
 	return axios.delete(`/api/items/${id}`);

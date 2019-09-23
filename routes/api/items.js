@@ -53,7 +53,7 @@ router.post('/',
 );
 
 router.patch("/:id", (req, res) => {
-  Item.findOneAndUpdate({ _id: req.body._id },
+  Item.findOneAndUpdate({ _id: req.params.id },
     {
       $set:
       {
@@ -65,7 +65,7 @@ router.patch("/:id", (req, res) => {
       }
     }).then(item => {
       if (item) {
-        User.findById(item.owner_id)
+        User.findById(item.sellerId)
           .then(user => {
             if (user) {
               const filter = {
@@ -73,7 +73,7 @@ router.patch("/:id", (req, res) => {
                 email: user.email,
                 _id: user._id
               }
-              res.json({ item: item, user: filter })
+              res.json({ item, user: filter })
             }
           })
       }

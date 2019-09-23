@@ -8,7 +8,7 @@ import items from './items_reducer';
 const EntitiesReducer = combineReducers({
 	reviews,
 	cartItems,
-  	items,
+  items,
 	users
 });
 
