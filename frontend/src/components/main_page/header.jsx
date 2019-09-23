@@ -6,8 +6,10 @@ import HeaderBottom from './header_bottom';
 class Header extends React.Component {
 
 	componentDidMount() {
+        if (this.props.currentUser) {
 		const userId = this.props.currentUser.id
-		this.props.fetchCartItems(userId);
+        this.props.fetchCartItems(userId)
+        }
 	}
 
     render() {
