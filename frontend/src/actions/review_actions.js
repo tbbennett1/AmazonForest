@@ -26,18 +26,18 @@ export const removeReview = reviewId => {
     }
   }
 
-export const fetchReviews = () => dispatch => (
-	ReviewApiUtil.fetchReviews().then((reviews) => dispatch({ type: RECEIVE_ALL_REVIEWS, reviews }))
+export const fetchReviews = (id) => dispatch => (
+	ReviewApiUtil.fetchReviews(id).then((reviews) => dispatch({ type: RECEIVE_ALL_REVIEWS, reviews }))
 );
 
 export const fetchReview = (id) => dispatch => (
 	ReviewApiUtil.fetchReview(id).then((review) => dispatch(receiveReview(review.data)))
 );
 
-export const createReview = (itemId, review) => dispatch => {
-	return ReviewApiUtil.createReview(itemId, review).then((review) => dispatch({ type: RECEIVE_REVIEW, review }))
+export const createReview = (review) => dispatch => {
+	return ReviewApiUtil.createReview(review).then((review) => dispatch({ type: RECEIVE_REVIEW, review }))
 };
 
-export const deleteReview = (id) => dispatch => (
-	ReviewApiUtil.deleteReview(id).then((review) => dispatch({ type: REMOVE_REVIEW, reviewId: review.id }))
-);
+// export const deleteReview = (id) => dispatch => (
+// 	ReviewApiUtil.deleteReview(id).then((review) => dispatch({ type: REMOVE_REVIEW, reviewId: review.id }))
+// );
