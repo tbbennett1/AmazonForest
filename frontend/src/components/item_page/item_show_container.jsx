@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
   }
   return {
     item: state.entities.items[ownProps.match.params.id],
-    reviews: reviews
+    reviews: reviews,
+    currentUser: state.session.user
   }
 }
 
