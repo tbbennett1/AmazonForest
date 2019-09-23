@@ -97,7 +97,7 @@ router.post("/login", (req, res) => {
 
 // show items sold by user (find by sellerId)
 
-router.get('/:user_id/items', (req, res) => {
+router.get('/:user_id', (req, res) => {
   Item.find({ sellerId: req.params.user_id })
     .then(items => res.json(items))
     .catch(err =>
