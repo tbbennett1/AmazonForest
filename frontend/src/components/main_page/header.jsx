@@ -13,7 +13,7 @@ class Header extends React.Component {
 	}
 
     render() {
-        const { items, cartItems } = this.props
+		const { items, cartItems, fetchCartItems } = this.props
         let itemLists
         if (items && items[0]){
             itemLists = items[0]
@@ -21,7 +21,7 @@ class Header extends React.Component {
         return(
             <div className="mainBodyHeader">
                 <HeaderTop items={itemLists}/>
-                <HeaderBottom currentUser={this.props.currentUser} cartItems={cartItems} />
+				<HeaderBottom currentUser={this.props.currentUser} cartItems={cartItems} fetchCartItems={fetchCartItems} />
                 {/* {this.handleSignedIn()} */}
             </div>
         )

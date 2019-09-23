@@ -25,7 +25,7 @@ router.get("/:id", (req, res) => {
 router.post('/',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
-		debugger;
+		// debugger;
 		const newReview = new Review({
 			rating: req.body.rating,
 			userId: req.user.id,

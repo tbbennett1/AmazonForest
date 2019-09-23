@@ -46,7 +46,6 @@ class ItemForm extends React.Component {
         <div></div>
       )
     }
-    // debugger
     return (
       <div className="create-item-top">
         <h1>Hello {this.props.currentUser.name}, create your new product</h1>

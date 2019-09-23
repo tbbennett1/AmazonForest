@@ -5,7 +5,7 @@ import AccountDropdownContainer from './account_dropdown_container';
 
 import Cart from '../../assets/images/cart.png';
 import Location from '../../assets/images/location.png';
-import { fetchCartItems } from '../../util/cart_item_api_util';
+// import { fetchCartItems } from '../../util/cart_item_api_util';
 
 class HeaderBottom extends React.Component{
     constructor(props) {
@@ -24,8 +24,19 @@ class HeaderBottom extends React.Component{
             let accountDropdown = document.getElementById("accountDropdown")
             if (accountDropdown) accountDropdown.classList.remove("active")
         })
-    }
+	}
 
+	componentDidUpdate(prevProps, prevState) {
+		// debugger
+		// if (prevProps.match.params.id !== this.props.match.params.id) {
+		// 	this.props.fetchCartItem(this.props.match.params.id)
+		// }
+
+		// if (!this.props.item) {
+		// 	this.props.fetchItem(this.props.match.params.id)
+		// }
+	}
+	
     toggleAccountDropdown() {
         let screen = document.getElementById("smoke-screen")
         if (screen) screen.classList.add("active")
