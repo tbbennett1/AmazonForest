@@ -200,6 +200,10 @@
   margin-bottom: 22px;
 }
 
+.ratingUsername {
+  margin-bottom: 20px;
+}
+
 .ratingAndTitle {
   display: flex;
 }
@@ -210,4 +214,28 @@
 
 .reviewComment {
   padding-top: 15px;
+}
+
+.reviewSubmitRating img {
+  height: 35px;
+  width: 35px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.reviewShowRating img {
+  height: 15px;
+  width: 15px;
+  border: none;
+  outline: none;
+  margin-right: 3px;
+}
+
+.submitError {
+  border-top: none;
+  color: #c40000;
+  font-size: 12px;
 }
