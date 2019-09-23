@@ -10,6 +10,10 @@ const ReviewSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'users'
 	},
+	user: {
+		type: String,
+		required: true
+	},
 	rating: {
 		range: {
 			min: { type: Number, min: 1 },
