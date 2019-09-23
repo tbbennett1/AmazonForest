@@ -145,7 +145,7 @@ class HomePage extends React.Component{
                     slidesToSlide={8}
                 >
                     {filtered.map(item => <div key={item._id} className="home-page-item-list-item">
-                        <div><img src={item.image_url} alt=""/></div>
+                        <div><Link to={`/items/${item._id}`}><img src={item.image_url} alt=""/></Link></div>
                         <div>${item.price}</div>
                         </div>)
                     }
