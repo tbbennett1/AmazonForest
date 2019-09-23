@@ -7,6 +7,10 @@ const Review = require('../../models/Review');
 
 router.get("/", (req, res) => {
 	let itemId = req.query.itemId;
+<<<<<<< HEAD
+=======
+	console.log(itemId);
+>>>>>>> 1f21f7e3a2b196101c223074e613c262bdae0adb
 	Review.find({ itemId: itemId })
 		.sort({ date: -1 })
 		.then(reviews => res.json(reviews))
