@@ -20,14 +20,13 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
 });
 
 // creating a Cart_Item instance
-// item_index, item_show (button: "put in the cart")
 
 router.post('/',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
 		const newCartItem = new CartItem({
-			userId: req.user.id,
-			itemId: req.item.id
+			userId: req.body.userId,
+			itemId: req.body.itemId
 		});
 
 		newCartItem

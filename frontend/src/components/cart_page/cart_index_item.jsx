@@ -11,7 +11,7 @@ const CartIndexItem = ({ cartItem, item, removeCartItem }) => {
 				</Link>
 				<Link to=""><div className="cartitem-delete">Delete</div></Link>
 			</div>
-			<div className="cartitem-price">${item.price}.00</div>
+			<div className="cartitem-price">${item.price}</div>
 		</div>
 	)
 }

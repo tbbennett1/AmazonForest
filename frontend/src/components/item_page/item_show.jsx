@@ -4,8 +4,13 @@ import CommentSectionContainer from './comment_section_container';
 import ReactImageMagnify from 'react-image-magnify';
 
 class ItemShow extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
   componentDidMount(){
-    this.props.fetchItem(this.props.match.params.id);
+	this.props.fetchItem(this.props.match.params.id);
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -16,7 +21,20 @@ class ItemShow extends React.Component {
     if (!this.props.item){
       this.props.fetchItem(this.props.match.params.id)
     }
+  }
 
+  handleClick() {
+	  
+	  const { currentUser, item, createCartItem } = this.props;
+	//   debugger;
+	  const cartItem = Object.assign({}, {
+		  userId: currentUser.id,
+		  itemId: item._id
+	  });
+	  createCartItem(cartItem).then(() => this.setState({
+		  userId: cartItem.userId,
+		  itemId: cartItem.itemId
+	  }));
   }
 
   render() {
@@ -62,7 +80,7 @@ class ItemShow extends React.Component {
             <span className="item-price"> ${item.price}.00</span>
             <p>Want it by Friday? Too late. How about next month? Buy AmazonForest Prime and get it never.</p>
             <h3>In Stock.</h3>
-            <div className="add-to-cart-button">
+		<div className="add-to-cart-button" onClick={this.handleClick}>
               <img src={Cart} className="item-cart-image" alt="cart" />
               <div className="atc-div"><input type="button" className="add-to-cart" value="Add to Cart" /></div>
             </div>
