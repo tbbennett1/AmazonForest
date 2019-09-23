@@ -20,6 +20,21 @@ class ItemShow extends React.Component {
 
   }
 
+  EditButton(incoming){
+    if(incoming.props.currentUser.id === incoming.props.item.sellerId){
+      return (
+        <div className="edit-item-button">
+          <div className="item-edit">edit</div>
+          <Link to={`/edit_item/${incoming.props.item._id}`}><div className="atc-div"><input type="button" className="edit-item" value="Edit Your Product" /></div></Link>
+        </div>
+      )
+    }
+    return(
+      <div></div>
+    )
+  }
+
+
   render() {
     if(!this.props.item){
       return(
@@ -70,10 +85,7 @@ class ItemShow extends React.Component {
               <div className="item-wl-plus">+</div>
               <div className="atc-div"><input type="button" className="add-to-wl" value="Add to Wish List" /></div>
             </div>
-            <div className="edit-item-button">
-              <div className="item-edit">edit</div>
-              <Link to={`/edit_item/${item._id}`}><div className="atc-div"><input type="button" className="edit-item" value="Edit Your Product" /></div></Link>
-            </div>
+            <this.EditButton props={this.props}/>
           </div>
         </div>
       </div>
