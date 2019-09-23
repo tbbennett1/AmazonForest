@@ -5,10 +5,6 @@ const passport = require('passport');
 
 const CartItem = require('../../models/Cart_Item');
 
-// show all items belongs to user (find by userId)
-
-
-
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
 	CartItem.find({ userId: req.user.id })
 		.populate("item")
@@ -18,8 +14,6 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
 			)
 		);
 });
-
-// creating a Cart_Item instance
 
 router.post('/',
 	passport.authenticate('jwt', { session: false }),
@@ -33,9 +27,7 @@ router.post('/',
 			.save()
 			.then(cartItem => res.json(cartItem));
 	});
-
-// deleting an CartItem instance
-
+	
 router.delete("/:cart_item_id", passport.authenticate('jwt', { session: false }), (req, res) => {
 		CartItem.findByIdAndRemove(req.params.cart_item_id, err => {
 			if (err) res.send(err);

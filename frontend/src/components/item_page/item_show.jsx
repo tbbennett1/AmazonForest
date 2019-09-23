@@ -6,10 +6,10 @@ import { withRouter, Link } from 'react-router-dom';
 
 class ItemShow extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.handleClick = this.handleClick.bind(this);
-	}
+  constructor(props) {
+	super(props);
+	this.handleClick = this.handleClick.bind(this);
+  }
   componentDidMount(){
 	this.props.fetchItem(this.props.match.params.id);
   }
@@ -25,17 +25,15 @@ class ItemShow extends React.Component {
   }
 
   handleClick() {
-	  
-	  const { currentUser, item, createCartItem } = this.props;
-	//   debugger;
-	  const cartItem = Object.assign({}, {
-		  userId: currentUser.id,
-		  itemId: item._id
-	  });
-	  createCartItem(cartItem).then(() => this.setState({
-		  userId: cartItem.userId,
-		  itemId: cartItem.itemId
-	  }));
+	const { currentUser, item, createCartItem } = this.props;
+	const cartItem = Object.assign({}, {
+	  userId: currentUser.id,
+	  itemId: item._id
+	});
+	createCartItem(cartItem).then(() => this.setState({
+	  userId: cartItem.userId,
+	  itemId: cartItem.itemId
+	}));
   }
 
   EditButton(incoming){

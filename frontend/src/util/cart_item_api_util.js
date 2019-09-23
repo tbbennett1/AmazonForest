@@ -9,7 +9,6 @@ export const fetchCartItem = (id) => {
 };
 
 export const createCartItem = (data) => {
-	// debugger;
 	return axios.post('/api/cartitems', data);
 }
 
