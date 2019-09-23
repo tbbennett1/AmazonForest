@@ -20,7 +20,6 @@ class MainBody extends React.Component {
         this.props.fetchItems()
     }    
 
-
     render() {
         return(
             <div className="mainPage">
