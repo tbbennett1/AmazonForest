@@ -24,11 +24,11 @@ class ItemForm extends React.Component {
       category: this.state.category,
       image_url: this.state.image_url
     }
-debugger
+
     if (this.props.formType === 'edit') {
-      this.props.createItem(new_item, this.state._id)
+      this.props.editItem(new_item, this.state._id)
         .then(res => {
-          this.props.fetchItem(this.state._id)
+          this.props.history.push(`/items/${res.item.item._id}`);
         })
     } else {
       this.props.createItem(new_item)
@@ -46,7 +46,7 @@ debugger
         <div></div>
       )
     }
-    debugger
+    // debugger
     return (
       <div className="create-item-top">
         <h1>Hello {this.props.currentUser.name}, create your new product</h1>
