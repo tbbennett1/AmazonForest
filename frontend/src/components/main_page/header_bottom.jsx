@@ -54,7 +54,11 @@ class HeaderBottom extends React.Component{
     }
     
     render(){
-		// debugger
+        const { cartItems } = this.props
+        let number
+        if (cartItems){
+            number = cartItems.length
+        }
         return(
             <div className="headerBottom">
                 <div className="headerAddress">
@@ -76,7 +80,7 @@ class HeaderBottom extends React.Component{
                     {this.handleSignedIn()}
                     <Link to="/cart" className="headerCartContainer">
                         <img className="headerCartImage" src={Cart} alt="cart"/>
-                        <span className="headerItemsInCart">0{fetchCartItems.length}</span>
+                        <span className="headerItemsInCart">{number}</span>
                         <span>Cart</span>
                     </Link>
                 </div>
