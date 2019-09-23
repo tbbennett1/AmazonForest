@@ -10,6 +10,7 @@ class FooterOne extends React.Component {
     }
 
     render() {
+      debugger
         return(
             <div className="footer1">
                 <div className="back-to-top">
@@ -36,7 +37,7 @@ class FooterOne extends React.Component {
                     <div className="footer-group">
                         <div>Let Us help You</div>
                         <ul>
-                            <li><a href="">Your Account</a></li>
+                            <li><Link to="/users/:id">Your Account</Link></li>
                             <li><a href="">Your Orders</a></li>
                             <li><a href="">Help</a></li>
                         </ul>
