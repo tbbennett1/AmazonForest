@@ -129,8 +129,9 @@
   font-size: 14px;
 }
 
-.reviewInput:last-child {
+.commentSubmitForm textarea {
   width: 100%;
+  height: 100px;
 }
 
 .submitSeparator {

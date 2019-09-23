@@ -6,17 +6,16 @@ import {fetchReviews, createReview, deleteReview} from '../../actions/review_act
 import CommentSection from './comment_section';
 
 const mapStateToProps = (state, ownProps) => {
-  // let reviews;
-  // let itemReviews;
-  // // debugger;
+  let reviews;
+  let itemReviews;
 
-  // if(state.entities.reviews.data) {
-  //   reviews = state.entities.reviews.data;
-  // }
-
+  if(state.entities.reviews.data) {
+    reviews = state.entities.reviews.data;
+  }
+  // reviews is coming out as empty
   return {
     item: ownProps.item,
-    // reviews: reviews,
+    reviews: reviews,
     currentUser: state.session.user
   }
 }

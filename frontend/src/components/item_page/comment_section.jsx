@@ -30,6 +30,7 @@ class CommentSection extends React.Component {
             title: this.state.title, 
             comment: this.state.comment,
             userId: this.props.currentUser.id,
+            user: this.props.currentUser.name,
             itemId: this.props.item._id
         });
         this.props.createReview(this.props.item._id, review).then(() => this.setState({

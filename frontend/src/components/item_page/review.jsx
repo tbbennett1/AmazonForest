@@ -14,7 +14,7 @@ class Review extends React.Component {
 
         return(
             <div className="review">
-                Username
+                {this.props.review.user}
                 <div className="ratingAndTitle">
                     <div className="reviewRating">{this.props.review.rating}</div>
                     <div className="reviewTitle">{this.props.review.title}</div>

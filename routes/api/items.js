@@ -1,10 +1,10 @@
-const reviews = require('./reviews');
-
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
 // var AWS = require("aws-sdk");
+
+const reviews = require('./reviews');
 
 const Item = require('../../models/Item');
 
@@ -80,6 +80,8 @@ router.patch("/:id", (req, res) => {
       }
     })
 });
+
+router.use('/items/:itemId/reviews/', reviews)
 
 module.exports = router;
 
