@@ -5,6 +5,7 @@ import AccountDropdownContainer from './account_dropdown_container';
 
 import Cart from '../../assets/images/cart.png';
 import Location from '../../assets/images/location.png';
+import { fetchCartItems } from '../../util/cart_item_api_util';
 
 class HeaderBottom extends React.Component{
     constructor(props) {
@@ -53,6 +54,11 @@ class HeaderBottom extends React.Component{
     }
     
     render(){
+        const { cartItems } = this.props
+        let number
+        if (cartItems){
+            number = cartItems.length
+        }
         return(
             <div className="headerBottom">
                 <div className="headerAddress">
@@ -67,16 +73,16 @@ class HeaderBottom extends React.Component{
                 <section className="navbarButtons">
                     <div><Link to="/items">Today's Deals</Link></div>
                     <div>Your Amazon Forest</div>
-                    <div>Sell Your Pets</div>
+                    <div><Link to="/new_item">Sell Your Pet/Product</Link></div>
                 </section>
                 <div className="headerBottomRight">
                     
                     {this.handleSignedIn()}
-                    <div className="headerCartContainer">
+                    <Link to="/cart" className="headerCartContainer">
                         <img className="headerCartImage" src={Cart} alt="cart"/>
-                        <span className="headerItemsInCart">0</span>
+                        <span className="headerItemsInCart">{number}</span>
                         <span>Cart</span>
-                    </div>
+                    </Link>
                 </div>
             </div>
         )

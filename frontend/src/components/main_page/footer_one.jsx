@@ -1,6 +1,6 @@
 import React from 'react';
 import WhiteLogo from '../../assets/images/forest_icon_white.png'
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class FooterOne extends React.Component {
 
@@ -28,8 +28,8 @@ class FooterOne extends React.Component {
                     <div className="footer-group">
                         <div>Make Money with Us</div>
                         <ul>
-                            <li><a href="">Sell your pet</a></li>
-                            <li><a href="">Sell pet food</a></li>
+                  <li><Link to="/new_item">Sell Your Pet</Link></li>
+                  <li><Link to="/new_item">Sell Your Product</Link></li>
                         </ul>
                     </div>
 
