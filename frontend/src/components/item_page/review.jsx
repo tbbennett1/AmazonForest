@@ -6,6 +6,7 @@ class Review extends React.Component {
     }
 
     render() {
+        debugger;
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         let year = Number(this.props.review.date.slice(0,4));
         let monthIdx = Number(this.props.review.date.slice(5,7));
@@ -14,7 +15,7 @@ class Review extends React.Component {
 
         return(
             <div className="review">
-                {this.props.review.user}
+                <div className="ratingUsername">{this.props.review.user}</div>
                 <div className="ratingAndTitle">
                     <div className="reviewRating">{this.props.review.rating}</div>
                     <div className="reviewTitle">{this.props.review.title}</div>
