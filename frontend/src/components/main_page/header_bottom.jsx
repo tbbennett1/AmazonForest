@@ -25,17 +25,6 @@ class HeaderBottom extends React.Component{
             if (accountDropdown) accountDropdown.classList.remove("active")
         })
 	}
-
-	componentDidUpdate(prevProps, prevState) {
-		// debugger
-		// if (prevProps.match.params.id !== this.props.match.params.id) {
-		// 	this.props.fetchCartItem(this.props.match.params.id)
-		// }
-
-		// if (!this.props.item) {
-		// 	this.props.fetchItem(this.props.match.params.id)
-		// }
-	}
 	
     toggleAccountDropdown() {
         let screen = document.getElementById("smoke-screen")
