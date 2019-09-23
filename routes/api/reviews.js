@@ -7,10 +7,6 @@ const Review = require('../../models/Review');
 
 router.get("/", (req, res) => {
 	let itemId = req.query.itemId;
-<<<<<<< HEAD
-=======
-	console.log(itemId);
->>>>>>> 1f21f7e3a2b196101c223074e613c262bdae0adb
 	Review.find({ itemId: itemId })
 		.sort({ date: -1 })
 		.then(reviews => res.json(reviews))
@@ -29,6 +25,7 @@ router.get("/:id", (req, res) => {
 router.post('/',
 	passport.authenticate('jwt', { session: false }),
 	(req, res) => {
+		debugger;
 		const newReview = new Review({
 			rating: req.body.rating,
 			userId: req.user.id,
