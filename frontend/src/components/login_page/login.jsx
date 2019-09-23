@@ -34,7 +34,7 @@ class Login extends React.Component {
         const user = {
             password: this.state.password,
             email: this.state.email,
-        } 
+        }
         this.props.login(user)
     }
 

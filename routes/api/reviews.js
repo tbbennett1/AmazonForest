@@ -6,11 +6,13 @@ const passport = require('passport');
 const Review = require('../../models/Review');
 
 router.get("/", (req, res) => {
-  let itemId = req.body.itemId;
-  Review.find({ itemId: itemId })
-    .sort({ date: -1 })
-    .then(reviews => res.json(reviews))
-    .catch(err => res.status(404).json({ noReviewsFound: "No reviews found" }));
+	let itemId = req.query.itemId;
+	console.log(itemId);
+	Review.find({ itemId: itemId })
+		.sort({ date: -1 })
+		.then(reviews => res.json(reviews))
+		.catch(err => res.status(404).json({ noReviewsFound: "No reviews found" }));
+	// res.send(reviews);
 });
 
 router.get("/:id", (req, res) => {
@@ -29,7 +31,8 @@ router.post('/',
 			userId: req.user.id,
 			itemId: req.body.itemId,
 			title: req.body.title,
-			comment: req.body.comment
+			comment: req.body.comment,
+			user: req.body.user
 		});
 
 		newReview

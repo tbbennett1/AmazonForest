@@ -129,8 +129,9 @@
   font-size: 14px;
 }
 
-.reviewInput:last-child {
+.commentSubmitForm textarea {
   width: 100%;
+  height: 100px;
 }
 
 .submitSeparator {
@@ -149,6 +150,7 @@
 
 .commentSubmitForm button input {
   border: none;
+  outline: none;
   background-color: transparent;
   font-size: 14px;
 }
