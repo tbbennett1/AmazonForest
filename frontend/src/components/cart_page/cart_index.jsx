@@ -19,13 +19,14 @@ class CartIndex extends React.Component {
 			let itemSelector;
 			if (items) {
 				itemSelector = items.filter(item => item._id === itemId)[0]
-			}
-			totalPrice += itemSelector.price;
+
+			if (itemSelector) totalPrice += itemSelector.price;
 			
 			return <CartIndexItem key={cartItem._id} 
 								cartItem={cartItem} 
 								item={itemSelector}
 								removeCartItem={removeCartItem} />
+			}
 		});
 
 		return (

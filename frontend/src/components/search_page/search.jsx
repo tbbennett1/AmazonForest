@@ -51,7 +51,7 @@ class Search extends React.Component {
         if (this.state.searchTerm) searchTermSplit = this.state.searchTerm.split(" ").map( term => term.toLowerCase())
         if (items && items[0] && searchTermSplit) {
             filtered = items[0].filter(item => {
-                return searchTermSplit.some(word => {
+                return searchTermSplit.every(word => {
                     return item.title.toLowerCase().match(word) || item.description.toLowerCase().match(word)
                  })
             })
