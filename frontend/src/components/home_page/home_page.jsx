@@ -4,7 +4,10 @@ import 'react-multi-carousel/lib/styles.css';
 import Horse from '../../assets/images/splash/horse-splash.jpg'
 import User from '../../assets/images/default_user.jpg'
 import { Link } from 'react-router-dom';
-import Dog from '../../assets/images/dog.png'
+import FoodImg from '../../assets/images/food.png';
+import Cart from '../../assets/images/cart2.png'
+import Cat from '../../assets/images/cat.png'
+import Gear from '../../assets/images/gear.png'
 import { CustomRightArrow, CustomLeftArrow, CustomLeftSplashArrow, CustomRightSplashArrow } from './custom_arrows/arrows.js'
 
 class HomePage extends React.Component{
@@ -25,20 +28,20 @@ class HomePage extends React.Component{
                 <p>Recommendations for you</p>
                 <div className="home-page-user-details-4x4">
                     <Link to="/cart" className="home-page-user-details-box">
-                        <div><img src="https://bigbasketco.com/wp-content/uploads/wire-cart-transparent.png" alt=""/></div>
+                        <div><img src={Cart} alt=""/></div>
                         <div><p>Your Cart</p></div>
                     </Link>
-                    <Link to="/cart" className="home-page-user-details-box">
-                            <div><img src={Dog} alt="" /></div>
+                    <Link to={ {pathname: "/items", pets: true} }className="home-page-user-details-box">
+                            <div><img src={Cat} alt="" /></div>
                             <div><p>Pets</p></div>
                     </Link>
-                    <Link to="/cart" className="home-page-user-details-box">
-                        <div><img src="https://bigbasketco.com/wp-content/uploads/wire-cart-transparent.png" alt="" /></div>
-                        <div><p>Your Cart</p></div>
+                    <Link to={{ pathname: "/items", food: true }} className="home-page-user-details-box">
+                        <div><img src={FoodImg} alt="" /></div>
+                        <div><p>Food</p></div>
                     </Link>
-                    <Link to="/cart" className="home-page-user-details-box">
-                        <div><img src={Dog} alt="" /></div>
-                        <div><p>Pets</p></div>
+                    <Link to={{ pathname: "/items", accessories: true }} className="home-page-user-details-box">
+                        <div><img src={Gear} alt="" /></div>
+                        <div><p>Accessories</p></div>
                     </Link>
                 </div>
             </div>
@@ -51,10 +54,11 @@ class HomePage extends React.Component{
         }
     }
 
-    renderRandomItem(){
+    renderRandomItem(value){
         const { items } = this.props
         let randItem
-        if (items && items[0]) {
+        let filtered
+        if (items && items[0] && !value) {
             randItem = items[0][Math.floor(Math.random() * items.length)]
         
         return <div className="home-page-card-item">
@@ -65,6 +69,18 @@ class HomePage extends React.Component{
                 <div>${randItem.price}</div>
                 <p>{randItem.title}</p>
             </div>
+            </div>
+        } else if (items && items[0] && value) {
+            filtered = items[0].filter(item => item.category === value)
+            randItem = filtered[Math.floor(Math.random() * filtered.length)]
+            return <div className="home-page-card-item">
+                <div className="home-page-card-item-img-wrapper">
+                    <Link to={`/items/${randItem._id}`}><img src={randItem.image_url} alt="" /></Link>
+                </div>
+                <div className="home-page-card-price-name">
+                    <div>${randItem.price}</div>
+                    <p>{randItem.title}</p>
+                </div>
             </div>
         }
 
@@ -134,6 +150,11 @@ class HomePage extends React.Component{
                 // },
             };
 
+            let constructed = filtered.map(item => <div key={item._id} className="home-page-item-list-item">
+                <div><Link to={`/items/${item._id}`}><img src={item.image_url} alt="" /></Link></div>
+                <div>${item.price}</div>
+            </div>)
+
             return <div className="home-page-item-list">
                 <Carousel
                     customRightArrow={<CustomRightArrow />}
@@ -144,11 +165,7 @@ class HomePage extends React.Component{
                     infinite={false}
                     slidesToSlide={8}
                 >
-                    {filtered.map(item => <div key={item._id} className="home-page-item-list-item">
-                        <div><Link to={`/items/${item._id}`}><img src={item.image_url} alt=""/></Link></div>
-                        <div>${item.price}</div>
-                        </div>)
-                    }
+                    {constructed}
                 </Carousel>
             </div>
         }
@@ -188,7 +205,8 @@ class HomePage extends React.Component{
                 customRightArrow={<CustomRightSplashArrow />}
                 customLeftArrow={<CustomLeftSplashArrow />}
                 >
-                    <div className="home-splash-item"><img src={Horse} alt=""/></div>
+                    <div className="home-splash-item"><img src={Horse} alt="" />
+                    <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
                     <div>Item 2</div>
                     <div>Item 3</div>
                     <div>Item 4</div>
@@ -203,13 +221,13 @@ class HomePage extends React.Component{
                 <div className="home-page-card">
                     <div className="home-page-card-details">
                         <h2>Renewed pets</h2>
-                        {this.renderSpecificItem("_id", "5d85641aa7237be00113f767")}
+                        {this.renderRandomItem("category1")}
                     </div>
                 </div>
                 <div className="home-page-card">
                     <div className="home-page-card-details">
                     <h2>Forest's fashion</h2>
-                    {this.renderSpecificItem("_id", "5d856596a7237be00113f768")}
+                    {this.renderRandomItem("accessories")}
                     </div>
                 </div>
                 <div className="home-page-card">
