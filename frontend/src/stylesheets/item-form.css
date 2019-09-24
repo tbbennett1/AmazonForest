@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  font-family: arial;
+  font-family: 'ember-rg';
   margin: 40px;
 }
 
@@ -21,7 +21,7 @@
   width: 100%;
   border: 1px solid lightgray;
   border-radius: 5px;
-  box-shadow: 5px 5px lightgray;
+  box-shadow: 2.5px 2.5px lightgray;
 }
 
 .form-label{

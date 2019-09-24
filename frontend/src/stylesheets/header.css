@@ -160,6 +160,17 @@
 .accountDropdown a {
     text-decoration: none;
     color: #05a;
+    padding: 5px 5px;
+}
+
+.accountDropdown a:hover{
+  text-decoration: none;
+  color: rgb(0, 125, 250);
+}
+
+.ad-div{
+  display: flex;
+  flex-direction: column;
 }
 
 .dropdownTriangle {

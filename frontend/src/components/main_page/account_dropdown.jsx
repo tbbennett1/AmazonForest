@@ -26,11 +26,14 @@ class AccountDropdown extends React.Component {
             )
         } else {
             return(
-                <Link to={"/login"}>
-                    <button className="form-orange-button" onClick={this.handleClick}>   
-                            Sign Out
-                    </button>
-                </Link>
+                <div className="ad-div">
+                  <Link to={`/users/${this.props.currentUser.id}`}>Your Amazon Forest</Link>
+                  <Link to={"/login"}>
+                      <button className="form-orange-button" onClick={this.handleClick}>   
+                              Sign Out
+                      </button>
+                  </Link>
+                </div>
             )
         }
     }

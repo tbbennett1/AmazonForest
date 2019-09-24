@@ -16,6 +16,7 @@ import '../stylesheets/item-show/item-show.css'
 import '../stylesheets/item-index/item-index.css'
 import '../stylesheets/item-form.css'
 import '../stylesheets/home.css'
+import '../stylesheets/user-profile.css'
 import main_body_container from './main_page/main_body_container';
 
 const App = () => (
