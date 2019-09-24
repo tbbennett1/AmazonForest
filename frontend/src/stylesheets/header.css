@@ -21,11 +21,12 @@
 
 .headerAddress button {
     display: flex;
-        padding: 0px 5px 0 5px;
+    padding: 0px 5px 0 5px;
     /* position: relative; */
     /* bottom: 10px; */
     background-color: transparent;
     border: none;
+    outline: none;
     cursor: pointer;
     height: 50px;
 }

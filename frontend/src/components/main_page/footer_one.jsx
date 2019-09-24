@@ -10,7 +10,6 @@ class FooterOne extends React.Component {
     }
 
     render() {
-      debugger
         return(
             <div className="footer1">
                 <div className="back-to-top">
