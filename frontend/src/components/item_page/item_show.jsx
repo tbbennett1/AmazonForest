@@ -4,14 +4,20 @@ import CommentSectionContainer from './comment_section_container';
 import ReactImageMagnify from 'react-image-magnify';
 import { withRouter, Link } from 'react-router-dom';
 
+import Star_Filled from '../../assets/images/star_filled.svg';
+import StarEmpty from '../../assets/images/star_empty.svg';
+
 class ItemShow extends React.Component {
 
   constructor(props) {
-	super(props);
-	this.handleClick = this.handleClick.bind(this);
+    super(props);
+    this.state = { }
+    this.handleClick = this.handleClick.bind(this);
+    this.currentRating = this.currentRating.bind(this);
   }
+
   componentDidMount(){
-	this.props.fetchItem(this.props.match.params.id);
+    this.props.fetchItem(this.props.match.params.id);
     window.scrollTo(0, 0);
   }
 
@@ -31,6 +37,7 @@ class ItemShow extends React.Component {
 	  userId: currentUser.id,
 	  itemId: item._id
 	});
+
 	createCartItem(cartItem).then(() => this.setState({
 	  userId: cartItem.userId,
 	  itemId: cartItem.itemId
@@ -51,6 +58,9 @@ class ItemShow extends React.Component {
     )
   }
 
+  currentRating(avg) {
+    this.setState({rating: avg})
+  }
 
   render() {
     if(!this.props.item){
@@ -58,8 +68,23 @@ class ItemShow extends React.Component {
         <div></div>
       )
     }
+
     const item = this.props.item;
-    const reviews = this.props.reviews;
+    
+    const stars = [];
+    let i = 0;
+
+    while(i < this.state.rating) {
+      stars.push(<img src={Star_Filled} alt="star" />);
+      i++;
+    }
+    while(i < 5) {
+      stars.push(<img src={StarEmpty} alt="empty star"/>);
+      i++;
+    }
+
+    let reviewStars = this.state.rating ? <div className="reviewShowRating">{stars}</div> : <div className="noReviews">No reviews yet</div>;
+
     return (
       <div>
         <div className="item-show-top">
@@ -84,11 +109,13 @@ class ItemShow extends React.Component {
           </div>
           <div className="item-center-col">
             <h1 className="item-title">{item.title}</h1>
+            <p className="item-username">By {this.props.item.user}</p>
+            { reviewStars }
             <h4>Price: 
               <span className="item-price"> ${item.price}</span>
             </h4>
             <p>{item.description}</p>
-            <CommentSectionContainer item={this.props.item} />
+            <CommentSectionContainer rating={this.currentRating} item={this.props.item} />
           </div>
           <div className="item-right-col">
             <span className="item-price"> ${item.price}</span>

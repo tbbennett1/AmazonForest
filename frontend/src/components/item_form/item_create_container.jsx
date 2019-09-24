@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
       price: 0,
       image_url: "",
       sellerId: "",
-      category: "category1"
+      category: "category1",
+      user: ""
     },
     formType: "new"
   };

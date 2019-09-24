@@ -16,13 +16,13 @@ class ItemForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     let new_item = {
       title: this.state.title,
       description: this.state.description,
       price: this.state.price,
       category: this.state.category,
-      image_url: this.state.image_url
+      image_url: this.state.image_url,
+      user: this.props.currentUser.name
     }
 
     if (this.props.formType === 'edit') {
