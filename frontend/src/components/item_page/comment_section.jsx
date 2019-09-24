@@ -9,7 +9,7 @@ class CommentSection extends React.Component {
         super(props);
         this.state = {title: "", comment: "", rating: 0, 
             star_one: false, star_two: false, star_three: false, 
-            star_four: false, star_five: false,
+            star_four: false, star_five: false, 
             rating_error: false, title_error: false, comment_error: false};
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleStarOne = this.handleStarOne.bind(this);
@@ -20,7 +20,7 @@ class CommentSection extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchReviews(this.props.item._id)
+        this.props.fetchReviews(this.props.item._id);
     }
 
     update(field) {
@@ -95,6 +95,12 @@ class CommentSection extends React.Component {
         if(!this.props.reviews) {
             return <div></div>
         }
+
+        let avg_rating = 0;
+        for(let i = 0; i < this.props.reviews.length; i++) {
+            avg_rating += this.props.reviews[i].rating;
+        }
+        this.props.rating(avg_rating / this.props.reviews.length);
 
         const star_one = this.state.star_one ? Star_Filled : StarEmpty;
         const star_two = this.state.star_two ? Star_Filled : StarEmpty;

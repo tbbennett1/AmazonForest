@@ -43,7 +43,8 @@ router.post('/',
       description: req.body.description,
       price: req.body.price,
       image_url: req.body.image_url,
-      category: req.body.category
+      category: req.body.category,
+      user: req.body.user
     });
 
     newItem
@@ -61,7 +62,8 @@ router.patch("/:id", (req, res) => {
         description: req.body.description,
         price: req.body.price,
         category: req.body.category,
-        image_url: req.body.image_url
+        image_url: req.body.image_url,
+        user: req.body.user
       }
     }).then(item => {
       if (item) {
