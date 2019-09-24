@@ -12,6 +12,7 @@
   width: 800px;
   flex: 1 1 auto;
   margin: 40px;
+  align-items: flex-start;
 }
 
 .create-item-form{
