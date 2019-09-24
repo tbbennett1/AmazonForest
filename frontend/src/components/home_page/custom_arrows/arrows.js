@@ -8,7 +8,7 @@ export const CustomRightArrow = ({ onClick, ...rest }) => {
         carouselState: { currentSlide, deviceType },
     } = rest;
     // onMove means if dragging or swiping in progress.
-    return <div class="custom-right" onClick={() => onClick()}>
+    return <div className="custom-right" onClick={() => onClick()}>
         <MdChevronRight/>
     </div>;
 };
@@ -19,7 +19,7 @@ export const CustomLeftArrow = ({ onClick, ...rest }) => {
         // state: { currentSlide, deviceType },
     } = rest;
     // onMove means if dragging or swiping in progress.
-    return <div class="custom-left" onClick={() => onClick()}>
+    return <div className="custom-left" onClick={() => onClick()}>
         <MdChevronLeft/>
     </div>;
 };
@@ -30,7 +30,7 @@ export const CustomRightSplashArrow = ({ onClick, ...rest }) => {
         carouselState: { currentSlide, deviceType },
     } = rest;
     // onMove means if dragging or swiping in progress.
-    return <div class="custom-right-splash" onClick={() => onClick()}>
+    return <div className="custom-right-splash" onClick={() => onClick()}>
         <MdChevronRight />
     </div>;
 };
@@ -41,7 +41,7 @@ export const CustomLeftSplashArrow = ({ onClick, ...rest }) => {
         // state: { currentSlide, deviceType },
     } = rest;
     // onMove means if dragging or swiping in progress.
-    return <div class="custom-left-splash" onClick={() => onClick()}>
+    return <div className="custom-left-splash" onClick={() => onClick()}>
         <MdChevronLeft />
     </div>;
 };

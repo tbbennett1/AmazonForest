@@ -25,12 +25,11 @@ export const fetchCartItem = (id) => dispatch => (
 export const createCartItem = (data) => dispatch => (
 	CartItemApiUtil.createCartItem(data)
 	.then((cartItem) => {
-		debugger
 		dispatch(receiveCartItem(cartItem.data))
 	})
 );
 
 export const removeCartItem = (id) => dispatch => (
-	CartItemApiUtil.removeCartItem(id).then((cartItem) => dispatch({ type: REMOVE_CART_ITEM, cartItemId: cartItem.id }))
+	CartItemApiUtil.removeCartItem(id).then((cartItem) => dispatch({ type: REMOVE_CART_ITEM, cartItemId: id }))
 );
 	

@@ -5,7 +5,7 @@ import AccountDropdownContainer from './account_dropdown_container';
 
 import Cart from '../../assets/images/cart.png';
 import Location from '../../assets/images/location.png';
-import { fetchCartItems } from '../../util/cart_item_api_util';
+// import { fetchCartItems } from '../../util/cart_item_api_util';
 
 class HeaderBottom extends React.Component{
     constructor(props) {
@@ -24,8 +24,8 @@ class HeaderBottom extends React.Component{
             let accountDropdown = document.getElementById("accountDropdown")
             if (accountDropdown) accountDropdown.classList.remove("active")
         })
-    }
-
+	}
+	
     toggleAccountDropdown() {
         let screen = document.getElementById("smoke-screen")
         if (screen) screen.classList.add("active")
