@@ -15,7 +15,6 @@ class Review extends React.Component {
     }
 
     handleClick() {
-        debugger;
         const new_review = this.props.review;
         new_review.helpful.push(this.props.currentUser.id);
 

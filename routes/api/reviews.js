@@ -41,7 +41,6 @@ router.post('/',
 	});
 
 router.patch("/:id", (req, res) => {
-	debugger;
 	Review.findOneAndUpdate({ _id: req.params.id },
 	  {
 		$set:
@@ -53,7 +52,6 @@ router.patch("/:id", (req, res) => {
 			helpful: req.body.helpful
 		}
 	}).then(review => {
-		debugger;
 		console.log(review);
 	})
 });
