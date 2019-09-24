@@ -56,7 +56,7 @@
 
 .navbarButtons {
     display: flex;
-    max-height: 40px;
+    /* max-height: 40px; */
 }
 
 .navbarButtons div {
@@ -306,9 +306,13 @@
     padding: 0 11.250px;
 }
 
+.searchBar input:focus{
+    outline: none;
+}
+
 .searchBar {
     height: 35px;
-    margin-top: 12px;
+    margin-top: 5px;
     margin-right: 25px;
     display: flex;
     width: 100%;
@@ -353,6 +357,12 @@
     font-family: 'ember-rg'
 }
 
+.searchBar:focus-within {
+    border-color: #e77600;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
 .search-suggestions{
     display: none;
     flex-direction: column;
@@ -377,6 +387,7 @@
     border-color: transparent;
     border-radius: 0px 5px 5px 0px;
     cursor: pointer;
+    object-fit: scale-down;
 }
 
 .searchBar img:hover {

@@ -11,6 +11,8 @@
 
 .footer-links-groups{
     display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .footer-group{

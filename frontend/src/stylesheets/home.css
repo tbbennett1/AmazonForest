@@ -4,7 +4,7 @@
     align-items: center;
     margin: 0 auto;
     height: 1100px;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
 }
 
@@ -172,6 +172,7 @@ position: absolute;
 .home-page-card-details-last{
     padding: 20px 0 15px 0;
     background: white;
+    display: flex;
     height: 25%;
     width: 100%;
 }
@@ -240,7 +241,7 @@ position: absolute;
 
 .home-page-card-not-logged {
     padding: 0 20px 0 20px;
-    width: 310px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -276,9 +277,8 @@ position: absolute;
     margin-top: 15px;
 }
 
-.home-page-item-list 
 
-.home-page-item-list-item {
+.carousel-list-item{
     display: flex;
     flex-direction: column;
     margin-right: 10px;
@@ -382,4 +382,86 @@ position: absolute;
     left: -7px;
     font-size: 60px;
     color: white;
+}
+
+@media only screen and (max-width: 1500px) {
+.home-page{
+    height: 1200px;
+}
+
+.home-page-carousel{
+    width: 100%;
+}
+
+.home-page-card-rows{
+    top: -260px;
+    min-width: 1000px;
+    flex-wrap:wrap;
+}
+
+.home-page-card-rows > div:last-child{
+    min-height: 140px;
+    height: 348px;
+    flex: 1 0 290px;
+    min-width: 313.33px;
+}
+
+.home-page-card-details-last{
+    height: 30%;
+}
+
+.carousel-list-item .home-page-item-list-item{
+    margin-right: 0px!important;
+
+}
+
+
+.home-page-entire-row{
+    top: -260px;
+    width: 100%;
+}
+
+
+}
+
+@media only screen and (max-width: 1280px) {
+
+.headerTop span{
+    display: none;
+}
+
+.headerAddress {
+    display: none;
+}
+
+
+.home-page-card-details-last{
+    height: 30%;
+}
+
+.home-page-card-rows > div:last-child{
+    margin-top: 20px;
+    min-height: 140px;
+    height: 348px;
+    flex: 1 0 290px;
+    min-width: 313.33px;
+}
+
+
+.home-page-entire-row{
+    top: -470px;
+    width: 100%;
+}
+
+}
+
+@media only screen and (max-width: 804px) {
+    .navbarButtons{
+        /* max-height: 0; */
+    }
+
+    .accountDropdown{
+        top: 67px;
+    }
+
 }
