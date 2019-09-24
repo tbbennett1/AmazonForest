@@ -8,6 +8,7 @@ class CartIndex extends React.Component {
 	componentDidMount() {
 		const userId = this.props.currentUser.id;
 		this.props.fetchCartItems(userId);
+    window.scrollTo(0, 0);
 	}
 
 	componentDidUpdate() {
