@@ -38,6 +38,10 @@ export const createReview = (review) => dispatch => {
 	return ReviewApiUtil.createReview(review).then((review) => dispatch({ type: RECEIVE_REVIEW, review }))
 };
 
+export const updateReview = (review, id) => dispatch => {
+  return ReviewApiUtil.updateReview(review, id).then(review => dispatch(receiveReview(review)))
+};
+
 // export const deleteReview = (id) => dispatch => (
 // 	ReviewApiUtil.deleteReview(id).then((review) => dispatch({ type: REMOVE_REVIEW, reviewId: review.id }))
 // );

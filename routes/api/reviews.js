@@ -40,4 +40,20 @@ router.post('/',
 			.then(review => res.json(review));
 	});
 
+router.patch("/:id", (req, res) => {
+	Review.findOneAndUpdate({ _id: req.params.id },
+	  {
+		$set:
+		{
+			rating: req.body.rating,
+			itemId: req.body.itemId,
+			title: req.body.title,
+			comment: req.body.comment,
+			helpful: req.body.helpful
+		}
+	}).then(review => {
+		console.log(review);
+	})
+});
+
 module.exports = router;
