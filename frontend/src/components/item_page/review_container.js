@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import {fetchUsers} from '../../actions/user_actions';
+import {fetchReview} from '../../actions/review_actions';
 
 import Review from './review';
 
@@ -10,12 +11,13 @@ const mapStateToProps = (state, ownProps) => {
 
     return{
         review: review,
-        // user: user
+        currentUser: state.session.user
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        fetchReview: (id) => dispatch(fetchReview(id)),
         fetchUsers: () => dispatch(fetchUsers())
     }
 }
