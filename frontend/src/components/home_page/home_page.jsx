@@ -8,6 +8,9 @@ import FoodImg from '../../assets/images/food.png';
 import Cart from '../../assets/images/cart2.png'
 import Cat from '../../assets/images/cat.png'
 import Gear from '../../assets/images/gear.png'
+import Bear from '../../assets/images/splash/bear.gif'
+import Giraffe from '../../assets/images/splash/giraffe.jpg'
+import Harambe from '../../assets/images/splash/harambe.jpg'
 import { CustomRightArrow, CustomLeftArrow, CustomLeftSplashArrow, CustomRightSplashArrow } from './custom_arrows/arrows.js'
 
 class HomePage extends React.Component{
@@ -204,17 +207,21 @@ class HomePage extends React.Component{
             <div className="home-page-carousel">
                 <Carousel 
                 responsive={responsive}
-                autoPlay={false}
-                autoPlaySpeed={5000}
+                autoPlay={true}
+                autoPlaySpeed={7000}
                 infinite={true}
                 customRightArrow={<CustomRightSplashArrow />}
                 customLeftArrow={<CustomLeftSplashArrow />}
                 >
+                    <div className="home-splash-item"><img className="bear" src={Giraffe} alt="" />
+                    <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
                     <div className="home-splash-item"><img src={Horse} alt="" />
                     <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
-                    <div>Item 2</div>
-                    <div>Item 3</div>
-                    <div>Item 4</div>
+                    <div className="home-splash-item"><img className="bear" src={Bear} alt="" />
+                    <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
+                    <div className="home-splash-item"><img className="bear" src={Harambe} alt="" />
+                    <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
+
                 </Carousel>
             </div>
             <div className="home-page-card-rows">
