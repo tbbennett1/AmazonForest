@@ -4,13 +4,11 @@ import CartIndexItem from '../cart_page/cart_index_item';
 
 class UserProfileCart extends React.Component{
   render(){
-    debugger
-    let itemLists = this.props.items.map((cartItem) => {
-      debugger
-      let item = this.props.items[cartItem.itemId];
+    let itemLists = this.props.items.map((item) => {
+      let cartItem = Object.values(this.props.cartItems).filter(cartI => cartI.itemId === item._id);
       return <CartIndexItem 
               key={cartItem._id}
-              cartItem={cartItem}
+              cartItem={cartItem[0]}
               item={item}
               removeCartItem={this.props.removeCartItem} />
     });
