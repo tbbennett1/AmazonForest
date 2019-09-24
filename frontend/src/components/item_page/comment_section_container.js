@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   if(state.entities.reviews.data) {
     reviews = state.entities.reviews.data;
   }
-  // reviews is coming out as empty
+
   return {
     item: ownProps.item,
     reviews: reviews,
@@ -24,8 +24,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchItem: (id) => dispatch(fetchItem(id)),
     fetchReviews: (id) => dispatch(fetchReviews(id)),
-    createReview: (review) => dispatch(createReview(review)),
-    // deleteReview: (id) => dispatch(deleteReview(id))
+    createReview: (review) => dispatch(createReview(review))
   }
 }
 

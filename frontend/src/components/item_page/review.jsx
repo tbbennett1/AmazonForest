@@ -19,9 +19,6 @@ class Review extends React.Component {
         new_review.helpful.push(this.props.currentUser.id);
 
         this.props.updateReview(new_review, this.props.review._id)
-        //     .then(res => {
-        //     this.props.history.push(`/reviews/${res.review.review._id}`);
-        // })
     }
 
     render() {

@@ -6,6 +6,9 @@ const ItemSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'users'
 	},
+	user: {
+		type: String
+	},
 	price: {
 		type: Number,
 		required: true
