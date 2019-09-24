@@ -2,10 +2,21 @@ import React from 'react';
 
 import Star_Filled from '../../assets/images/star_filled.svg';
 import StarEmpty from '../../assets/images/star_empty.svg';
+import DefaultUser from '../../assets/images/default_user.jpg';
 
 class Review extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchReview(this.props.review._id);
+    }
+
+    handleClick() {
+        debugger;
+        this.props.review.helpful.push(this.props.currentUser.id);
     }
 
     render() {
@@ -26,15 +37,22 @@ class Review extends React.Component {
             i++;
         }
 
+        const helpful = this.props.review.helpful.includes(this.props.currentUser.id) ? <p className="helpfulThankYou">Thank you for your feedback</p> : <button className="helpfulButton" onClick={this.handleClick}>Helpful</button>
+
         return(
             <div className="review">
-                <div className="ratingUsername">{this.props.review.user}</div>
+                <div className="usernameAndIcon">
+                    <img className="reviewUserIcon" src={DefaultUser} alt="user icon" />
+                    <div className="ratingUsername">{this.props.review.user}</div>
+                </div>
                 <div className="ratingAndTitle">
                     <div className="reviewShowRating">{stars}</div>
                     <div className="reviewTitle">{this.props.review.title}</div>
                 </div>
                 <div className="reviewDate">{month} {day}, {year}</div>
                 <div className="reviewComment">{this.props.review.comment}</div>
+                <div className="reviewHelpful">{this.props.review.helpful.length} people found this helpful</div>
+                <div>{helpful}</div>
             </div>
         )
     }

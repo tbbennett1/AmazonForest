@@ -31,7 +31,8 @@ router.post('/',
 			itemId: req.body.itemId,
 			title: req.body.title,
 			comment: req.body.comment,
-			user: req.body.user
+			user: req.body.user,
+			helpful: req.body.helpful
 		});
 
 		newReview
