@@ -5,9 +5,15 @@ class Search extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            searchTerm: ""
+            searchTerm: "",
+            pets: false,
+            accessories: false,
+            food: false,
+            items: "",
+            filtered: ""
         }
         this.handleSearchQuery = this.handleSearchQuery.bind(this)
+        this.toggleFilter = this.toggleFilter.bind(this)
     }
 
 
@@ -37,11 +43,53 @@ class Search extends React.Component {
     componentDidUpdate(prevProps, prevState){
         if (prevProps.location.search != this.props.history.location.search){
             this.handleSearchQuery()
+
+            const petsbox = document.getElementById("pets")
+            if (petsbox) {
+                petsbox.checked = false
+            }
+
+            const foodbox = document.getElementById("food")
+            if (foodbox) {
+                foodbox.checked = false
+            }
+
+            const accessoriesbox = document.getElementById("accessories")
+            if (accessoriesbox) {
+                accessoriesbox.checked = false
+            }
         }
+
+        if (prevState.searchTerm != this.state.searchTerm) {
+            this.renderSearchResults()
+        }
+        
+        if (!this.state.filtered){
+        this.renderSearchResults()
+        }
+
     }
 
     componentDidMount(){
         this.handleSearchQuery()
+    }
+
+    toggleFilter(value, key) {
+        this.setState({ [key]: value.target.checked })
+        if (key) {
+            this.filterPets(key)
+        } else {
+            this.setState({ filtered: this.state.items })
+        }
+    }
+
+    filterPets(key) {
+        let category
+        if (key === "pets") category = "category1"
+        if (key === "accessories") category = "accessories"
+        if (key === "food") category = "category5"
+        let filtered = this.state.items.filter(item => item.category == category)
+        this.setState({ filtered: filtered })
     }
 
     renderSearchResults(){
@@ -55,18 +103,36 @@ class Search extends React.Component {
                     return item.title.toLowerCase().match(word) || item.description.toLowerCase().match(word)
                  })
             })
+            if (filtered) {
+                this.setState({ items: filtered,
+                filtered:filtered })
+            }
             itemLists = filtered.map(item => <ItemIndexItem key={item._id} item={item} />)
         }
 
-        return itemLists
+    }
+
+    renderFilteredResults(){
+        if (this.state.filtered && this.state.filtered.length > 0) {
+            return this.state.filtered.map(item => <ItemIndexItem key={item._id} item={item} />)
+        }
     }
 
     render(){
         return(
             <div className="item-index">
                 <div className="item-lists">
+                    <div className="item-list-filter">
+                        <div className="item-list-filter-wrapper">
+                            <h2>Category</h2>
+                            <label className="container">Pets<input name="radio" id="pets" type="radio" value="pets" onChange={value => this.toggleFilter(value, "pets")} /><span className="checkmark" /></label>
+                            <label className="container">Accessories<input name="radio" id="accessories" type="radio" value="accessories" onChange={value => this.toggleFilter(value, "accessories")} /><span className="checkmark" /></label>
+                            <label className="container">Food<input name="radio" id="food" type="radio" value="food" onChange={value => this.toggleFilter(value, "food")} /><span className="checkmark" /></label>
+                            <label className="container">All<input name="radio" id="special-box" type="radio" value="accessories" onChange={value => this.toggleFilter(value)} /><span className="checkmark" /></label>
+                        </div>
+                    </div>
                     <ul>
-                        {this.renderSearchResults()}
+                        {this.renderFilteredResults()}
                     </ul>
                 </div>
             </div>

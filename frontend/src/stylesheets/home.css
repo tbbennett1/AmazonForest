@@ -38,6 +38,15 @@
     height: 100%;
 }
 
+.floating-clickable {
+position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 81px;
+    width: 90%;
+    height: 40%;
+}
+
 .home-page-card-rows{
     display: flex;
     max-width: 1480px;
