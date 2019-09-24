@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
 	}
 	
     return {
+        currentUser: state.session.user,
         items: itemList
     }
 }

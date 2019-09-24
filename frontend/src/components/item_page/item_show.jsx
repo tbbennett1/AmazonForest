@@ -17,7 +17,8 @@ class ItemShow extends React.Component {
   }
 
   componentDidMount(){
-      this.props.fetchItem(this.props.match.params.id);
+    this.props.fetchItem(this.props.match.params.id);
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps, prevState){

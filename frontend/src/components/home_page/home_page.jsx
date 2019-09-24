@@ -136,14 +136,18 @@ class HomePage extends React.Component{
                 //     breakpoint: { max: 4000, min: 3000 },
                 //     items: 1,
                 // },
-                desktop: {
-                    breakpoint: { max: 4000, min: 0 },
+                highRes: {
+                    breakpoint: { max: 4000, min: 1500 },
                     items: 8,
                 },
-                // tablet: {
-                //     breakpoint: { max: 1024, min: 464 },
-                //     items: 1,
-                // },
+                medRes: {
+                    breakpoint: { max: 1500, min: 1280 },
+                    items: 6,
+                },
+                lowRes: {
+                    breakpoint: { max: 1280, min: 464 },
+                    items: 4,
+                },
                 // mobile: {
                 //     breakpoint: { max: 464, min: 0 },
                 //     items: 1,
@@ -163,6 +167,7 @@ class HomePage extends React.Component{
                     autoPlay={false}
                     autoPlaySpeed={5000}
                     infinite={false}
+                    itemClass={"carousel-list-item"}
                     slidesToSlide={8}
                 >
                     {constructed}
