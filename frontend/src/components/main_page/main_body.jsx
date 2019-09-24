@@ -22,6 +22,12 @@ class MainBody extends React.Component {
         this.props.fetchItems()
     }    
 
+    componentDidUpdate(prevProps){
+        if (JSON.stringify(prevProps.items[0]) != JSON.stringify(this.props.items[0])){
+            this.props.fetchItems()
+        }
+    }
+
     render() {
         return(
             <div className="mainPage">

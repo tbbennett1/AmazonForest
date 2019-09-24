@@ -9,6 +9,7 @@ class Search extends React.Component {
             pets: false,
             accessories: false,
             food: false,
+            toys: false,
             items: "",
             filtered: ""
         }
@@ -58,6 +59,11 @@ class Search extends React.Component {
             if (accessoriesbox) {
                 accessoriesbox.checked = false
             }
+
+            const toysbox = document.getElementById("toys")
+            if (toysbox) {
+                toysbox.checked = false
+            }
         }
 
         if (prevState.searchTerm != this.state.searchTerm) {
@@ -88,6 +94,7 @@ class Search extends React.Component {
         if (key === "pets") category = "category1"
         if (key === "accessories") category = "accessories"
         if (key === "food") category = "category5"
+        if (key === "toys") category = key
         let filtered = this.state.items.filter(item => item.category == category)
         this.setState({ filtered: filtered })
     }
@@ -125,9 +132,10 @@ class Search extends React.Component {
                     <div className="item-list-filter">
                         <div className="item-list-filter-wrapper">
                             <h2>Category</h2>
-                            <label className="container">Pets<input name="radio" id="pets" type="radio" value="pets" onChange={value => this.toggleFilter(value, "pets")} /><span className="checkmark" /></label>
                             <label className="container">Accessories<input name="radio" id="accessories" type="radio" value="accessories" onChange={value => this.toggleFilter(value, "accessories")} /><span className="checkmark" /></label>
                             <label className="container">Food<input name="radio" id="food" type="radio" value="food" onChange={value => this.toggleFilter(value, "food")} /><span className="checkmark" /></label>
+                            <label className="container">Pets<input name="radio" id="pets" type="radio" value="pets" onChange={value => this.toggleFilter(value, "pets")} /><span className="checkmark" /></label>
+                            <label className="container">Toys<input name="radio" id="toys" type="radio" value="toys" onChange={value => this.toggleFilter(value, "toys")} /><span className="checkmark" /></label>
                             <label className="container">All<input name="radio" id="special-box" type="radio" value="accessories" onChange={value => this.toggleFilter(value)} /><span className="checkmark" /></label>
                         </div>
                     </div>
