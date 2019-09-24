@@ -15,7 +15,7 @@ import ItemEditContainer from '../item_form/item_edit_container';
 import CartIndexContainer from '../cart_page/cart_index_containter';
 import Search from '../search_page/search_container'
 import HomePage from '../home_page/home_page_container'
-import UserListings from '../user_profile/user_listings';
+import UserProfile from '../user_profile/user_profile';
 
 class MainBody extends React.Component {
     componentDidMount() {
@@ -43,10 +43,10 @@ class MainBody extends React.Component {
                         <ProtectedRoute exact path="/new_item" component={ItemCreateContainer} />
                         <ProtectedRoute exact path="/edit_item/:id" component={ItemEditContainer} />
 						            <ProtectedRoute exact path="/cart" component={CartIndexContainer} />
-						            <ProtectedRoute exact path="/users/:id" component={UserListings} />
+						            <ProtectedRoute exact path="/users/:id" component={UserProfile} />
                     </Switch>
                 </div>
-                <FooterOne />
+                <FooterOne userId={this.props.currentUser.id}/>
                 {/* <FooterTwo /> */}
             </div>
         )

@@ -36,7 +36,7 @@ class FooterOne extends React.Component {
                     <div className="footer-group">
                         <div>Let Us help You</div>
                         <ul>
-                            <li><Link to="/users/:id">Your Account</Link></li>
+                            <li><Link to={`/users/${this.props.userId}`}>Your Account</Link></li>
                             <li><a href="">Your Orders</a></li>
                             <li><a href="">Help</a></li>
                         </ul>

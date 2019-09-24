@@ -22,9 +22,7 @@ const ReviewSchema = new Schema({
 		type: Number,
 		required: true
 	},
-	helpful: {
-		type: Array
-	},
+	helpful: [String],
 	title: {
 		type: String,
 		required: true

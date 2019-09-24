@@ -72,7 +72,7 @@ class HeaderBottom extends React.Component{
                 </div>
                 <section className="navbarButtons">
                     <div><Link to="/items">Today's Deals</Link></div>
-                    <div>Your Amazon Forest</div>
+              <div><Link to={`/users/${this.props.currentUser.id}`}>Your Amazon Forest</Link></div>
                     <div><Link to="/new_item">Sell Your Pet/Product</Link></div>
                 </section>
                 <div className="headerBottomRight">
