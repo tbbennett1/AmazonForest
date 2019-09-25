@@ -70,8 +70,13 @@ class ItemIndex extends React.Component {
 	
 	render() {
 		let itemLists
-		if (this.state.filtered) {
-			itemLists = this.state.filtered.map(item => <ItemIndexItem key={item._id} item={item} />)
+		if (this.state.filtered && this.props.reviews) {
+		itemLists = this.state.filtered.map(item => {
+			let filteredReviews
+
+			filteredReviews = this.props.reviews.filter(review => review.itemId === item._id)
+
+		return <ItemIndexItem key={item._id} item={item} filteredReviews={filteredReviews}/>})
 		}
 		return (
 			<div className="item-index">

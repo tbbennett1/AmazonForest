@@ -7,7 +7,7 @@
 
 .mainPageBody{
     display: flex;
-    /* min-height: 100px; */
+    min-height: 80px;
     flex: 1 0 auto;
 }
 

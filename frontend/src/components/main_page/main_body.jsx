@@ -20,6 +20,7 @@ import UserProfile from '../user_profile/user_profile';
 class MainBody extends React.Component {
     componentDidMount() {
         this.props.fetchItems()
+        this.props.fetchReviews()
     }    
 
     componentDidUpdate(prevProps){

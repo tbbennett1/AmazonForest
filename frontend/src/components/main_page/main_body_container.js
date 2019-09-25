@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchItems } from "../../actions/item_actions";
+import { fetchReviews } from '../../actions/review_actions';
 import MainBody from '../main_page/main_body';
 
 
@@ -17,7 +18,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-		fetchItems: () => dispatch(fetchItems())
+        fetchItems: () => dispatch(fetchItems()),
+        fetchReviews: () => dispatch(fetchReviews())
     }
 }
 

@@ -26,9 +26,13 @@ export const removeReview = reviewId => {
     }
   }
 
-export const fetchReviews = (id) => dispatch => (
-	ReviewApiUtil.fetchReviews(id).then((reviews) => dispatch({ type: RECEIVE_ALL_REVIEWS, reviews }))
+export const fetchReviews = () => dispatch => (
+	ReviewApiUtil.fetchReviews().then((reviews) => dispatch({ type: RECEIVE_ALL_REVIEWS, reviews }))
 );
+
+// export const fetchReviews = (id) => dispatch => (
+//   ReviewApiUtil.fetchReviews(id).then((reviews) => dispatch({ type: RECEIVE_ALL_REVIEWS, reviews }))
+// );
 
 export const fetchReview = (id) => dispatch => (
 	ReviewApiUtil.fetchReview(id).then((review) => dispatch(receiveReview(review.data)))

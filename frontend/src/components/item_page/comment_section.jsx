@@ -20,7 +20,7 @@ class CommentSection extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchReviews(this.props.item._id);
+        // this.props.fetchReviews(this.props.item._id);
     }
 
     update(field) {
@@ -108,7 +108,9 @@ class CommentSection extends React.Component {
         const star_four = this.state.star_four ? Star_Filled : StarEmpty;
         const star_five = this.state.star_five ? Star_Filled : StarEmpty;
 
-        const reviews = this.props.reviews.map(review => {
+        let filtered = this.props.reviews.filter( review => review.itemId === this.props.item._id)
+        let reviews
+        if (filtered) reviews = filtered.map(review => {
             return <ReviewContainer key={review._id} review={review} deleteReview={this.props.deleteReview} />
         })
 

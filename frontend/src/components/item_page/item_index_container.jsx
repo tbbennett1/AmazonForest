@@ -5,6 +5,13 @@ import { fetchItems, fetchItem, removeItem } from "../../actions/item_actions";
 import ItemIndex from './item_index';
 
 const mapStateToProps = (state, ownProps) => {
+  let reviews;
+
+  if (state.entities.reviews.data) {
+    reviews = state.entities.reviews.data;
+  }
+
+
   if (ownProps.userId && state.entities.items.data){
     let usersItems = [];
     usersItems[0] = state.entities.items.data.filter(item => item.sellerId === ownProps.userId);
@@ -14,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
   }
   
 	return {
-		items: Object.keys((state.entities.items)).map(id => state.entities.items[id])
+    items: Object.keys((state.entities.items)).map(id => state.entities.items[id]),
+    reviews: reviews,
 	}
 }
 
