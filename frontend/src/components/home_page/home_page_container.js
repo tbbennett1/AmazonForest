@@ -4,7 +4,7 @@ import HomePage from './home_page'
 const mapStateToProps = state =>{
     return{
         currentUser: state.session.user,
-        items: Object.keys((state.entities.items)).map(id => state.entities.items[id])
+        items: Object.keys((state.entities.items)).map(id => state.entities.items[id]),
     }
 }
 

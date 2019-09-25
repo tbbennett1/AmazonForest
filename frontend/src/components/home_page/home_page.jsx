@@ -214,13 +214,13 @@ class HomePage extends React.Component{
                 customLeftArrow={<CustomLeftSplashArrow />}
                 >
                     <div className="home-splash-item"><img className="bear" src={Giraffe} alt="" />
-                    <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
+                    <Link to="/items/5d8aff1495ff4371437d10c2" className="floating-clickable"></Link></div>
                     <div className="home-splash-item"><img src={Horse} alt="" />
                     <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
                     <div className="home-splash-item"><img className="bear" src={Bear} alt="" />
-                    <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
+                    <Link to="/items/5d8b02bc95ff4371437d10c4" className="floating-clickable"></Link></div>
                     <div className="home-splash-item"><img className="bear" src={Harambe} alt="" />
-                    <Link to="/items/5d89b99fda97372c45c0792b" className="floating-clickable"></Link></div>
+                    <Link to="/items/5d8b00f795ff4371437d10c3" className="floating-clickable"></Link></div>
 
                 </Carousel>
             </div>

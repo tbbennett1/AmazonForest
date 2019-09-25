@@ -48,6 +48,7 @@
 
 .index-item-wrapper > div:first-child{
     height: 80%;
+    width: 100%;
     padding: 20px 0px 20px 0px;
 }
 
@@ -65,10 +66,10 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
 
-.index-item-details div:first-child{
+.index-item-details > div:last-child{
     color: #cc1c39;
     font-weight: bold;
     padding-bottom: 7px;
@@ -179,4 +180,29 @@
 .item-list-filter-wrapper h2 {
   margin: 0;
   margin-bottom: 10px;
+}
+
+.index-item-ratings{
+    display: flex;
+    width: 100%;
+    padding: 10px 0 10px 0;
+}
+
+
+.index-item-ratings img{
+    width: 15px;
+    height: 15px;
+}
+
+.index-item-ratings a {
+    display: flex;
+}
+
+.index-item-ratings a:hover{
+    text-decoration: none;
+    color: orange;
+}
+
+.index-item-ratings div:last-child{
+    padding-left: 10px;
 }

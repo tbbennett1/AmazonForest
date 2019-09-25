@@ -4,8 +4,11 @@ import { createCartItem, fetchCartItem } from "../../actions/cart_item_actions";
 import ItemShow from './item_show';
 
 const mapStateToProps = (state, ownProps) => {
-  let reviews = Object.values(state.entities.reviews)
-  reviews = reviews.filter(review => review.id === ownProps.match.params.id)
+  let reviews;
+
+  if (state.entities.reviews.data) {
+    reviews = state.entities.reviews.data;
+  }
 
   if(!state.entities.items[ownProps.match.params.id]){
     return {};

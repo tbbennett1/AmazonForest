@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-export const fetchReviews = (id) => {
-	return axios.get(`/api/reviews?itemId=${id}`);
+// export const fetchReviews = (id) => {
+// 	return axios.get(`/api/reviews?itemId=${id}`);
+// };
+export const fetchReviews = () => {
+	return axios.get(`/api/reviews`);
 };
 
 export const fetchReview = (id) => {

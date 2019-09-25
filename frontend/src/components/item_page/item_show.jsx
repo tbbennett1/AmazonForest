@@ -18,15 +18,15 @@ class ItemShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchItem(this.props.match.params.id);
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps, prevState){
-    if (prevProps.match.params.id !== this.props.match.params.id) {
-      this.props.fetchItem(this.props.match.params.id)
-    }
+    // if (prevProps.match.params.id !== this.props.match.params.id) {
+    //   this.props.fetchItem(this.props.match.params.id)
+    // }
 
-    if (!this.props.item){
+    if (!this.props.item && !prevProps.items){
       this.props.fetchItem(this.props.match.params.id)
     }
   }
@@ -67,6 +67,44 @@ class ItemShow extends React.Component {
       return(
         <div></div>
       )
+    }
+    let filteredReviews
+    if(this.props.reviews && this.props.item){
+      filteredReviews = this.props.reviews.filter(review => review.itemId === this.props.item._id)
+    }
+
+
+    let numberOfRatings
+    let avg
+    let stars2 = []
+
+    const times = x => f => {
+      if (x > 0) {
+        f()
+        times(x - 1)(f)
+      }
+    }
+
+
+    if (filteredReviews && filteredReviews.length > 0) {
+      let ratings = filteredReviews.map(review => review.rating)
+      numberOfRatings = ratings.length
+      avg = Math.round(ratings.reduce((a, b) => a + b) / ratings.length)
+    }
+
+    if (!numberOfRatings) {
+      numberOfRatings = 0
+    }
+
+    if (!avg) {
+      times(5)((x) => (stars2.push(<img key={x} src={StarEmpty} />)))
+      avg = "no ratings"
+    }
+
+    if (avg) {
+      let emptyStars2 = 5 - avg
+      times(avg)((x) => (stars2.push(<img key={x} src={Star_Filled} />)))
+      times(emptyStars2)((x) => (stars2.push(<img key={x} src={StarEmpty} />)))
     }
 
     const item = this.props.item;
@@ -110,7 +148,7 @@ class ItemShow extends React.Component {
           <div className="item-center-col">
             <h1 className="item-title">{item.title}</h1>
             <p className="item-username">By {this.props.item.user}</p>
-            { reviewStars }
+            { stars2 }
             <h4>Price: 
               <span className="item-price"> ${item.price}</span>
             </h4>

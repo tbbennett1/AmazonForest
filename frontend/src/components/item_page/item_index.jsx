@@ -42,7 +42,7 @@ class ItemIndex extends React.Component {
 	}
 
 	componentDidUpdate(prevProps, prevState){
-		if (!this.state.items && this.props.items.length > 1){
+		if (!this.state.items && this.props.items.length > 0){
 			this.setState({items: this.props.items[0],
 				filtered: this.props.items[0]})
 		}
@@ -70,8 +70,13 @@ class ItemIndex extends React.Component {
 	
 	render() {
 		let itemLists
-		if (this.state.filtered) {
-			itemLists = this.state.filtered.map(item => <ItemIndexItem key={item._id} item={item} />)
+		if (this.state.filtered && this.props.reviews) {
+		itemLists = this.state.filtered.map(item => {
+			let filteredReviews
+
+			filteredReviews = this.props.reviews.filter(review => review.itemId === item._id)
+
+		return <ItemIndexItem key={item._id} item={item} filteredReviews={filteredReviews}/>})
 		}
 		return (
 			<div className="item-index">

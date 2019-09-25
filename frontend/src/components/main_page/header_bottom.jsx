@@ -54,11 +54,14 @@ class HeaderBottom extends React.Component{
     }
     
     render(){
-        const { cartItems } = this.props
+        const { cartItems, currentUser } = this.props
         let number
         if (cartItems){
             number = cartItems.length
         }
+
+        let userId
+        if (currentUser) userId = this.props.currentUser.id
         return(
             <div className="headerBottom">
                 <div className="headerAddress">
@@ -72,7 +75,7 @@ class HeaderBottom extends React.Component{
                 </div>
                 <section className="navbarButtons">
                     <div><Link to="/items">Today's Deals</Link></div>
-              <div><Link to={`/users/${this.props.currentUser.id}`}>Your Amazon Forest</Link></div>
+              <div><Link to={`/users/${userId}`}>Your Amazon Forest</Link></div>
                     <div><Link to="/new_item">Sell Your Pet/Product</Link></div>
                 </section>
                 <div className="headerBottomRight">
