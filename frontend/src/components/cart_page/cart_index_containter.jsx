@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import { fetchCartItems, removeCartItem } from "../../actions/cart_item_actions";
 import CartIndex from "./cart_index";
-// import allCartItems from "../../reducers/selectors/cart_items_selector"
 
 const mapStateToProps = (state) => {
 	return { 
