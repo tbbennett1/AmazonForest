@@ -89,6 +89,10 @@ position: absolute;
     height: 385px;
 }
 
+.home-page-card-details:hover {
+	background-color: rgb(231, 231, 231);
+}
+
 .home-page-user-details{
     display: flex;
     width: 100%;
