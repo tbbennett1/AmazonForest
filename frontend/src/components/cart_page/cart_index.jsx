@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 import CartIndexItem from "./cart_index_item";
 
@@ -9,11 +9,6 @@ class CartIndex extends React.Component {
 		const userId = this.props.currentUser.id;
 		this.props.fetchCartItems(userId);
     window.scrollTo(0, 0);
-	}
-
-	componentDidUpdate() {
-	// 	const userId = this.props.currentUser.id;
-	// 	this.props.fetchCartItems(userId);
 	}
 
 	render() {
