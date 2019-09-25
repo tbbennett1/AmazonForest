@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchItems } from '../../actions/item_actions';
-import { fetchCartItems } from '../../actions/cart_item_actions';
+import { fetchCartItems, removeCartItem } from '../../actions/cart_item_actions';
 import UserListings from './user_listings';
 import UserProfileCart from './user_profile_cart';
 
@@ -14,7 +14,8 @@ const msp = (state, ownProps) => {
     userCartItems = state.entities.items.data.filter(item => cartItemFilter.includes(item._id));
     return {
       items: usersItems,
-      cartItems: userCartItems
+      itemsInCart: userCartItems,
+      cartItems: state.entities.cartItems
     }
   }
 
@@ -24,7 +25,8 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
   return {
     fetchItems: () => dispatch(fetchItems()),
-    fetchCartItems: (userId) => dispatch(fetchCartItems(userId))
+    fetchCartItems: (userId) => dispatch(fetchCartItems(userId)),
+    removeCartItem: (id) => dispatch(removeCartItem(id))
   }
 }
 
@@ -41,10 +43,11 @@ class UserProfile extends React.Component {
         <div></div>
       )
     }
+
     return ( 
       <div className="user-profile">
         <UserListings items={this.props.items}/>
-        <UserProfileCart items={this.props.cartItems} />
+        <UserProfileCart items={this.props.itemsInCart} cartItems={this.props.cartItems} removeCartItem={this.props.removeCartItem} />
       </div>
     )
   }
