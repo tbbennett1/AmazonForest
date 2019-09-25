@@ -10,8 +10,8 @@ class Header extends React.Component {
 		const userId = this.props.currentUser.id
         this.props.fetchCartItems(userId)
         }
-	}
-
+    }
+    
     render() {
 		const { items, cartItems, fetchCartItems } = this.props
         let itemLists
