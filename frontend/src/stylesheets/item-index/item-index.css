@@ -34,7 +34,10 @@
     min-height: 530px;
 }
 
-
+.index-item:hover {
+	background-color: rgb(231, 231, 231);
+	cursor: pointer;
+}
 
 .index-item-wrapper{
 
