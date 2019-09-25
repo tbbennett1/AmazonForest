@@ -36,6 +36,17 @@
 .home-splash-item img {
     width: 100%;
     height: 100%;
+    vertical-align: top;
+}
+
+.floating-bear-text{
+    position: absolute;
+    z-index: 100;
+    top: 44px;
+    left: 290px;
+    font-size: 40px;
+    font-family: "ember-rg";
+    color: white;
 }
 
 .floating-clickable {
