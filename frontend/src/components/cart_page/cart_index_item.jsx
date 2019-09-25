@@ -9,7 +9,6 @@ class CartIndexItem extends React.Component {
 	}
 
 	handleClick() {
-    debugger
 		this.props.removeCartItem(this.props.cartItem._id);
 	}
 
