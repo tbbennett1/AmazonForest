@@ -42,7 +42,7 @@ class ItemIndex extends React.Component {
 	}
 
 	componentDidUpdate(prevProps, prevState){
-		if (!this.state.items && this.props.items.length > 1){
+		if (!this.state.items && this.props.items.length > 0){
 			this.setState({items: this.props.items[0],
 				filtered: this.props.items[0]})
 		}

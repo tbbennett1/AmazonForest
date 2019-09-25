@@ -17,7 +17,7 @@ class ItemIndexItem extends Component {
             }
         }
 
-        if (filteredReviews && filteredReviews.length > 1){
+        if (filteredReviews && filteredReviews.length > 0){
             let ratings = filteredReviews.map(review => review.rating)
             numberOfRatings = ratings.length
             avg = Math.round(ratings.reduce((a, b) => a + b) / ratings.length)

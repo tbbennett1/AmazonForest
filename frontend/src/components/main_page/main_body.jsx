@@ -27,6 +27,10 @@ class MainBody extends React.Component {
         if (JSON.stringify(prevProps.items[0]) != JSON.stringify(this.props.items[0])){
             this.props.fetchItems()
         }
+        if (JSON.stringify(prevProps.reviews) != JSON.stringify(this.props.reviews)) {
+            this.props.fetchReviews()
+        }
+
     }
 
     render() {
