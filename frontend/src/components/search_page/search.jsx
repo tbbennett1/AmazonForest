@@ -1,6 +1,7 @@
 import React from 'react';
 import ItemIndexItem from '../item_page/item_index_item';
 
+
 class Search extends React.Component {
     constructor(props){
         super(props)
@@ -120,8 +121,14 @@ class Search extends React.Component {
     }
 
     renderFilteredResults(){
-        if (this.state.filtered && this.state.filtered.length > 0) {
-            return this.state.filtered.map(item => <ItemIndexItem key={item._id} item={item} />)
+        if (this.state.filtered && this.state.filtered.length > 0 && this.props.reviews) {
+
+        return this.state.filtered.map(item => {
+            let filteredReviews
+
+            filteredReviews = this.props.reviews.filter(review => review.itemId === item._id)
+        
+            return <ItemIndexItem key={item._id} item={item} filteredReviews={filteredReviews}/>})
         }
     }
 

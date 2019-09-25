@@ -173,6 +173,12 @@
   flex-direction: column;
 }
 
+.accountDropdown div{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .dropdownTriangle {
     position: absolute;
     top: -10px;
