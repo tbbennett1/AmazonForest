@@ -37,7 +37,7 @@ class FooterOne extends React.Component {
                         <div>Let Us help You</div>
                         <ul>
                             <li><Link to={`/users/${this.props.userId}`}>Your Account</Link></li>
-                            <li><a href="">Your Orders</a></li>
+                            <li><Link to="/cart">Your Cart</Link></li>
                             <li><a href="">Help</a></li>
                         </ul>
                     </div>
