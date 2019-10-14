@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "server": "nodemon app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
@@ -34,7 +34,8 @@
     "passport-jwt": "^4.0.0",
     "react-image-magnify": "^2.7.4",
     "react-image-zoom": "^0.7.0",
-    "validator": "^11.1.0"
+    "validator": "^11.1.0",
+    "nodemon": "^1.19.2"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"
