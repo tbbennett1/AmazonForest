@@ -6,7 +6,7 @@ const CartItem = require('./models/Cart_Item');
 const mongoose = require('mongoose');
 const faker = require('faker')
 
-const db = require("./config/keys_dev.js").mongoURI;
+const db = require("./config/keys.js").mongoURI;
 
 // const user = new User({
 //   name: "Bagel",
