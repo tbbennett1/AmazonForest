@@ -84,7 +84,7 @@ class HeaderBottom extends React.Component{
                     <Link to="/cart" className="headerCartContainer">
                         <img className="headerCartImage" src={Cart} alt="cart"/>
                         <span className="headerItemsInCart">{number}</span>
-                        <span>Cart</span>
+                        <span className="cartText">Cart</span>
                     </Link>
                 </div>
             </div>

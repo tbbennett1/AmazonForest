@@ -470,7 +470,7 @@ position: absolute;
 
 }
 
-@media only screen and (max-width: 804px) {
+@media only screen and (max-width: 805px) {
     .navbarButtons{
         /* max-height: 0; */
     }
@@ -478,5 +478,87 @@ position: absolute;
     .accountDropdown{
         top: 67px;
     }
+
+    .cartText {
+        display: none;
+    }
+
+    .footer-links-groups > div:nth-child(2), .footer-links-groups > div:nth-child(1){
+        display: none;
+    }
+
+    .footer-group{
+        padding: 0;
+    }
+    
+    .searchBar button{
+        display: none;
+    }
+
+    .search-box input{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+   .navbarButtons div{
+       margin-left: 0;
+       font-size: 12px;
+   } 
+
+   .headerAccountTwo{
+       display: none;
+   }
+
+   .dropdownTriangle{
+       display: none;
+   }
+
+   .headerTriangle{
+       display: none;
+   }
+   .accountDropdown{
+    left: 50%;
+    margin-left: -200%;
+    width: auto;
+    right: none;
+   }
+
+   .home-page-card-rows{
+       top: 0;
+       flex-direction: column;
+   }
+
+   .home-page-card{
+       margin-bottom: 10px;
+   }
+
+   .home-page{
+       height: 1840px
+   }
+
+   .home-page-entire-row {
+       top: -10px;
+   }
+
+   .home-page-card-rows > div:last-child{
+       display: none;
+   }
+   .home-page-first-list{
+        width: 360px;
+   }
+
+   .item-lists {
+       flex-direction: column;
+   }
+
+   .index-item{
+    min-width: 193px;
+    min-height: 400px;
+   }
+   .item-lists ul {
+       width: 100%;
+       justify-content: center;
+   }
+
 
 }
