@@ -377,6 +377,8 @@
     bottom: 0;
     width: 99.9%;
     background-color: white;
+    left: 1px;
+    z-index: 5;
 }
 
 .search-suggestion{

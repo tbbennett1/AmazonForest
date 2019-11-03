@@ -13,6 +13,16 @@ class Login extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderEmailError = this.renderEmailError.bind(this);
         this.renderPasswordError = this.renderPasswordError.bind(this);
+        this.handleGuest = this.handleGuest.bind(this);
+    }
+
+    handleGuest(e) {
+        e.preventDefault();
+        const user = {
+            email: "jeff@bezos.com",
+            password: "password",
+        }
+        this.props.login(user);
     }
 
     
@@ -140,6 +150,9 @@ class Login extends React.Component {
                                 </div>
                                 <div className="form-orange-button">   
                                     <input type="submit" value="Continue" />
+                                </div>
+                                <div className="form-orange-button demo">
+                                    <input type="button" value="Demo Login" onClick={this.handleGuest} />
                                 </div>
                                 <div className="session-box-legal">
                                         By continuing, you agree to Amazon Forest's <a href="">Conditions of Use</a> and <a href="">Privacy Notice.</a>

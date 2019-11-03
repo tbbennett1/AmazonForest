@@ -72,10 +72,10 @@ class HeaderTop extends React.Component {
     render() {
         return(
             <div className="headerTop">
-                <img className="headerBars" src={Bars} alt="bars" />
+                {/* <img className="headerBars" src={Bars} alt="bars" /> */}
                 <Link to={"/"}><img className="headerLogo" src={WhiteLogo} alt="header logo" /></Link>
                 <div className="searchBar">
-                    <button>All<div></div></button>
+                    <button>Search</button>
                     <div className="search-box">
                         <form onSubmit={this.handleSearchButton}><input type="text" onChange={this.onInputChange} value={this.state.searchTerm}/></form>
                         <div className="search-suggestions" id="search-suggestions">
