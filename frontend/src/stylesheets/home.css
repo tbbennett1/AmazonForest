@@ -517,9 +517,8 @@ position: absolute;
        display: none;
    }
    .accountDropdown{
-    left: 50%;
-    margin-left: -200%;
-    width: auto;
+    left: -100%;
+    width: 160%;
     right: none;
    }
 
@@ -561,4 +560,85 @@ position: absolute;
    }
 
 
+   .item-show-top {
+       flex-direction: column;
+   }
+
+   .item-left-col {
+       width: auto;
+       padding: 20px 20px;
+   }
+
+   .item-center-col{
+       width: auto;
+       
+   }
+
+    .item-center-col textarea{
+        box-sizing: border-box;
+    }
+
+    .item-right-col{
+        width: auto;
+    }
+
+    .ul-ul{
+        padding: 0;
+    }
+
+    .create-item-top{
+        margin: 0;
+    }
+
+    .create-item-top h1{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .form-container {
+        margin: 0;
+        width: auto;
+    }
+
+    .form-label{
+        justify-content: flex-start;
+    }
+
+    .form-label input{
+        margin: 0;
+        
+    }
+
+    .form-input{
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .form-input-price{
+        width: auto;
+    }
+
+    .form-label > label {
+        width: auto;
+    }
+
+    .cart-canvas{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .cart-frame {
+        display: flex;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .checkout{   
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+    .shopping{
+      padding: 30px 0 10px 10px;  
+    }
 }
