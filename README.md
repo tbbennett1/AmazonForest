@@ -1,24 +1,30 @@
-# AmazonForest.com
-#### An exotic pet/supply site
+# AmazonForest
+#### A fun Amazon-inspired shopping site for exotic animals. A user can browse by category, search for products, add products to their cart, review/comment/rate a product, and even create a new product.
 
-
-## Background and Overview
+<!-- ## Background and Overview
 ## Functionality and MVP
 - [ ] Product Listings
 - [ ] Shopping Cart
 - [ ] Comments / Reviews
 - [ ] Search
 - [ ] Bonus: Categories
-- [ ] Bonus: Wish Lists
+- [ ] Bonus: Wish Lists -->
 
-## Technologies and Technical Challenges
-	MERN (MongoDB, Express, React, and Node).
-	Redux
-    AWS
-    Frontend: React
-    Backened: MongoDB/Express
+## Technologies	
+  MongoDB, 
+  Express, 
+  React,
+  Node.js,
+	Redux,
+  AWS,
+  Webpack,
+  Heroku
 
-## Group Members and Work Breakdown
+![Web Site System](amazonforest.gif)
+
+[Demo](https://amazonforest.herokuapp.com/#/login)
+
+<!-- ## Group Members and Work Breakdown
 backend: Brock & Abby
 Frontend: Brett && Carlos
 ### Day 1 - 2
@@ -42,4 +48,4 @@ Frontend: Brett && Carlos
 * Checkout
 
 
-## Plan for getting users and reviews (if your app is a downloadable app)
+## Plan for getting users and reviews (if your app is a downloadable app) -->
