@@ -26,7 +26,7 @@
 
 .form-label{
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   color: black;
   font-family: Arial;
   font-size: 18px;
@@ -36,9 +36,9 @@
 }
 
 .form-label > label{
-  width: 50%;
+  width: 30%;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   margin-right: 10px;
   align-items: center;
 }
@@ -59,8 +59,8 @@
 .form-input, .form-input-price{
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 50%;
-  margin-right: 200px;
+  width: 70%;
+  /* margin-right: 200px; */
   min-height: 30px;
   font-family: arial;
   font-size: 16px;
@@ -69,7 +69,7 @@
 .form-input-price{
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  width: 340px;
+  width: 67%;
 }
 
 .form-input:focus, .form-input-price:focus {
@@ -84,7 +84,7 @@
   border: 1px solid #846a29;
   border-radius: 4px; 
   margin-top: 20px;
-  width: 50%;
+  width: 100%;
   min-height: 40px;
   font-family: arial;
   font-size: 16px;
@@ -97,4 +97,9 @@
 
 #item-submit:focus{
   outline: none;
+}
+
+.form-label-submit{
+  align-self: center;
+  width: 95%;
 }

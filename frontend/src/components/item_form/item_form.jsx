@@ -113,7 +113,7 @@ class ItemForm extends React.Component {
                   </option>
               </select>
             </div>
-            <div className="form-label">
+            <div className="form-label form-label-submit">
               <input
                 id="item-submit"
                 type="submit"
