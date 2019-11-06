@@ -414,6 +414,8 @@ position: absolute;
     flex-wrap:wrap;
 }
 
+
+
 .home-page-card-rows > div:last-child{
     min-height: 140px;
     height: 348px;
@@ -433,7 +435,8 @@ position: absolute;
 
 .home-page-entire-row{
     top: -260px;
-    width: 100%;
+    max-width: 98vw;
+    margin-left: -1px;
 }
 
 
@@ -462,15 +465,15 @@ position: absolute;
     min-width: 313.33px;
 }
 
-
-.home-page-entire-row{
-    top: -470px;
-    width: 100%;
+.home-page-entire-row {
+     top: -470px;
+    max-width: 98vw;
+    margin-left: -1px;
 }
 
 }
 
-@media only screen and (max-width: 804px) {
+@media only screen and (max-width: 805px) {
     .navbarButtons{
         /* max-height: 0; */
     }
@@ -479,4 +482,170 @@ position: absolute;
         top: 67px;
     }
 
+    .cartText {
+        display: none;
+    }
+
+    .footer-links-groups > div:nth-child(2), .footer-links-groups > div:nth-child(1){
+        display: none;
+    }
+
+    .footer-group{
+        padding: 0;
+    }
+    
+    .searchBar button{
+        display: none;
+    }
+
+    .search-box input{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+   .navbarButtons div{
+       margin-left: 0;
+       font-size: 12px;
+   } 
+
+   .headerAccountTwo{
+       display: none;
+   }
+
+   .dropdownTriangle{
+       display: none;
+   }
+
+   .headerTriangle{
+       display: none;
+   }
+   .accountDropdown{
+    left: -100%;
+    width: 160%;
+    right: none;
+   }
+
+   .home-page-card-rows{
+       top: 0;
+       flex-direction: column;
+   }
+
+   .home-page-card{
+       margin-bottom: 10px;
+       max-width: 95vw;
+   }
+
+
+   .home-page{
+    height: 1940px;
+   }
+
+   .home-page-entire-row {
+       top: -10px;
+   }
+
+   .home-page-card-rows > div:last-child{
+       display: none;
+   }
+
+    .home-page-entire-row {
+        max-width: 95vw;
+        margin-left: -1px;
+    }
+
+   .item-lists {
+       flex-direction: column;
+   }
+
+   .index-item{
+    min-width: 193px;
+    min-height: 400px;
+   }
+   .item-lists ul {
+       width: 100%;
+       justify-content: center;
+   }
+
+
+   .item-show-top {
+       flex-direction: column;
+   }
+
+   .item-left-col {
+       width: auto;
+       padding: 20px 20px;
+   }
+
+   .item-center-col{
+       width: auto;
+       
+   }
+
+    .item-center-col textarea{
+        box-sizing: border-box;
+    }
+
+    .item-right-col{
+        width: auto;
+    }
+
+    .ul-ul{
+        padding: 0;
+    }
+
+    .create-item-top{
+        margin: 0;
+    }
+
+    .create-item-top h1{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .form-container {
+        margin: 0;
+        width: auto;
+    }
+
+    .form-label{
+        justify-content: flex-start;
+    }
+
+    .form-label input{
+        margin: 0;
+        
+    }
+
+    .form-input{
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .form-input-price{
+        width: auto;
+    }
+
+    .form-label > label {
+        width: auto;
+    }
+
+    .cart-canvas{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .cart-frame {
+        display: flex;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .checkout{   
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+    .shopping{
+      padding: 30px 0 10px 10px;  
+    }
 }

@@ -151,10 +151,10 @@ class HomePage extends React.Component{
                     breakpoint: { max: 1280, min: 464 },
                     items: 4,
                 },
-                // mobile: {
-                //     breakpoint: { max: 464, min: 0 },
-                //     items: 1,
-                // },
+                mobile: {
+                    breakpoint: { max: 464, min: 0 },
+                    items: 1,
+                },
             };
 
             let constructed = filtered.map(item => <div key={item._id} className="home-page-item-list-item">
@@ -171,7 +171,7 @@ class HomePage extends React.Component{
                     autoPlaySpeed={5000}
                     infinite={false}
                     itemClass={"carousel-list-item"}
-                    slidesToSlide={8}
+                    slidesToSlide={1}
                 >
                     {constructed}
                 </Carousel>
