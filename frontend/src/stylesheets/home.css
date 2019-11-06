@@ -604,10 +604,10 @@ position: absolute;
 
     .form-container {
         margin: 0;
-        width: auto;
+        width: 80%;
     }
 
-    .form-label{
+    /* .form-label{
         justify-content: flex-start;
     }
 
@@ -627,7 +627,7 @@ position: absolute;
 
     .form-label > label {
         width: auto;
-    }
+    } */
 
     .cart-canvas{
         flex-direction: column-reverse;

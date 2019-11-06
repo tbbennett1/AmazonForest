@@ -163,10 +163,10 @@ class ItemShow extends React.Component {
               <img src={Cart} className="item-cart-image" alt="cart" />
               <div className="atc-div"><input type="button" className="add-to-cart" value="Add to Cart" /></div>
             </div>
-            <div className="add-to-wl-button">
+            {/* <div className="add-to-wl-button">
               <div className="item-wl-plus">+</div>
               <div className="atc-div"><input type="button" className="add-to-wl" value="Add to Wish List" /></div>
-            </div>
+            </div> */}
             <this.EditButton props={this.props}/>
           </div>
         </div>

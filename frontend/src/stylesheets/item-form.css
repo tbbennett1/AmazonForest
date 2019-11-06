@@ -39,7 +39,7 @@
   width: 30%;
   display: flex;
   /* justify-content: flex-end; */
-  margin-right: 10px;
+  margin-right: 20px;
   align-items: center;
 }
 
@@ -69,7 +69,9 @@
 .form-input-price{
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  width: 67%;
+  width: 64%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .form-input:focus, .form-input-price:focus {
@@ -102,4 +104,14 @@
 .form-label-submit{
   align-self: center;
   width: 95%;
+}
+
+.form-label select{
+  width: 70.4%;
+  min-height: 34px;
+}
+
+.form-label textarea {
+  width: 69.66%;
+  /* max-height: 30px; */
 }
