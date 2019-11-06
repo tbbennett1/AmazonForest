@@ -1,11 +1,12 @@
 import {connect} from 'react-redux';
 
-import {logout} from '../../actions/session_actions';
+import {logout, login} from '../../actions/session_actions';
 import AccountDropdown from './account_dropdown';
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()),
+        login: user => dispatch(login(user))
     })
 }
 
