@@ -69,7 +69,7 @@ class HeaderBottom extends React.Component{
                         <img src={Location} alt="user location"/>
                         <div>
                             <div>Deliver to</div>
-                            <div>My address, yo</div>
+                            <div>Any Address</div>
                         </div>
                     </button>
                 </div>

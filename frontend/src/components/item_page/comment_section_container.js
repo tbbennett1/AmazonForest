@@ -7,7 +7,6 @@ import CommentSection from './comment_section';
 
 const mapStateToProps = (state, ownProps) => {
   let reviews;
-  let itemReviews;
 
   if(state.entities.reviews.data) {
     reviews = state.entities.reviews.data;

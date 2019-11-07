@@ -181,6 +181,10 @@ label.password2 {
     background: linear-gradient(to bottom,#f7dfa5,#e6b94a);
 }
 
+.form-orange-button:hover{
+    background: linear-gradient(to bottom,#f7dfa5,#e6b94a);
+}
+
 
 .session-gray-button:hover{
     background: #dfe2e6;

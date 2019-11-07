@@ -97,14 +97,14 @@ class ItemShow extends React.Component {
     }
 
     if (!avg) {
-      times(5)((x) => (stars2.push(<img key={x} src={StarEmpty} />)))
+      times(5)((x) => (stars2.push(<img alt="" key={x} src={StarEmpty} />)))
       avg = "no ratings"
     }
 
     if (avg) {
       let emptyStars2 = 5 - avg
-      times(avg)((x) => (stars2.push(<img key={x} src={Star_Filled} />)))
-      times(emptyStars2)((x) => (stars2.push(<img key={x} src={StarEmpty} />)))
+      times(avg)((x) => (stars2.push(<img alt="" key={x} src={Star_Filled} />)))
+      times(emptyStars2)((x) => (stars2.push(<img alt="" key={x} src={StarEmpty} />)))
     }
 
     const item = this.props.item;
@@ -121,7 +121,7 @@ class ItemShow extends React.Component {
       i++;
     }
 
-    let reviewStars = this.state.rating ? <div className="reviewShowRating">{stars}</div> : <div className="noReviews">No reviews yet</div>;
+    // let reviewStars = this.state.rating ? <div className="reviewShowRating">{stars}</div> : <div className="noReviews">No reviews yet</div>;
 
     return (
       <div>

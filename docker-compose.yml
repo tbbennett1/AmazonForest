@@ -1,0 +1,36 @@
+version: "3"
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    image: red-team/amazon-forest-frontend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    image: red-team/amazon-forest-backend
+    ports:
+      - 3001:3000
+    volumes:
+      - .:/usr/src/app
+      - node_modules_b:/usr/src/app/node_modules
+
+  mongo:
+    image: mongo
+    volumes:
+      - data:/data/db
+    ports:
+     - "27017:27017"
+
+volumes: 
+  node_modules:
+  node_modules_b:
+  data:
