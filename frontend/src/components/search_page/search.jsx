@@ -28,7 +28,7 @@ class Search extends React.Component {
 
         if (this.props.history.location.search) {
             let match,
-                pl = /\+/g,  // Regex for replacing addition symbol with a space
+                pl = /\+/g,  
                 search = /([^&=]+)=?([^&]*)/g,
                 decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
                 query = this.props.history.location.search.slice(2)
