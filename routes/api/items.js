@@ -2,14 +2,11 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-// var AWS = require("aws-sdk");
 
 const reviews = require('./reviews');
 
 const Item = require('../../models/Item');
 
-// var storage = multer.memoryStorage();
-// var upload = multer({ storage: storage });
 
 router.get("/test", (req, res) => res.json({ msg: "This is the Item route" }));
 
@@ -31,12 +28,6 @@ router.get("/:item_id", (req, res) => {
 router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    // Add validations back in later
-    // const { errors, isValid } = validateTweetInput(req.body);
-    // 
-    // if (!isValid) {
-    //   return res.status(400).json(errors);
-    // }
     const newItem = new Item({
       sellerId: req.user.id,
       title: req.body.title,
