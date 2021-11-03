@@ -35,7 +35,7 @@
     "passport-jwt": "^4.0.0",
     "react-image-magnify": "^2.7.4",
     "react-image-zoom": "^0.7.0",
-    "validator": "^11.1.0",
+    "validator": "^13.7.0",
     "nodemon": "^1.19.2"
   },
   "devDependencies": {
